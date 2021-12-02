@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Projet_Huchon_Salemi_3I"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid RenderTransformOrigin="0.516,0.323">
+        <Button Content="Button" HorizontalAlignment="Left" Margin="351,134,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
