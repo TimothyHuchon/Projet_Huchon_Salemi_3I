@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31727.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projet_Huchon_Salemi_3I", "Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I.csproj", "{A539314C-7341-4E9B-A767-5624952B523D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A539314C-7341-4E9B-A767-5624952B523D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A539314C-7341-4E9B-A767-5624952B523D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A539314C-7341-4E9B-A767-5624952B523D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A539314C-7341-4E9B-A767-5624952B523D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11D674B7-E90D-4EBD-A512-794903C1ACD7}
+	EndGlobalSection
+EndGlobal
