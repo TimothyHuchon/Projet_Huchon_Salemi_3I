@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\bibli_Csharp\\Projet_IT\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I.csproj": {}
+    "D:\\bibli_Csharp\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I.csproj": {}
   },
   "projects": {
-    "D:\\bibli_Csharp\\Projet_IT\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I.csproj": {
+    "D:\\bibli_Csharp\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\bibli_Csharp\\Projet_IT\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I.csproj",
+        "projectUniqueName": "D:\\bibli_Csharp\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I.csproj",
         "projectName": "Projet_Huchon_Salemi_3I",
-        "projectPath": "D:\\bibli_Csharp\\Projet_IT\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I.csproj",
+        "projectPath": "D:\\bibli_Csharp\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I.csproj",
         "packagesPath": "C:\\Users\\tim-1\\.nuget\\packages\\",
-        "outputPath": "D:\\bibli_Csharp\\Projet_IT\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\obj\\",
+        "outputPath": "D:\\bibli_Csharp\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
