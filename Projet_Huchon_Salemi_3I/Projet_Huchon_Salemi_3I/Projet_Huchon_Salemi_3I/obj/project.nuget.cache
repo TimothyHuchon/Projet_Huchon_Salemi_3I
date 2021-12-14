@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DqWyJdAmTjR9hYw0aTvcRRaVDHX/TbcuR82dOjfkRIpYsiE8obzwLxjWVlIzXSgXNsWO7l8D/H/GH02W3UiAEg==",
+  "dgSpecHash": "paeDnl5CqvugFbwmJ1xXWN/a9MJe3Qzy1Yu/oVG/lMh7nGdrX39nWhdp+pax4BPBXs8URxYA3FC6LJWqutc6FQ==",
   "success": true,
-  "projectFilePath": "D:\\bibli_Csharp\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\tim-1\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
-    "C:\\Users\\tim-1\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\tim-1\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\tim-1\\.nuget\\packages\\microsoft.netcore.app.host.win-x86\\3.1.21\\microsoft.netcore.app.host.win-x86.3.1.21.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\aless\\Cours\\Projet commun\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
