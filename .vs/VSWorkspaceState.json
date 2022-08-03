@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Projet_Huchon_Salemi_3I",
+    "\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I",
+    "\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I",
+    "\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\metier"
   ],
-  "SelectedNode": "\\Projet_Huchon_Salemi_3I.sln",
+  "SelectedNode": "\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\metier\\Vehicule.cs",
   "PreviewInSolutionExplorer": false
 }

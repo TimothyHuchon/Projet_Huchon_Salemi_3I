@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Projet_Huchon_Salemi_3I.metier
 {
-    class Trialiste : VTT
+    class Randonneur : VTT
     {
-        public Trialiste(int num)
-            : base(num)
+        public Randonneur(int num)
+    : base(num)
         {
 
         }

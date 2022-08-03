@@ -8,6 +8,9 @@ namespace Projet_Huchon_Salemi_3I.metier
     {
         private bool passager;
         private bool velo;
+        private Balade balade;
+        private Membre membre;
+        private Velo veloDetails;
 
         public Inscription(bool passager, bool velo)
         {
@@ -17,6 +20,9 @@ namespace Projet_Huchon_Salemi_3I.metier
 
         public bool Passager { get => passager; set => passager = value; }
         public bool Velo { get => velo; set => velo = value; }
+        internal Balade Balade { get => balade; set => balade = value; }
+        internal Membre Membre { get => membre; set => membre = value; }
+        internal Velo VeloDetails { get => veloDetails; set => veloDetails = value; }
 
         public override bool Equals(object obj)
         {
@@ -32,9 +38,9 @@ namespace Projet_Huchon_Salemi_3I.metier
 
         public override string ToString()
         {
-            return "Inscription{"+
-                " Passager: "+Passager+
-                " Velo: " +Velo+
+            return "Inscription{" +
+                " Passager: " + Passager +
+                " Velo: " + Velo +
                 "}";
         }
     }

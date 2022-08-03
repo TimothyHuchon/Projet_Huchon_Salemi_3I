@@ -10,6 +10,10 @@ namespace Projet_Huchon_Salemi_3I.metier
         private string lieuDepart;
         private DateTime dateDepart;
         private double forfait;
+        public List<Vehicule> listeVehicule = new List<Vehicule>();
+        public List<Inscription> listeInscription = new List<Inscription>();
+        public Calendrier calendrier;
+
 
         public Balade(int num, string lieuDepart, DateTime dateDepart, double forfait)
         {
@@ -23,6 +27,9 @@ namespace Projet_Huchon_Salemi_3I.metier
         public string LieuDepart { get => lieuDepart; set => lieuDepart = value; }
         public DateTime DateDepart { get => dateDepart; set => dateDepart = value; }
         public double Forfait { get => forfait; set => forfait = value; }
+        internal List<Vehicule> ListeVehicule { get => listeVehicule; set => listeVehicule = value; }
+        internal List<Inscription> ListeInscription { get => listeInscription; set => listeInscription = value; }
+        internal Calendrier CalendrierBalade { get => calendrier; set => calendrier = value; }
 
         public override bool Equals(object obj)
         {
@@ -79,5 +86,7 @@ namespace Projet_Huchon_Salemi_3I.metier
         {
 
         }
+
+
     }
 }

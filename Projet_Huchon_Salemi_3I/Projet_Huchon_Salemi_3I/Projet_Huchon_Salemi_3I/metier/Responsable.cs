@@ -6,8 +6,9 @@ namespace Projet_Huchon_Salemi_3I.metier
 {
     class Responsable : Personne
     {
-        public Responsable(string nom,string prenom,string tel,string id, string motDePasse)
-            :base(nom,prenom,tel,id,motDePasse)
+        public Categorie categorie;
+        public Responsable(string nom, string prenom, string tel, string id, string motDePasse)
+            : base(nom, prenom, tel, id, motDePasse)
         {
 
         }

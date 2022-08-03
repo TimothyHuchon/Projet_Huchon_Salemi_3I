@@ -7,6 +7,7 @@ namespace Projet_Huchon_Salemi_3I.metier
     abstract class Categorie
     {
         private int num;
+        private Responsable responsable;
 
         protected Categorie(int num)
         {
@@ -14,6 +15,7 @@ namespace Projet_Huchon_Salemi_3I.metier
         }
 
         public int Num { get => num; set => num = value; }
+        internal Responsable Responsable { get => responsable; set => responsable = value; }
 
         public override bool Equals(object obj)
         {
@@ -26,6 +28,5 @@ namespace Projet_Huchon_Salemi_3I.metier
             return HashCode.Combine(Num);
         }
     }
-
 
 }

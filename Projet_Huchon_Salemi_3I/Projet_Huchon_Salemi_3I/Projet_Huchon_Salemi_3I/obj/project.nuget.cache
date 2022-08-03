@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "W/b14Si4cxSmb0YS3tusiqDsUaJwJPAceouvYPstNyP6l/mccAPSwz6nmUgwC3OWB5bdFcSn1Ob5jK5QpkB6hw==",
+  "dgSpecHash": "+dz+3MRkY/gsj38QA0PzpBdgeZKCmMJadNLXDL+ftG4GxwFhvU/0p0DliGc5mKdzpjci1DHX9Bj2KOVLWDq0OQ==",
   "success": true,
   "projectFilePath": "D:\\Masset_wpfPA\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\tim-1\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
-    "C:\\Users\\tim-1\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\tim-1\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\tim-1\\.nuget\\packages\\microsoft.netcore.app.host.win-x86\\3.1.25\\microsoft.netcore.app.host.win-x86.3.1.25.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
