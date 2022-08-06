@@ -20,7 +20,7 @@ namespace Projet_Huchon_Salemi_3I.metier
             this.id_personne = id_personne;
         }
 
-        public Personne(string nom, string prenom, string tel, string id, string motDePasse)
+        protected Personne(string nom, string prenom, string tel, string id, string motDePasse)
         {
             this.nom = nom;
             this.prenom = prenom;

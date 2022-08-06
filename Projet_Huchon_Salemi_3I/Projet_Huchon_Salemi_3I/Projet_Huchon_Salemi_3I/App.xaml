@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:Projet_Huchon_Salemi_3I"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
     </Application.Resources>
 </Application>
