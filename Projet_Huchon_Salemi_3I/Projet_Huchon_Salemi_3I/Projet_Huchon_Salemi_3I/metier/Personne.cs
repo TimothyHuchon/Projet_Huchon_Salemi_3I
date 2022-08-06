@@ -7,12 +7,12 @@ namespace Projet_Huchon_Salemi_3I.metier
 {
     public class Personne
     {
-        private int id_personne;
-        private string nom;
-        private string prenom;
-        private string tel;
-        private string id;
-        private string motDePasse;
+        protected Decimal id_personne;
+        protected string nom;
+        protected string prenom;
+        protected string tel;
+        protected string id;
+        protected string motDePasse;
 
         public Personne(){}
 
@@ -29,7 +29,7 @@ namespace Projet_Huchon_Salemi_3I.metier
             this.motDePasse = motDePasse;
         }
 
-        public int ID_personne { get => id_personne; set => id_personne = value; }
+        public Decimal ID_personne { get => id_personne; set => id_personne = value; }
         public string Nom { get => nom; set => nom = value; }
         public string Prenom { get => prenom; set => prenom = value; }
         public string Tel { get => tel; set => tel = value; }
@@ -47,13 +47,13 @@ namespace Projet_Huchon_Salemi_3I.metier
             return HashCode.Combine(Id);
         }
 
-        public int CheckidUser(String nom, String Prenom)
+        public decimal CheckidUser(String nom, String prenom)
         {
             PersonneDAO personneDAO = new PersonneDAO();
             Personne user = new Personne();
 
             user = personneDAO.FindId(nom, prenom);
-            return user.ID_personne;
+            return user.id_personne;
         }
 
     }

@@ -24,8 +24,8 @@ namespace Projet_Huchon_Salemi_3I
         {
             InitializeComponent();
             Projet_Huchon_Salemi_3I.metier.Personne personne = new Projet_Huchon_Salemi_3I.metier.Personne();
-            int id = personne.CheckidUser("Salemi","Alessandro");
-            Console.WriteLine(id);
+            decimal id = personne.CheckidUser("Salemi","Alessandro");
+            System.Diagnostics.Debug.WriteLine("l'id est donc = " + id);
         }
     }
 }
