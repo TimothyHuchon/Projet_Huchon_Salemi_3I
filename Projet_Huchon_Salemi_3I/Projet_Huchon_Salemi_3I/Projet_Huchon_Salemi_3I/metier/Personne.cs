@@ -12,13 +12,13 @@ namespace Projet_Huchon_Salemi_3I.metier
         protected string id;
         protected string motDePasse;
 
-        public Personne(string nom, string prenom, string tel, string id, string motDePasse)
+        protected Personne(string nom, string prenom, string tel, string id, string motDePasse)
         {
-            this.Nom = nom;
-            this.Prenom = prenom;
-            this.Tel = tel;
-            this.Id = id;
-            this.MotDePasse = motDePasse;
+            this.nom = nom;
+            this.prenom = prenom;
+            this.tel = tel;
+            this.id = id;
+            this.motDePasse = motDePasse;
         }
 
         public string Nom { get => nom; set => nom = value; }

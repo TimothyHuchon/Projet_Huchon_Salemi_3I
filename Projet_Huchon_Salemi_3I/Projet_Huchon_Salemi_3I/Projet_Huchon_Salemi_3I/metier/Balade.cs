@@ -12,16 +12,31 @@ namespace Projet_Huchon_Salemi_3I.metier
         private double forfait;
         public List<Vehicule> listeVehicule = new List<Vehicule>();
         public List<Inscription> listeInscription = new List<Inscription>();
-        public Calendrier calendrier;
+        public Calendrier Calendrier;
 
+        public Balade()
+        {
+        }
 
         public Balade(int num, string lieuDepart, DateTime dateDepart, double forfait)
         {
-            this.Num = num;
-            this.LieuDepart = lieuDepart;
-            this.DateDepart = dateDepart;
-            this.Forfait = forfait;
+            this.num = num;
+            this.lieuDepart = lieuDepart;
+            this.dateDepart = dateDepart;
+            this.forfait = forfait;
         }
+
+        public Balade(int num, string lieuDepart, DateTime dateDepart, double forfait, List<Vehicule> listeVehicule, List<Inscription> listeInscription, Calendrier calendrier)
+        {
+            this.num = num;
+            this.lieuDepart = lieuDepart;
+            this.dateDepart = dateDepart;
+            this.forfait = forfait;
+            this.listeVehicule = listeVehicule;
+            this.listeInscription = listeInscription;
+            this.Calendrier = calendrier;
+        }
+
 
         public int Num { get => num; set => num = value; }
         public string LieuDepart { get => lieuDepart; set => lieuDepart = value; }
@@ -29,7 +44,7 @@ namespace Projet_Huchon_Salemi_3I.metier
         public double Forfait { get => forfait; set => forfait = value; }
         internal List<Vehicule> ListeVehicule { get => listeVehicule; set => listeVehicule = value; }
         internal List<Inscription> ListeInscription { get => listeInscription; set => listeInscription = value; }
-        internal Calendrier CalendrierBalade { get => calendrier; set => calendrier = value; }
+        internal Calendrier CalendrierBalade { get => Calendrier; set => Calendrier = value; }
 
         public override bool Equals(object obj)
         {

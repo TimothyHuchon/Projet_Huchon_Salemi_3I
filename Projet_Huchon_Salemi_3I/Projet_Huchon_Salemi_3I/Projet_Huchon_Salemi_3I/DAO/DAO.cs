@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Text;
 
+
 namespace Projet_Huchon_Salemi_3I.DAO
 {
     public abstract class DAO<T>
     {
+
         protected string connectionString = null;
         public DAO()
         {

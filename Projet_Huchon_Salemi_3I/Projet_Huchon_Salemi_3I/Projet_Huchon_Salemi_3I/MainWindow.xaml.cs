@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Projet_Huchon_Salemi_3I.DAO;
+using Projet_Huchon_Salemi_3I.metier;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +16,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
+
 namespace Projet_Huchon_Salemi_3I
 {
     /// <summary>
@@ -23,6 +28,9 @@ namespace Projet_Huchon_Salemi_3I
         public MainWindow()
         {
             InitializeComponent();
+
+
+
         }
     }
 }

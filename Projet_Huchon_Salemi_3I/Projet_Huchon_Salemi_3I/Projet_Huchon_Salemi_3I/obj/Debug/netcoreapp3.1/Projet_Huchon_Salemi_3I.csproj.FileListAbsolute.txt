@@ -18,3 +18,11 @@ D:\Masset_wpfPA\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Sa
 D:\Masset_wpfPA\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\obj\Debug\netcoreapp3.1\Projet_Huchon_Salemi_3I.dll
 D:\Masset_wpfPA\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\obj\Debug\netcoreapp3.1\Projet_Huchon_Salemi_3I.pdb
 D:\Masset_wpfPA\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\obj\Debug\netcoreapp3.1\Projet_Huchon_Salemi_3I.genruntimeconfig.cache
+D:\Masset_wpfPA\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+D:\Masset_wpfPA\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\Masset_wpfPA\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\Masset_wpfPA\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\Masset_wpfPA\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Masset_wpfPA\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Masset_wpfPA\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\obj\Debug\netcoreapp3.1\Projet_Huchon_Salemi_3I.csproj.CopyComplete
+D:\Masset_wpfPA\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\bin\Debug\netcoreapp3.1\Projet_Huchon_Salemi_3I.dll.config
