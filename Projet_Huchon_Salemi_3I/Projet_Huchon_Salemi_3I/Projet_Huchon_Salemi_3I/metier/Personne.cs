@@ -6,13 +6,13 @@ namespace Projet_Huchon_Salemi_3I.metier
 {
     abstract class Personne
     {
-        private string nom;
-        private string prenom;
-        private string tel;
-        private string id;
-        private string motDePasse;
+        protected string nom;
+        protected string prenom;
+        protected string tel;
+        protected string id;
+        protected string motDePasse;
 
-        protected Personne(string nom, string prenom, string tel, string id, string motDePasse)
+        public Personne(string nom, string prenom, string tel, string id, string motDePasse)
         {
             this.Nom = nom;
             this.Prenom = prenom;

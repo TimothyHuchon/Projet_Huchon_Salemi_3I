@@ -52,9 +52,14 @@ namespace Projet_Huchon_Salemi_3I.metier
                 " }";
         }
 
-        public void obtenirPlacesMembreTotal()
+        public int obtenirPlacesMembreTotal(List<Vehicule> listeVehicule)
         {
-
+            int totalNbrePlaces = 0;
+            foreach (Vehicule i in listeVehicule)
+            {
+                totalNbrePlaces = totalNbrePlaces + i.NbrePlacesMembre;
+            }
+            return totalNbrePlaces;
         }
 
         public void obtenirPlacesMembreRestantes()
