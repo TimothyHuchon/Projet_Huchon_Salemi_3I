@@ -23,6 +23,9 @@ namespace Projet_Huchon_Salemi_3I
         public MainWindow()
         {
             InitializeComponent();
+            Projet_Huchon_Salemi_3I.metier.Personne personne = new Projet_Huchon_Salemi_3I.metier.Personne();
+            int id = personne.CheckidUser("Salemi","Alessandro");
+            Console.WriteLine(id);
         }
     }
 }

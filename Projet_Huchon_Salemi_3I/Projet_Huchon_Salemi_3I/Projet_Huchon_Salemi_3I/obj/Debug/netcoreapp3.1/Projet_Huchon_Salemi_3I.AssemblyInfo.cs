@@ -11,7 +11,6 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("7e652285-3416-4f40-9fa0-f056c30d356d")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Projet_Huchon_Salemi_3I")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
