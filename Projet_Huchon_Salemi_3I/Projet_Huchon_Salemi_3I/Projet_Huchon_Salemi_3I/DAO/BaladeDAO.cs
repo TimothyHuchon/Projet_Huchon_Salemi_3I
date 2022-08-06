@@ -45,9 +45,7 @@ namespace Projet_Huchon_Salemi_3I.DAO
                             balade = new Balade
                             {
                                 Num = reader.GetInt32("num"),
-                                LieuDepart = reader.GetString("lieuDepart"),
-                                DateDepart = reader.GetDateTime("dateDepart"),
-                                Forfait = reader.GetDouble("forfait"),
+
 
                             };
                         }

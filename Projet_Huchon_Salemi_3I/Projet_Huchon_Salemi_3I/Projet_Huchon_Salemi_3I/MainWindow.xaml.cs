@@ -29,7 +29,9 @@ namespace Projet_Huchon_Salemi_3I
         {
             InitializeComponent();
 
-
+            DAO<Balade> baladeDAO = new BaladeDAO();
+            baladeDAO.Find(1);
+            Console.WriteLine("Hello AZERTTRUIPOKJILMKJLKHJ.HJKJHKJGJKHGKJHGKJHGKNH?HKLJHKJHKJHDKHDKJX");
 
         }
     }
