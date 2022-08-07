@@ -15,48 +15,131 @@ namespace Projet_Huchon_Salemi_3I.DAO
 
         public override bool Create(Personne obj)
         {
-            return false;
+            bool value = false;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Personne([nom],[prenom],[tel],[id],[motDePasse]) VALUES(@nom, @prenom, @tel, @id, @mdp); ", connection);
+                    cmd.Parameters.AddWithValue("nom", obj.Nom);
+                    cmd.Parameters.AddWithValue("prenom", obj.Prenom);
+                    cmd.Parameters.AddWithValue("tel", obj.Tel);
+                    cmd.Parameters.AddWithValue("id", obj.Id);
+                    cmd.Parameters.AddWithValue("mdp", obj.MotDePasse);
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                value = true;
+                
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+            return value;
         }
 
         public override bool Delete(Personne obj)
         {
-            return false;
+            bool value = false;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Personne WHERE id_personne = @id", connection);
+                    cmd.Parameters.AddWithValue("id", obj.ID_personne);
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                value = true;
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+            return value;
         }
 
         public override bool Update(Personne obj)
         {
-            return false;
+            bool value = false;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("UPDATE Personne SET [nom] = @nom,[prenom] = @prenom,[tel] = @tel,[id] = @id,[motDePasse] = @mdp WHERE nom = @nom and prenom = @prenom", connection);
+                    cmd.Parameters.AddWithValue("nom", obj.Nom);
+                    cmd.Parameters.AddWithValue("prenom", obj.Prenom);
+                    cmd.Parameters.AddWithValue("tel", obj.Tel);
+                    cmd.Parameters.AddWithValue("id", obj.Id);
+                    cmd.Parameters.AddWithValue("mdp", obj.MotDePasse);
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                value = true;
+                
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+            return value;
         }
 
-        public override Personne Find(int id)
-        {
-            return null;
-        }
-
-        public Personne FindId(String nom, String prenom)
+        public override Personne Find(decimal id)
         {
             Personne personne = null;
             try
             {
                 using (SqlConnection connection = new SqlConnection(this.connectionString))
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Personne where nom = @nom and prenom = @prenom", connection);
-                    cmd.Parameters.AddWithValue("nom", nom);
-                    cmd.Parameters.AddWithValue("prenom", prenom);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Personne where id_personne = @id", connection);
+                    cmd.Parameters.AddWithValue("id", id);
                     connection.Open();
-
-                    Console.Write("ok Details");
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                       
                         if (reader.Read())
                         {
                             personne = new Personne
                             {
-                                ID_personne = reader.GetDecimal("id_personne")
+                                ID_personne = reader.GetDecimal("id_personne"),
+                                Nom = reader.GetString("nom"),
+                                Prenom = reader.GetString("prenom"),
+                                Tel = reader.GetString("tel"),
+                                Id = reader.GetString("id"),
+                                MotDePasse = reader.GetString("motDePasse"),
                             };
                         }
+
                     }
+                }
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+
+            return personne;
+        }
+
+        public decimal FindId(String nom, String prenom)
+        {
+           int personne = 0;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT id_personne FROM Personne where nom = @nom and prenom = @prenom", connection);
+                    cmd.Parameters.AddWithValue("nom", nom);
+                    cmd.Parameters.AddWithValue("prenom", prenom);
+                    connection.Open();
+                     
+                    if (cmd.ExecuteScalar() != null)
+                    {
+                        personne = (int)(decimal) cmd.ExecuteScalar();
+                    }
+                    
+   
                 }
             }
             catch (SqlException)

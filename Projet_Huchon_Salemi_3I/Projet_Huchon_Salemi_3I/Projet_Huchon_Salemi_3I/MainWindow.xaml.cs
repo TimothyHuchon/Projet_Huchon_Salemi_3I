@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projet_Huchon_Salemi_3I.metier;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,9 +24,15 @@ namespace Projet_Huchon_Salemi_3I
         public MainWindow()
         {
             InitializeComponent();
-            Projet_Huchon_Salemi_3I.metier.Personne personne = new Projet_Huchon_Salemi_3I.metier.Personne();
-            decimal id = personne.CheckidUser("Salemi","Alessandro");
-            System.Diagnostics.Debug.WriteLine("l'id est donc = " + id);
+
+             DAO.MembreDAO dao = new DAO.MembreDAO();
+            Membre membre = new Membre();
+
+              membre.calculSolde("Salemi", "Alessandro");
+            
+            // DAO.MembreDAO dao = new DAO.MembreDAO();
+            // Membre membre = new Membre();
+            // System.Diagnostics.Debug.WriteLine("l'id est donc = " + membre.verifierSolde("Salemi", "Alessandro"));
         }
     }
 }
