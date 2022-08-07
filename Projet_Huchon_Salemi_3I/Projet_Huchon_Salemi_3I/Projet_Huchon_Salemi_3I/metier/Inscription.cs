@@ -12,6 +12,10 @@ namespace Projet_Huchon_Salemi_3I.metier
         private Membre membre;
         private Velo veloDetails;
 
+        public Inscription()
+        {
+        }
+
         public Inscription(bool passager, bool velo)
         {
             this.Passager = passager;

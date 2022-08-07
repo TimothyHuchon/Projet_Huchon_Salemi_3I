@@ -53,7 +53,7 @@ namespace Projet_Huchon_Salemi_3I.DAO
                         {
                             personne = new Personne
                             {
-                                ID_personne = reader.GetDecimal("id_personne")
+                                ID_personne = reader.GetInt32("id_personne")
                             };
                         }
                     }

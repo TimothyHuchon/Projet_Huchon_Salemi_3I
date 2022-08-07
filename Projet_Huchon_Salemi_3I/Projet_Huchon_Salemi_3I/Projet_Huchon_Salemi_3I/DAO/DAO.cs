@@ -12,7 +12,7 @@ namespace Projet_Huchon_Salemi_3I.DAO
         protected string connectionString = null;
         public DAO()
         {
-            this.connectionString = ConfigurationManager.ConnectionStrings["MyDb"].ConnectionString;
+            this.connectionString = ConfigurationManager.ConnectionStrings["LOCALDB"].ConnectionString;
         }
 
         public abstract bool Create(T obj);
