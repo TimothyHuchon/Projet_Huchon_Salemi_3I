@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Projet_Huchon_Salemi_3I.DAO;
+using System;
 using System.Collections.Generic;
 using System.Text;
+
 
 namespace Projet_Huchon_Salemi_3I.metier
 {
@@ -9,7 +11,7 @@ namespace Projet_Huchon_Salemi_3I.metier
         private int num;
         private string lieuDepart;
         private DateTime dateDepart;
-        private double forfait;
+        private decimal forfait;
         public List<Vehicule> listeVehicule = new List<Vehicule>();
         public List<Inscription> listeInscription = new List<Inscription>();
         public Calendrier Calendrier;
@@ -18,7 +20,7 @@ namespace Projet_Huchon_Salemi_3I.metier
         {
         }
 
-        public Balade(int num, string lieuDepart, DateTime dateDepart, double forfait)
+        public Balade(int num, string lieuDepart, DateTime dateDepart, decimal forfait)
         {
             this.num = num;
             this.lieuDepart = lieuDepart;
@@ -26,7 +28,7 @@ namespace Projet_Huchon_Salemi_3I.metier
             this.forfait = forfait;
         }
 
-        public Balade(int num, string lieuDepart, DateTime dateDepart, double forfait, List<Vehicule> listeVehicule, List<Inscription> listeInscription, Calendrier calendrier)
+        public Balade(int num, string lieuDepart, DateTime dateDepart, decimal forfait, List<Vehicule> listeVehicule, List<Inscription> listeInscription, Calendrier calendrier)
         {
             this.num = num;
             this.lieuDepart = lieuDepart;
@@ -41,7 +43,7 @@ namespace Projet_Huchon_Salemi_3I.metier
         public int Num { get => num; set => num = value; }
         public string LieuDepart { get => lieuDepart; set => lieuDepart = value; }
         public DateTime DateDepart { get => dateDepart; set => dateDepart = value; }
-        public double Forfait { get => forfait; set => forfait = value; }
+        public decimal Forfait { get => forfait; set => forfait = value; }
         internal List<Vehicule> ListeVehicule { get => listeVehicule; set => listeVehicule = value; }
         internal List<Inscription> ListeInscription { get => listeInscription; set => listeInscription = value; }
         internal Calendrier CalendrierBalade { get => Calendrier; set => Calendrier = value; }
@@ -67,24 +69,60 @@ namespace Projet_Huchon_Salemi_3I.metier
                 " }";
         }
 
-        public int obtenirPlacesMembreTotal(List<Vehicule> listeVehicule)
+        public int obtenirPlacesMembreTotal(int num)
         {
             int totalNbrePlaces = 0;
-            foreach (Vehicule i in listeVehicule)
+
+            BaladeDAO baladeDAO = new BaladeDAO();
+            Balade balade = new Balade();
+
+            balade = baladeDAO.Find(num);
+
+            foreach (Vehicule i in balade.listeVehicule)
             {
                 totalNbrePlaces = totalNbrePlaces + i.NbrePlacesMembre;
             }
             return totalNbrePlaces;
         }
 
-        public void obtenirPlacesMembreRestantes()
+        public int obtenirPlacesMembreRestantes(int num)
         {
+            int placesRestantes = 0;
+            int membresReservations = 0;
 
+            BaladeDAO baladeDAO = new BaladeDAO();
+            Balade balade = new Balade();
+
+            balade = baladeDAO.Find(num);
+            foreach(Inscription i in balade.listeInscription)
+            {
+                if (i.Passager)
+                {
+                    membresReservations++;
+                    System.Diagnostics.Debug.WriteLine("membrereservation: " + membresReservations);
+                }
+            }
+
+            int totalNbrePlaces = obtenirPlacesMembreTotal(num);
+            placesRestantes = totalNbrePlaces - membresReservations;
+
+            return placesRestantes; 
         }
 
-        public void obtenirVeloTotal()
+        public int obtenirPlacesVeloTotal(int num)
         {
+            int totalNbrePlaces = 0;
 
+            BaladeDAO baladeDAO = new BaladeDAO();
+            Balade balade = new Balade();
+
+            balade = baladeDAO.Find(num);
+
+            foreach(Vehicule i in balade.listeVehicule)
+            {
+                totalNbrePlaces = totalNbrePlaces + i.NbrePlacesVelo;
+            }
+            return totalNbrePlaces;
         }
 
         public void obtenirVeloRestantes()

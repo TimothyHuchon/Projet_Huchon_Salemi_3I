@@ -20,6 +20,8 @@ namespace Projet_Huchon_Salemi_3I.metier
             this.Solde = solde;
         }
 
+        public Membre() { }
+
         public double Solde { get => solde; set => solde = value; }
         internal Vehicule Vehiculeproprietaire { get => vehiculeproprietaire; set => vehiculeproprietaire = value; }
         internal List<Vehicule> WhereIAmPassager { get => whereIAmPassager; set => whereIAmPassager = value; }

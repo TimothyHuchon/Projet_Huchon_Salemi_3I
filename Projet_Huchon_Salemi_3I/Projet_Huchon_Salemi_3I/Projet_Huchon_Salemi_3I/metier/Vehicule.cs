@@ -12,6 +12,10 @@ namespace Projet_Huchon_Salemi_3I.metier
         private List<Membre> passagers = new List<Membre>();
         private List<Velo> listeVelo = new List<Velo>();
 
+        public Vehicule()
+        {
+        }
+
         public Vehicule(int nbrePlacesMembre, int nbrePlacesVelo)
         {
             this.NbrePlacesMembre = nbrePlacesMembre;
