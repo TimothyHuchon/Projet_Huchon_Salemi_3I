@@ -18,7 +18,7 @@ namespace Projet_Huchon_Salemi_3I.DAO
         public abstract bool Create(T obj);
         public abstract bool Delete(T obj);
         public abstract bool Update(T obj);
-        public abstract T Find(int id);
+        public abstract T Find(decimal id);
 
     }
 }

@@ -16,11 +16,7 @@ namespace Projet_Huchon_Salemi_3I.metier
 
         public Personne(){}
 
-        public Personne(int id_personne) {
-            this.id_personne = id_personne;
-        }
-
-        protected Personne(string nom, string prenom, string tel, string id, string motDePasse)
+        public Personne(string nom, string prenom, string tel, string id, string motDePasse)
         {
             this.nom = nom;
             this.prenom = prenom;
@@ -47,13 +43,14 @@ namespace Projet_Huchon_Salemi_3I.metier
             return HashCode.Combine(Id);
         }
 
-        public decimal CheckidUser(String nom, String prenom)
+        public decimal GetidUser(String nom, String prenom)
         {
-            PersonneDAO personneDAO = new PersonneDAO();
-            Personne user = new Personne();
+            PersonneDAO dao = new PersonneDAO();
+            decimal id = 0;
 
-            user = personneDAO.FindId(nom, prenom);
-            return user.id_personne;
+            id = dao.FindId(nom, prenom);
+
+            return id;
         }
 
     }

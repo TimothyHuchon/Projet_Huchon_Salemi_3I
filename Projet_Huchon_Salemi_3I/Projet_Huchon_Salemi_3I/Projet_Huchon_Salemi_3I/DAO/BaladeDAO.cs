@@ -27,7 +27,7 @@ namespace Projet_Huchon_Salemi_3I.DAO
             return false;
         }
 
-        public override Balade Find(int num)
+        public override Balade Find(decimal num)
         {
             Balade balade = null;
             try
