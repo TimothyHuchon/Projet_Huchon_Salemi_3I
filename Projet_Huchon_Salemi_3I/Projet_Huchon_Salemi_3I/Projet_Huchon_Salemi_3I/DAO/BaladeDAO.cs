@@ -64,6 +64,14 @@ namespace Projet_Huchon_Salemi_3I.DAO
                         balade.listeVehicule.Add(vehi);
                     }
 
+
+                    InscriptionDAO inscriptionDAO = new InscriptionDAO();
+                    List<Inscription> inscriptionsBalade = inscriptionDAO.FindAllByBalade(balade);
+                    foreach(Inscription inscri in inscriptionsBalade)
+                    {
+                        balade.listeInscription.Add(inscri);
+                    }
+
                     /*  *********************************************************  
                         *********************************************************  
                         ********************************************************* 
