@@ -4,28 +4,41 @@ using System.Text;
 
 namespace Projet_Huchon_Salemi_3I.metier
 {
-    class Velo
+    public class Velo
     {
-        private double poids;
+        private decimal id_velo;
+        private decimal poids;
         private string type;
-        private double longueur;
-        private Vehicule vehicule;
+        private decimal longueur;
+        private decimal id_vehicule;
         private List<Inscription> listeInscription = new List<Inscription>();
-        private Membre proprietaire;
+        private decimal id_personne;
 
-        public Velo(double poids, string type, double longueur)
+        public Velo(decimal poids, string type, decimal longueur)
         {
             this.Poids = poids;
             this.Type = type;
             this.Longueur = longueur;
         }
 
-        public double Poids { get => poids; set => poids = value; }
+        public Velo(decimal id_personne, decimal id_vehicule, decimal poids, string type, decimal longueur)
+        {
+            this.Proprietaire = id_personne;
+            this.Vehicule = id_vehicule;
+            this.Poids = poids;
+            this.Type = type;
+            this.Longueur = longueur;
+        }
+
+        public Velo() { }
+
+        public decimal ID { get => id_velo; set => id_velo = value; }
+        public decimal Poids { get => poids; set => poids = value; }
         public string Type { get => type; set => type = value; }
-        public double Longueur { get => longueur; set => longueur = value; }
-        internal Vehicule Vehicule { get => vehicule; set => vehicule = value; }
+        public decimal Longueur { get => longueur; set => longueur = value; }
+        internal decimal Vehicule { get => id_vehicule; set => id_vehicule = value; }
         internal List<Inscription> ListeInscription { get => listeInscription; set => listeInscription = value; }
-        internal Membre Proprietaire { get => proprietaire; set => proprietaire = value; }
+        internal decimal Proprietaire { get => id_vehicule; set => id_vehicule = value; }
 
         public override string ToString()
         {

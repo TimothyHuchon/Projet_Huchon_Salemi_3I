@@ -125,8 +125,8 @@ namespace Projet_Huchon_Salemi_3I.DAO
         public decimal FindId(String nom, String prenom)
         {
            int personne = 0;
-            try
-            {
+           try
+           {
                 using (SqlConnection connection = new SqlConnection(this.connectionString))
                 {
                     SqlCommand cmd = new SqlCommand("SELECT id_personne FROM Personne where nom = @nom and prenom = @prenom", connection);
@@ -141,11 +141,11 @@ namespace Projet_Huchon_Salemi_3I.DAO
                     
    
                 }
-            }
+           }
             catch (SqlException)
-            {
-                throw new Exception("Une erreur sql s'est produite!");
-            }
+           {
+               throw new Exception("Une erreur sql s'est produite!");
+           }
             return personne;
         }
     }
