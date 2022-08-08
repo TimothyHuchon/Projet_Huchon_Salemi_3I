@@ -80,7 +80,7 @@ namespace Projet_Huchon_Salemi_3I.metier
 
             foreach (Vehicule i in balade.listeVehicule)
             {
-                totalNbrePlaces = totalNbrePlaces + i.NbrePlacesMembre;
+                totalNbrePlaces = totalNbrePlaces + (int) i.NbrePlacesMembre;
             }
             return totalNbrePlaces;
         }
@@ -118,7 +118,7 @@ namespace Projet_Huchon_Salemi_3I.metier
 
             foreach(Vehicule i in balade.listeVehicule)
             {
-                totalNbrePlaces = totalNbrePlaces + i.NbrePlacesVelo;
+                totalNbrePlaces = totalNbrePlaces + (int) i.NbrePlacesVelo;
             }
             return totalNbrePlaces;
         }

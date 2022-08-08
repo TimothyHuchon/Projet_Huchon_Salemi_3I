@@ -1,20 +1,21 @@
-﻿using System;
+﻿using Projet_Huchon_Salemi_3I.DAO;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Projet_Huchon_Salemi_3I.metier
 {
-    class Vehicule
+    public class Vehicule
     {
-        private int nbrePlacesMembre;
-        private int nbrePlacesVelo;
+        private Decimal id_vehicule;
+        private Decimal id_personne_conducteur;
+        private Decimal nbrePlacesMembre;
+        private Decimal nbrePlacesVelo;
         private Membre conducteur;
         private List<Membre> passagers = new List<Membre>();
         private List<Velo> listeVelo = new List<Velo>();
 
-        public Vehicule()
-        {
-        }
+        public Vehicule(){}
 
         public Vehicule(int nbrePlacesMembre, int nbrePlacesVelo)
         {
@@ -22,8 +23,17 @@ namespace Projet_Huchon_Salemi_3I.metier
             this.NbrePlacesVelo = nbrePlacesVelo;
         }
 
-        public int NbrePlacesMembre { get => nbrePlacesMembre; set => nbrePlacesMembre = value; }
-        public int NbrePlacesVelo { get => nbrePlacesVelo; set => nbrePlacesVelo = value; }
+        public Vehicule(Decimal id_personne_conducteur, int nbrePlacesMembre, int nbrePlacesVelo)
+        {
+            this.ID_personne_conducteur = id_personne_conducteur;
+            this.NbrePlacesMembre = nbrePlacesMembre;
+            this.NbrePlacesVelo = nbrePlacesVelo;
+        }
+
+        public Decimal ID_vehicule { get => id_vehicule; set => id_vehicule = value; }
+        public Decimal ID_personne_conducteur { get => id_personne_conducteur; set => id_personne_conducteur = value; }
+        public Decimal NbrePlacesMembre { get => nbrePlacesMembre; set => nbrePlacesMembre = value; }
+        public Decimal NbrePlacesVelo { get => nbrePlacesVelo; set => nbrePlacesVelo = value; }
         internal Membre Conducteur { get => conducteur; set => conducteur = value; }
         internal List<Membre> Passagers { get => passagers; set => passagers = value; }
         internal List<Velo> ListeVelo { get => listeVelo; set => listeVelo = value; }
@@ -34,6 +44,37 @@ namespace Projet_Huchon_Salemi_3I.metier
                 " nbrePlacesMembre: " + NbrePlacesMembre +
                 " nbrePlacesVelo: " + NbrePlacesVelo +
                 " }";
+        }
+
+        public Vehicule membreByVehicule(String nom, String prenom)
+        {
+            Personne personne = new Personne();
+            decimal id = personne.GetidUser(nom, prenom);
+
+            VehiculeDAO dao = new VehiculeDAO();
+
+            return dao.VehiculeByMembre(id);
+        }
+
+        public void ajouterPassager(String nom, String prenom)
+        {
+            Personne personne = new Personne();
+            decimal id = personne.GetidUser(nom, prenom);
+
+            VehiculeDAO dao = new VehiculeDAO();
+
+            dao.ajoutPassager(id, this);
+
+        }
+
+        public void ajouterVelo(Velo velo, String nom, String prenom)
+        {
+            Personne personne = new Personne();
+            decimal id = personne.GetidUser(nom, prenom);
+            
+
+            VehiculeDAO dao = new VehiculeDAO();
+            dao.ajoutVelo(id,velo, this);
         }
     }
 }
