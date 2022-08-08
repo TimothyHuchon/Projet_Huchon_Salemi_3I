@@ -94,15 +94,13 @@ namespace Projet_Huchon_Salemi_3I.metier
             Balade balade = new Balade();
 
             balade = baladeDAO.Find(num);
-            foreach(Inscription i in balade.listeInscription)
+            foreach (Inscription i in balade.listeInscription)
             {
                 if (i.Passager)
                 {
                     membresReservations++;
-                    System.Diagnostics.Debug.WriteLine("membrereservation: " + membresReservations);
                 }
             }
-
             int totalNbrePlaces = obtenirPlacesMembreTotal(num);
             placesRestantes = totalNbrePlaces - membresReservations;
 
@@ -125,8 +123,26 @@ namespace Projet_Huchon_Salemi_3I.metier
             return totalNbrePlaces;
         }
 
-        public void obtenirVeloRestantes()
+        public int obtenirPlacesVeloRestantes(int num)
         {
+            int placesRestantes = 0;
+            int veloReservations = 0;
+
+            BaladeDAO baladeDAO = new BaladeDAO();
+            Balade balade = new Balade();
+
+            balade = baladeDAO.Find(num);
+            foreach(Inscription i in balade.listeInscription)
+            {
+                if (i.Passager)
+                {
+                    veloReservations++;
+                }
+            }
+            int totalNbrePlacesVelo = obtenirPlacesVeloTotal(num);
+            placesRestantes = totalNbrePlacesVelo - veloReservations;
+
+            return placesRestantes;
 
         }
 

@@ -6,8 +6,8 @@ namespace Projet_Huchon_Salemi_3I.metier
 {
     class Inscription
     {
-        private bool passager;
-        private bool velo;
+        private Boolean passager;
+        private Boolean velo;
         private Balade balade;
         private Membre membre;
         private Velo veloDetails;
@@ -16,19 +16,19 @@ namespace Projet_Huchon_Salemi_3I.metier
         {
         }
 
-        public Inscription(bool passager, bool velo)
+        public Inscription(Boolean passager, Boolean velo)
         {
             this.Passager = passager;
             this.Velo = velo;
         }
 
-        public bool Passager { get => passager; set => passager = value; }
-        public bool Velo { get => velo; set => velo = value; }
+        public Boolean Passager { get => passager; set => passager = value; }
+        public Boolean Velo { get => velo; set => velo = value; }
         internal Balade Balade { get => balade; set => balade = value; }
         internal Membre Membre { get => membre; set => membre = value; }
         internal Velo VeloDetails { get => veloDetails; set => veloDetails = value; }
 
-        public override bool Equals(object obj)
+        public override Boolean Equals(object obj)
         {
             return obj is Inscription inscription &&
                    Passager == inscription.Passager &&

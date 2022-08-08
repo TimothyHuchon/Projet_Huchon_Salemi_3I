@@ -24,7 +24,7 @@ namespace Projet_Huchon_Salemi_3I.DAO
             return false;
         }
 
-        public override Inscription Find(int id)
+        public override Inscription Find(decimal id)
         {
             Inscription inscription = null;
             try
@@ -61,7 +61,7 @@ namespace Projet_Huchon_Salemi_3I.DAO
 
                 throw new Exception("Une erreur sql s'est produite!");
             }
-
+            return inscription;
         }
 
 

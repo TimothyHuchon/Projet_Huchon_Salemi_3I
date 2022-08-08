@@ -24,7 +24,7 @@ namespace Projet_Huchon_Salemi_3I.DAO
             return false;
         }
 
-        public override Vehicule Find(int id)
+        public override Vehicule Find(decimal id)
         {
             Vehicule vehicule = null;
             try
