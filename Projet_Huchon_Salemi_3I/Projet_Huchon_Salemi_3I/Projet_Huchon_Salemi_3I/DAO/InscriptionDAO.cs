@@ -97,5 +97,34 @@ namespace Projet_Huchon_Salemi_3I.DAO
             return inscriptions;
         }
 
+        public List<decimal> FindPersonneInscrit(decimal num)
+        {
+            List<decimal> personne = new List<decimal>();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT id_personne FROM Inscription WHERE num_balade = @num", connection);
+                    cmd.Parameters.AddWithValue("num", num);
+                    connection.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            decimal pers = reader.GetDecimal("id_personne");
+                            personne.Add(pers);
+                        }
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+
+                throw new Exception("Une erreur sql s'est produite");
+            }
+            return personne;
+        }
+
     }
 }

@@ -50,7 +50,7 @@ namespace Projet_Huchon_Salemi_3I.DAO
                                 Forfait = reader.GetDecimal("forfait"),
                                 ListeVehicule = new List<Vehicule>(),
                                 ListeInscription = new List<Inscription>(),
-                                Calendrier = new Calendrier()
+                                CalendrierBalade = reader.GetDecimal("id_calendrier") 
                             };
                         }
                     }
@@ -86,6 +86,27 @@ namespace Projet_Huchon_Salemi_3I.DAO
                 throw new Exception("Une erreur sql s'est produite!");
             }
             return balade;
+        }
+
+        public decimal recupForfait(decimal id)
+        {
+            decimal forfait = 0;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT forfait FROM balade where num = @id", connection);
+                    cmd.Parameters.AddWithValue("id", id);
+                    connection.Open();
+                    forfait = (decimal)cmd.ExecuteScalar();
+
+                }
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+            return forfait;
         }
     }
 }
