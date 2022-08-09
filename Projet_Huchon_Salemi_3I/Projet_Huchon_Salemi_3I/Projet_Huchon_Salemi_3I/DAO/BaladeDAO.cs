@@ -14,17 +14,71 @@ namespace Projet_Huchon_Salemi_3I.DAO
     {
         public override bool Create(Balade obj)
         {
-            return false;
+            bool value = false;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Balade([lieu_depart],[dateDepart],[forfait]) VALUES(@lieu_depart,@dateDepart,@forfait)", connection);
+                    cmd.Parameters.AddWithValue("lieu_depart", obj.LieuDepart);
+                    cmd.Parameters.AddWithValue("dateDepart", obj.DateDepart);
+                    cmd.Parameters.AddWithValue("forfait", obj.Forfait);
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                value = true;
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+            return value;
         }
 
         public override bool Update(Balade obj)
         {
-            return false;
+            bool value = false;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("UPDATE Balade SET [lieu_depart]=@lieu_depart, [dateDepart]=@dateDepart, [forfait]=@forfait WHERE num=@num", connection);
+                    cmd.Parameters.AddWithValue("lieu_depart", obj.LieuDepart);
+                    cmd.Parameters.AddWithValue("dateDepart", obj.DateDepart);
+                    cmd.Parameters.AddWithValue("forfait", obj.Forfait);
+                    cmd.Parameters.AddWithValue("num", obj.Num);
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                value = true;
+            }
+            catch (SqlException)
+            {
+
+                throw new Exception("Une erreur sql s'est produite!"); ;
+            }
+            return value;
         }
 
         public override bool Delete(Balade obj)
         {
-            return false;
+            bool value = false;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Balade WHERE num=@num", connection);
+                    cmd.Parameters.AddWithValue("num", obj.Num);
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                value = true;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+            return value;
         }
 
         public override Balade Find(decimal num)
@@ -107,6 +161,30 @@ namespace Projet_Huchon_Salemi_3I.DAO
                 throw new Exception("Une erreur sql s'est produite!");
             }
             return forfait;
+        }
+
+        public bool CreateTransport(Decimal vehi, Decimal bal)
+        {
+            bool value = false;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Transport([id_vehicule],[num_balade]) VALUES(@id_vehicule,@num_balade)", connection);
+                    cmd.Parameters.AddWithValue("id_vehicule", vehi);
+                    cmd.Parameters.AddWithValue("num_balade", bal);
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                value = true;
+            }
+            catch (SqlException)
+            {
+
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+
+            return value;
         }
     }
 }

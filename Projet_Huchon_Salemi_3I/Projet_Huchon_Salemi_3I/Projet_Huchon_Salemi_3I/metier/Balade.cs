@@ -8,6 +8,7 @@ namespace Projet_Huchon_Salemi_3I.metier
 {
     class Balade
     {
+        public decimal id_vehicule;
         private int num;
         private string lieuDepart;
         private DateTime dateDepart;
@@ -37,6 +38,18 @@ namespace Projet_Huchon_Salemi_3I.metier
             this.listeVehicule = listeVehicule;
             this.listeInscription = listeInscription;
             this.CalendrierBalade = id_calendrier;
+        }
+
+        public Balade(int num)
+        {
+            this.num = num;
+        }
+
+        public Balade(string lieuDepart, DateTime dateDepart, decimal forfait)
+        {
+            this.lieuDepart = lieuDepart;
+            this.dateDepart = dateDepart;
+            this.forfait = forfait;
         }
 
 
@@ -104,7 +117,8 @@ namespace Projet_Huchon_Salemi_3I.metier
             int totalNbrePlaces = obtenirPlacesMembreTotal(num);
             placesRestantes = totalNbrePlaces - membresReservations;
 
-            return placesRestantes; 
+            if (placesRestantes > 0) return placesRestantes;
+            else return 0;
         }
 
         public int obtenirPlacesVeloTotal(int num)
@@ -142,23 +156,67 @@ namespace Projet_Huchon_Salemi_3I.metier
             int totalNbrePlacesVelo = obtenirPlacesVeloTotal(num);
             placesRestantes = totalNbrePlacesVelo - veloReservations;
 
-            return placesRestantes;
+            if (placesRestantes > 0) return placesRestantes;
+            else return 0;
 
         }
 
-        public void obtenirPlacesMembreBesoin()
+        public int obtenirPlacesMembreBesoin(int num)
         {
+            int placesRestantes = 0;
+            int membreReservation = 0;
+
+            BaladeDAO baladeDAO = new BaladeDAO();
+            Balade balade = new Balade();
+
+            balade = baladeDAO.Find(num);
+            foreach (Inscription i in balade.listeInscription)
+            {
+                if (i.Passager) membreReservation++;
+            }
+            int totalNbrePlaces = obtenirPlacesMembreTotal(num);
+            placesRestantes = totalNbrePlaces - membreReservation;
+
+            if (placesRestantes < 0)
+            {
+                placesRestantes = Math.Abs(placesRestantes);
+                return placesRestantes;
+            }
+            else return 0;
 
         }
 
-        public void obtenirPlaceVeloBesoin()
+        public int obtenirPlaceVeloBesoin(int num)
         {
+            int placesRestantesVelo = 0;
+            int veloReservations = 0;
 
+            BaladeDAO baladeDAO = new BaladeDAO();
+            Balade balade = new Balade();
+
+            balade = baladeDAO.Find(num);
+            foreach (Inscription i in balade.listeInscription)
+            {
+                if (i.Velo) veloReservations++;
+            }
+            int totalNbrePlacesVelo = obtenirPlacesVeloTotal(num);
+            placesRestantesVelo = totalNbrePlacesVelo - veloReservations;
+
+            if (placesRestantesVelo < 0)
+            {
+                placesRestantesVelo = Math.Abs(placesRestantesVelo);
+                return placesRestantesVelo;
+            }
+            else return 0;
         }
 
-        public void ajouterVehicule()
+        public void ajouterVehicule(Decimal numVehi, Decimal numBal)
         {
 
+            BaladeDAO baladeDAO = new BaladeDAO();
+
+
+            baladeDAO.CreateTransport(numVehi, numBal);
         }
 
 
