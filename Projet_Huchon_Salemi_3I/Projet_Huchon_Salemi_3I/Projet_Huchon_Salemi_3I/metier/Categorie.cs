@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Projet_Huchon_Salemi_3I.DAO;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Projet_Huchon_Salemi_3I.metier
 {
-    abstract class Categorie
+    public abstract class Categorie
     {
         private int num;
         private Responsable responsable;
@@ -17,7 +18,6 @@ namespace Projet_Huchon_Salemi_3I.metier
         }
 
         public int Num { get => num; set => num = value; }
-        internal Responsable Responsable { get => Responsable1; set => Responsable1 = value; }
         internal Responsable Responsable1 { get => responsable; set => responsable = value; }
         internal List<Membre> ListeMembre { get => listeMembre; set => listeMembre = value; }
         internal Calendrier Calendrier { get => calendrier; set => calendrier = value; }
@@ -32,6 +32,7 @@ namespace Projet_Huchon_Salemi_3I.metier
         {
             return HashCode.Combine(Num);
         }
+
     }
 
 }

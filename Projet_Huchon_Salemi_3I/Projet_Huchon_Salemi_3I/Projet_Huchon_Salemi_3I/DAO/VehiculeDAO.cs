@@ -248,5 +248,26 @@ namespace Projet_Huchon_Salemi_3I.DAO
             }
         }
 
+        public decimal NbrMembreByVehicule (decimal id)
+        {
+            decimal totalMembre = 0;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT COUNT(id_personne) from passager where id_vehicule = @id", connection);
+                    cmd.Parameters.AddWithValue("id", id);
+                    connection.Open();
+                    totalMembre = (int)cmd.ExecuteScalar();
+                }
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+
+            return totalMembre;
+        }
+
     }
 }

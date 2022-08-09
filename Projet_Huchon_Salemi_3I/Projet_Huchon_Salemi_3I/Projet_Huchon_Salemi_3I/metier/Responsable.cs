@@ -4,10 +4,13 @@ using System.Text;
 
 namespace Projet_Huchon_Salemi_3I.metier
 {
-    class Responsable : Personne
+    public class Responsable : Personne
     {
-        public Categorie categorie;
-        public Responsable(string nom, string prenom, string tel, string id, string motDePasse, Categorie categorie)
+        public decimal id_personne;
+        public decimal num_categorie;
+
+        public Responsable() { }
+        public Responsable(string nom, string prenom, string tel, string id, string motDePasse, decimal num_categorie)
             : base(nom, prenom, tel, id, motDePasse)
         {
             this.nom = nom;
@@ -15,9 +18,18 @@ namespace Projet_Huchon_Salemi_3I.metier
             this.tel = tel;
             this.id = id;
             this.motDePasse = motDePasse;
-            this.categorie = categorie;
+            this.num_categorie = num_categorie;
         }
 
+        public Responsable(decimal id_personne, decimal num_categorie) 
+        {
+            this.ID_personne = id_personne;
+            this.Num_categorie = num_categorie;
+        }
+        
+        public decimal ID_personne { get => id_personne; set => id_personne = value; }
+        public decimal Num_categorie { get => num_categorie; set => num_categorie = value; }
+       
         public override string ToString()
         {
             return "Responsable { " +
@@ -26,7 +38,7 @@ namespace Projet_Huchon_Salemi_3I.metier
                 " tel: " + Tel +
                 " id: " + Id +
                 " motDePasse: " + MotDePasse +
-                " categorie: " + categorie +
+                " categorie: " + num_categorie +
                 " }";
         }
     }

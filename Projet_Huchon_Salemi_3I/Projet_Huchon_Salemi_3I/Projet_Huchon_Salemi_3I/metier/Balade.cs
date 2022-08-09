@@ -14,16 +14,10 @@ namespace Projet_Huchon_Salemi_3I.metier
         private decimal forfait;
         public List<Vehicule> listeVehicule = new List<Vehicule>();
         public List<Inscription> listeInscription = new List<Inscription>();
-        public Calendrier Calendrier;
-        public decimal id_vehicule;
+        public decimal id_calendrier;
 
         public Balade()
         {
-        }
-
-        public Balade(int num)
-        {
-            this.num = num;
         }
 
         public Balade(int num, string lieuDepart, DateTime dateDepart, decimal forfait)
@@ -34,14 +28,7 @@ namespace Projet_Huchon_Salemi_3I.metier
             this.forfait = forfait;
         }
 
-        public Balade(string lieuDepart, DateTime dateDepart, decimal forfait)
-        {
-            this.lieuDepart = lieuDepart;
-            this.dateDepart = dateDepart;
-            this.forfait = forfait;
-        }
-
-        public Balade(int num, string lieuDepart, DateTime dateDepart, decimal forfait, List<Vehicule> listeVehicule, List<Inscription> listeInscription, Calendrier calendrier)
+        public Balade(int num, string lieuDepart, DateTime dateDepart, decimal forfait, List<Vehicule> listeVehicule, List<Inscription> listeInscription, decimal id_calendrier)
         {
             this.num = num;
             this.lieuDepart = lieuDepart;
@@ -49,7 +36,7 @@ namespace Projet_Huchon_Salemi_3I.metier
             this.forfait = forfait;
             this.listeVehicule = listeVehicule;
             this.listeInscription = listeInscription;
-            this.Calendrier = calendrier;
+            this.CalendrierBalade = id_calendrier;
         }
 
 
@@ -59,7 +46,7 @@ namespace Projet_Huchon_Salemi_3I.metier
         public decimal Forfait { get => forfait; set => forfait = value; }
         internal List<Vehicule> ListeVehicule { get => listeVehicule; set => listeVehicule = value; }
         internal List<Inscription> ListeInscription { get => listeInscription; set => listeInscription = value; }
-        internal Calendrier CalendrierBalade { get => Calendrier; set => Calendrier = value; }
+        internal decimal CalendrierBalade { get => id_calendrier; set => id_calendrier = value; }
 
         public override bool Equals(object obj)
         {
@@ -117,8 +104,7 @@ namespace Projet_Huchon_Salemi_3I.metier
             int totalNbrePlaces = obtenirPlacesMembreTotal(num);
             placesRestantes = totalNbrePlaces - membresReservations;
 
-            if (placesRestantes > 0) return placesRestantes;
-            else return 0;
+            return placesRestantes; 
         }
 
         public int obtenirPlacesVeloTotal(int num)
@@ -156,67 +142,23 @@ namespace Projet_Huchon_Salemi_3I.metier
             int totalNbrePlacesVelo = obtenirPlacesVeloTotal(num);
             placesRestantes = totalNbrePlacesVelo - veloReservations;
 
-            if (placesRestantes > 0) return placesRestantes;
-            else return 0;
+            return placesRestantes;
 
         }
 
-        public int obtenirPlacesMembreBesoin(int num)
+        public void obtenirPlacesMembreBesoin()
         {
-            int placesRestantes = 0;
-            int membreReservation = 0;
 
-            BaladeDAO baladeDAO = new BaladeDAO();
-            Balade balade = new Balade();
-
-            balade = baladeDAO.Find(num);
-            foreach(Inscription i in balade.listeInscription)
-            {
-                if (i.Passager) membreReservation++;
-            }
-            int totalNbrePlaces = obtenirPlacesMembreTotal(num);
-            placesRestantes = totalNbrePlaces - membreReservation;
-
-            if (placesRestantes < 0)
-            {
-                placesRestantes = Math.Abs(placesRestantes);
-                return placesRestantes;
-            }
-            else return 0;
-               
         }
 
-        public int obtenirPlaceVeloBesoin(int num)
+        public void obtenirPlaceVeloBesoin()
         {
-            int placesRestantesVelo = 0;
-            int veloReservations = 0;
 
-            BaladeDAO baladeDAO = new BaladeDAO();
-            Balade balade = new Balade();
-
-            balade = baladeDAO.Find(num);
-            foreach(Inscription i in balade.listeInscription)
-            {
-                if (i.Velo) veloReservations++; 
-            }
-            int totalNbrePlacesVelo = obtenirPlacesVeloTotal(num);
-            placesRestantesVelo = totalNbrePlacesVelo - veloReservations;
-
-            if (placesRestantesVelo < 0)
-            {
-                placesRestantesVelo = Math.Abs(placesRestantesVelo);
-                return placesRestantesVelo;
-            }
-            else return 0;
         }
 
-        public void ajouterVehicule(Decimal numVehi, Decimal numBal)
+        public void ajouterVehicule()
         {
 
-            BaladeDAO baladeDAO = new BaladeDAO();
-
-
-            baladeDAO.CreateTransport(numVehi, numBal);
         }
 
 
