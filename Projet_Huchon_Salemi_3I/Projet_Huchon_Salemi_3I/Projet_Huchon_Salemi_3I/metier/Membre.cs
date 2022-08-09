@@ -45,24 +45,24 @@ namespace Projet_Huchon_Salemi_3I.metier
                 " }";
         }
 
-        public void calculSolde(String nom,String prenom)
+        public void calculSolde(String nom, String prenom)
         {
             decimal solde = 0;
             DAO.MembreDAO dao = new DAO.MembreDAO();
             Personne personne = new Personne();
-            decimal id = personne.GetidUser(nom,prenom);
+            decimal id = personne.GetidUser(nom, prenom);
             decimal total = dao.TotalofAbonnementCat(id);
             decimal cpt = dao.RecupCptBanquaire(id);
 
             if (total >= 2)
             {
-                for (int i = 0; i < (total-1); i = i + 1)
+                for (int i = 0; i < (total - 1); i = i + 1)
                 {
                     solde = solde + 5;
                 }
                 solde = solde + 20;
 
-             
+
                 Membre membre = new Membre(id, solde, cpt);
                 System.Diagnostics.Debug.WriteLine(membre);
                 dao.Update(membre);
@@ -82,7 +82,7 @@ namespace Projet_Huchon_Salemi_3I.metier
             Personne personne = new Personne();
 
             decimal id = personne.GetidUser(nom, prenom);
-            
+
             return dao.RecupSolde(id);
         }
 
