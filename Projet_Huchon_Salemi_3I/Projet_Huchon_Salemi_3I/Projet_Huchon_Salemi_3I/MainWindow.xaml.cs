@@ -49,9 +49,9 @@ namespace Projet_Huchon_Salemi_3I
               int placesRestantes1 = balade3.obtenirPlacesVeloRestantes(1);
               System.Diagnostics.Debug.WriteLine(" LE NOMBRE DE PLACES MEMBRE velo EST : " + placesRestantes1);
               */
-            CalendrierDAO dao = new CalendrierDAO();
-            Calendrier p = new Calendrier(1,1);
-            dao.Delete(p);
+            VehiculeDAO dao = new VehiculeDAO();
+            Vehicule v = new Vehicule();
+            v = dao.Find(1);
 
    
 
