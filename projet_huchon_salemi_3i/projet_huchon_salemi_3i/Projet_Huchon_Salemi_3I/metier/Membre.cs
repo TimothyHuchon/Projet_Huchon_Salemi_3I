@@ -45,24 +45,24 @@ namespace Projet_Huchon_Salemi_3I.metier
                 " }";
         }
 
-        public void calculSolde(String nom,String prenom)
+        public void calculSolde(String nom, String prenom)
         {
             decimal solde = 0;
             DAO.MembreDAO dao = new DAO.MembreDAO();
             Personne personne = new Personne();
-            decimal id = personne.GetidUser(nom,prenom);
+            decimal id = personne.GetidUser(nom, prenom);
             decimal total = dao.TotalofAbonnementCat(id);
             decimal cpt = dao.RecupCptBanquaire(id);
 
             if (total >= 2)
             {
-                for (int i = 0; i < (total-1); i = i + 1)
+                for (int i = 0; i < (total - 1); i = i + 1)
                 {
                     solde = solde + 5;
                 }
                 solde = solde + 20;
 
-             
+
                 Membre membre = new Membre(id, solde, cpt);
                 System.Diagnostics.Debug.WriteLine(membre);
                 dao.Update(membre);
@@ -82,7 +82,7 @@ namespace Projet_Huchon_Salemi_3I.metier
             Personne personne = new Personne();
 
             decimal id = personne.GetidUser(nom, prenom);
-            
+
             return dao.RecupSolde(id);
         }
 
@@ -95,32 +95,5 @@ namespace Projet_Huchon_Salemi_3I.metier
             Membre membre = new Membre(id, 0, cpt);
             dao.Update(membre);
         }
-
-        public String payerDette()
-        {
-            string reponse = null;
-            DAO.MembreDAO dao = new DAO.MembreDAO();
-            if (this.CptBanquaire >= this.solde)
-            {
-                this.CptBanquaire = this.CptBanquaire - this.solde;
-                this.solde = 0;
-                dao.Update(this);
-                reponse = "Paiement effectuer";
-            }
-            else 
-            {
-                reponse = "Paiement non-effectuer : fond inssufissant";
-            }
-
-            return reponse;
-        }
-
-        public void rechargerCompteBanquaire(decimal montant)
-        {
-            DAO.MembreDAO dao = new DAO.MembreDAO();
-            this.CptBanquaire = this.CptBanquaire + montant;
-            dao.Update(this);
-        }
-
     }
 }
