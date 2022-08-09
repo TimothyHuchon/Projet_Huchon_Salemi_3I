@@ -67,26 +67,174 @@ namespace Projet_Huchon_Salemi_3I
 
                 Balade balade8 = new Balade(3);
                 BaladeDAO baladeDAO = new BaladeDAO();
-                baladeDAO.Delete(balade8);*/
+                baladeDAO.Delete(balade8);
 
-            /* Inscription inscription = new Inscription(false, false);
-             InscriptionDAO inscriptionDAO = new InscriptionDAO();
-             inscriptionDAO.Create(inscription);*/
+                Inscription inscription = new Inscription(false, false);
+                InscriptionDAO inscriptionDAO = new InscriptionDAO();
+                inscriptionDAO.Create(inscription);
 
-            /* Inscription inscription = new Inscription(10,true, true);
-             InscriptionDAO inscriptionDAO = new InscriptionDAO();
-             inscriptionDAO.Update(inscription);*/
+                Inscription inscription = new Inscription(10,true, true);
+                InscriptionDAO inscriptionDAO = new InscriptionDAO();
+                inscriptionDAO.Update(inscription);
 
-            /* Inscription inscription = new Inscription(11);
-             InscriptionDAO inscriptionDAO = new InscriptionDAO();
-             inscriptionDAO.Delete(inscription);*/
+                Inscription inscription = new Inscription(11);
+                InscriptionDAO inscriptionDAO = new InscriptionDAO();
+                inscriptionDAO.Delete(inscription);
             
-            Balade balade = new Balade();
-            balade.ajouterVehicule(3,2);
+                Balade balade = new Balade();
+                balade.ajouterVehicule(3,2);
 
-            /*Vehicule vehicule = new Vehicule();
-            VehiculeDAO vehiculeDAO = new VehiculeDAO();
-            vehicule = vehiculeDAO.Find(1);*/
+                Vehicule vehicule = new Vehicule();
+                VehiculeDAO vehiculeDAO = new VehiculeDAO();
+                vehicule = vehiculeDAO.Find(1);*/
+
+            /* ------------- Balade ------------- */
+
+
+            /* ------------- Calendrier ------------- */
+           /* Calendrier calendrier = new Calendrier(1);
+            CalendrierDAO calendrierDao = new CalendrierDAO();
+            calendrierDao.Create(calendrier);
+
+            Calendrier calendrier1 = new Calendrier();
+            CalendrierDAO calendrierDao1 = new CalendrierDAO();
+            calendrierDao1.Delete(calendrier1);
+
+            Calendrier calendrier2 = new Calendrier();
+            CalendrierDAO calendrierDAO2 = new CalendrierDAO();
+            calendrierDAO2.Update(calendrier2);
+
+            Calendrier calendrier3 = new Calendrier();
+            CalendrierDAO calendrierDAO3 = new CalendrierDAO();
+            calendrierDAO3.Find(1);*/
+
+
+            /* ------------- Inscription ------------- */
+            /*Inscription inscription = new Inscription(1);
+            InscriptionDAO inscriptionDao = new InscriptionDAO();
+            calendrierDao.Create(inscription);
+
+            Inscription inscription1 = new Inscription();
+            InscriptionDAO inscriptionDao1 = new InscriptionDAO();
+            inscriptionDao1.Delete(inscription1);
+
+            Inscription inscription2 = new Inscription();
+            InscriptionDAO inscriptionDAO2 = newInscriptionDAO();
+            calendrierDAO2.Update(inscription2);
+
+            Inscription inscription3 = new Inscription();
+            InscriptionDAO inscriptionDAO3 = new InscriptionDAO();
+            calendrierDAO3.Find(1);*/
+
+            /* ------------- Membre ------------- */
+
+           /* Membre membre = new Membre(1);
+            MembreDAO membreDao = new MembreDAO();
+            calendrierDao.Create(membre);
+
+            Membre membre1 = new Membre();
+            Membre membreDao1 = new MembreDAO();
+            membreDao1.Delete(membre1);
+
+            Membre membre2 = new Membre();
+            MembreDAO membreDAO2 = newMembreDAO();
+            calendrierDAO2.Update(membre2);
+
+            Membre membre3 = new Membre();
+            MembreDAO membreDAO3 = new MembreDAO();
+            membreDAO3.Find(1);*/
+            /* ------------- Personne ------------- */
+
+           /* Personne personne = new Personne(1);
+            PersonneDAO personneDao = new PersonneDAO();
+            personneDao.Create(personne);
+
+            Personne personne1 = new Personne();
+            PersonneDAO personneDao1 = new PersonneDAO();
+            personneDao1.Delete(personne1);
+
+            Personne personne2 = new Personne();
+            PersonneDAO personneDAO2 = new PersonneDAO();
+            personneDAO2.Update(personne2);
+
+            Personne personne3 = new Personne();
+            PersonneDAO personneDAO3 = new PersonneDAO();
+            personneDAO3.Find(1);
+
+            Personne personne4 = new Personne();
+            decimal id = personne4.CheckidUser("Salemi", "Alessandro");
+            System.Diagnostics.Debug.WriteLine("l'id est donc = " + id);*/
+            /* ------------- Responsable ------------- */
+
+          /*  Responsable responsable = new Responsable(1);
+            ResponsableDAO responsableDao = new ResponsableDAO();
+            responsableDao.Create(responsable);
+
+            Responsable responsable1 = new Responsable();
+            ResponsableDAO responsableDao1 = new ResponsableDAO();
+            responsableDao1.Delete(responsable1);
+
+            Responsable responsable2 = new Responsable();
+            ResponsableDAO responsableDAO2 = new ResponsableDAO();
+            responsableDAO2.Update(responsable2);
+
+            Responsable responsable3 = new Responsable();
+            ResponsableDAO responsableDAO3 = new ResponsableDAO();
+            responsableDAO3.Find(1);*/
+            /* ------------- Tresorier ------------- */
+
+          /*  Tresorier tresorier = new Tresorier(1);
+            TresorierDAO tresorierDao = new TresorierDAO();
+            tresorierDao.Create(tresorier);
+
+            Tresorier tresorier1 = new Tresorier();
+            TresorierDAO tresorierDao1 = new TresorierDAO();
+            tresorierDao1.Delete(tresorier1);
+
+            Tresorier tresorier2 = new Tresorier();
+            TresorierDAO tresorierDAO2 = new TresorierDAO();
+            calendrierDAO2.Update(tresorier2);
+
+            Tresorier tresorier3 = new Tresorier();
+            TresorierDAO tresorierDAO3 = new TresorierDAO();
+            tresorierDao.Find(1);*/
+            /* ------------- Vehicule ------------- */
+
+          /*  Vehicule vehicule = new Vehicule(1);
+            VehiculeDAO vehiculeDao = new VehiculeDAO();
+            vehiculeDao.Create(vehicule);
+
+            Vehicule vehicule1 = new Vehicule();
+            VehiculeDAO vehiculeDao1 = new VehiculeDAO();
+            vehiculeDao1.Delete(vehicule1);
+
+            Vehicule vehicule2 = new Vehicule();
+            VehiculeDAO vehiculeDAO2 = new VehiculeDAO();
+            vehiculeDAO2.Update(vehicule2);
+
+            Vehicule vehicule3 = new Vehicule();
+            VehiculeDAO vehiculeDAO3 = new VehiculeDAO();
+            vehiculeDAO3.Find(1);*/
+            /* ------------- Velo ------------- */
+
+          /*  Velo velo = new Velo(1);
+            VeloDAO veloDao = new VeloDAO();
+            veloDao.Create(velo);
+
+            Velo velo1 = new Velo();
+            VeloDAO veloDao1 = new VeloDAO();
+            veloDao1.Delete(velo1);
+
+            Velo velo2 = new Velo();
+            VeloDAO veloDAO2 = new VeloDAO();
+            veloDAO2.Update(velo2);
+
+            Velo velo3 = new Velo();
+            VeloDAO veloDAO3 = new VeloDAO();
+            veloDAO3.Find(1);
+          */
+
+
 
         }
     }

@@ -12,11 +12,19 @@ namespace Projet_Huchon_Salemi_3I.metier
         private decimal num_categorie;
 
         public Calendrier() { }
+
+        public Calendrier(decimal num_categorie)
+        {
+            this.num_categorie = num_categorie;
+        }
+
         public Calendrier(decimal id_calendrier, decimal num_categorie) 
         {
             this.ID_calendrier = id_calendrier;
             this.NUM_categorie = num_categorie;
         }
+
+
 
         public decimal ID_calendrier { get => id_calendrier; set => id_calendrier = value; }
         internal List<Balade> ListeBalade { get => listeBalade; set => listeBalade = value; }
