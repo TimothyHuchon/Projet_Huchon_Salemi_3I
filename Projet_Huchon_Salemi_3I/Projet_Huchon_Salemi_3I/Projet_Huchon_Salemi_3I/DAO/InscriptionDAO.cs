@@ -11,17 +11,69 @@ namespace Projet_Huchon_Salemi_3I.DAO
     {
         public override bool Create(Inscription obj)
         {
-            return false;
+            bool value = false;
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Inscription([passager],[velo]) VALUES (@passager,@velo)",connection);
+                    cmd.Parameters.AddWithValue("passager", obj.Passager);
+                    cmd.Parameters.AddWithValue("velo", obj.Velo);
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                value = true;
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+            return value;
         }
 
         public override bool Update(Inscription obj)
         {
-            return false;
+            bool value = false;
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("UPDATE Inscription SET [passager]=@passager, [velo]=@velo WHERE id_inscription=@id", connection);
+                    cmd.Parameters.AddWithValue("passager", obj.Passager);
+                    cmd.Parameters.AddWithValue("velo", obj.Velo);
+                    cmd.Parameters.AddWithValue("id", obj.Id_inscription);
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                value = true;
+            }
+            catch (SqlException)
+            {
+
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+            return value;
         }
 
         public override bool Delete(Inscription obj)
         {
-            return false;
+            bool value = false;
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Inscription WHERE id_inscription = @id", connection);
+                    cmd.Parameters.AddWithValue("id", obj.Id_inscription);
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException)
+            {
+
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+            return value;
         }
 
         public override Inscription Find(decimal id)

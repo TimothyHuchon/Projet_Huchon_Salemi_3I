@@ -81,8 +81,8 @@ namespace Projet_Huchon_Salemi_3I.DAO
         public override Vehicule Find(decimal id)
         {
             Vehicule vehicule = null;
-           // try
-           // {
+            try
+            {
                 using(SqlConnection connection = new SqlConnection(this.connectionString))
                 {
                     SqlCommand cmd = new SqlCommand("SELECT * FROM Vehicule WHERE id_vehicule = @id", connection);
@@ -116,12 +116,11 @@ namespace Projet_Huchon_Salemi_3I.DAO
                         ********************************************************* 
                         ********************************************************* */
                 }
-           // }
-            //catch (SqlException)
-           // {
-
-            //    throw new Exception("Une erreur sql s'est produite!");
-          //  }
+            }
+            catch (SqlException)
+           {
+                throw new Exception("Une erreur sql s'est produite!");
+            }
             return vehicule;
         }
 
@@ -141,8 +140,8 @@ namespace Projet_Huchon_Salemi_3I.DAO
                         {
                             Vehicule vehi = new Vehicule
                             {
-                                NbrePlacesMembre = reader.GetInt32("nbrePlacesMembre"),
-                                NbrePlacesVelo = reader.GetInt32("nbrePlacesVelo")
+                                NbrePlacesMembre = reader.GetDecimal("nbrePlacesMembre"),
+                                NbrePlacesVelo = reader.GetDecimal("nbrePlacesVelo")
 
                             };
                             vehicules.Add(vehi);

@@ -29,26 +29,64 @@ namespace Projet_Huchon_Salemi_3I
         {
             InitializeComponent();
 
-          /*  Personne personne = new Personne();
-            decimal id = personne.CheckidUser("Salemi", "Alessandro");
-            System.Diagnostics.Debug.WriteLine("l'id est donc = " + id);*/
+            /*  Personne personne = new Personne();
+                decimal id = personne.CheckidUser("Salemi", "Alessandro");
+                System.Diagnostics.Debug.WriteLine("l'id est donc = " + id);
 
+                Balade balade = new Balade();
+                int placetotal = balade.obtenirPlacesMembreTotal(1);
+                System.Diagnostics.Debug.WriteLine(" LE NOMBRE DE PLACES MEMBRE TOTAL EST : " + placetotal);
+
+                Balade balade1 = new Balade();
+                int placetotal1 = balade1.obtenirPlacesVeloTotal(1);
+                System.Diagnostics.Debug.WriteLine(" LE NOMBRE DE PLACES VELO TOTAL EST : " + placetotal1);
+
+                Balade balade2 = new Balade();
+                int placesRestantes = balade2.obtenirPlacesMembreRestantes(1);
+                System.Diagnostics.Debug.WriteLine(" LE NOMBRE DE PLACES MEMBRE RESTANTES EST : " + placesRestantes);
+
+                Balade balade3 = new Balade();
+                int placesRestantes1 = balade3.obtenirPlacesVeloRestantes(1);
+                System.Diagnostics.Debug.WriteLine(" LE NOMBRE DE PLACES  velo RESTANTES EST : " + placesRestantes1);
+
+                Balade balade4 = new Balade();
+                int placesBesoin = balade4.obtenirPlacesMembreBesoin(1);
+                System.Diagnostics.Debug.WriteLine(" besoin de place membre : " + placesBesoin);
+
+                Balade balade5 = new Balade();
+                int placesBesoinvelo = balade5.obtenirPlaceVeloBesoin(1);
+                System.Diagnostics.Debug.WriteLine(" besoin de place velo : " + placesBesoinvelo);
+
+                Balade balade6 = new Balade("Dour",new DateTime(2022,10,26),12);
+                BaladeDAO baladeDAO = new BaladeDAO();
+                baladeDAO.Create(balade6);
+
+                Balade balade7 = new Balade(3,"Elouges", new DateTime(2022, 11, 27), 14);
+                BaladeDAO baladeDAO = new BaladeDAO();
+                baladeDAO.Update(balade7);
+
+                Balade balade8 = new Balade(3);
+                BaladeDAO baladeDAO = new BaladeDAO();
+                baladeDAO.Delete(balade8);*/
+
+            /* Inscription inscription = new Inscription(false, false);
+             InscriptionDAO inscriptionDAO = new InscriptionDAO();
+             inscriptionDAO.Create(inscription);*/
+
+            /* Inscription inscription = new Inscription(10,true, true);
+             InscriptionDAO inscriptionDAO = new InscriptionDAO();
+             inscriptionDAO.Update(inscription);*/
+
+            /* Inscription inscription = new Inscription(11);
+             InscriptionDAO inscriptionDAO = new InscriptionDAO();
+             inscriptionDAO.Delete(inscription);*/
+            
             Balade balade = new Balade();
-            int placetotal = balade.obtenirPlacesMembreTotal(1);
-            System.Diagnostics.Debug.WriteLine(" LE NOMBRE DE PLACES TOTAL EST : " + placetotal);
+            balade.ajouterVehicule(3,2);
 
-            Balade balade1 = new Balade();
-            int placetotal1 = balade1.obtenirPlacesVeloTotal(1);
-            System.Diagnostics.Debug.WriteLine(" LE NOMBRE DE PLACES VELO TOTAL EST : " + placetotal1);
-
-            Balade balade2 = new Balade();
-            int placesRestantes = balade2.obtenirPlacesMembreRestantes(1);
-            System.Diagnostics.Debug.WriteLine(" LE NOMBRE DE PLACES MEMBRE RESTANTES EST : " + placesRestantes);
-
-            Balade balade3 = new Balade();
-            int placesRestantes1 = balade3.obtenirPlacesVeloRestantes(1);
-            System.Diagnostics.Debug.WriteLine(" LE NOMBRE DE PLACES MEMBRE velo EST : " + placesRestantes1);
-
+            /*Vehicule vehicule = new Vehicule();
+            VehiculeDAO vehiculeDAO = new VehiculeDAO();
+            vehicule = vehiculeDAO.Find(1);*/
 
         }
     }
