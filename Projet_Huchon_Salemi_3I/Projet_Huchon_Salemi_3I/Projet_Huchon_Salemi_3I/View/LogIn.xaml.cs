@@ -60,5 +60,12 @@ namespace Projet_Huchon_Salemi_3I.View
             Register register = new Register();
             register.ShowDialog();
         }
+
+        private void loginBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Membre x = new Membre();
+            x.ShowDialog();
+        }
     }
 }

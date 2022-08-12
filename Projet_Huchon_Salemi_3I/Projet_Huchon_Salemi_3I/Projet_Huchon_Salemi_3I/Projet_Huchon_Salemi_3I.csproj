@@ -11,7 +11,20 @@
   </Target>
 
   <ItemGroup>
+    <None Remove="Images\car.png" />
+    <None Remove="Images\cat.png" />
+    <None Remove="Images\home.png" />
+    <None Remove="Images\img_arrow.png" />
+    <None Remove="Images\img_exit.png" />
+    <None Remove="Images\img_paiement.png" />
     <None Remove="Images\logo.png" />
+    <None Remove="Images\max_def.png" />
+    <None Remove="Images\max_mo.png" />
+    <None Remove="Images\new.png" />
+    <None Remove="Images\reserv.png" />
+    <None Remove="Images\shutdown_def.png" />
+    <None Remove="Images\shutdown_mo.png" />
+    <None Remove="Images\velo.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,9 +33,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\car.png" />
+    <Resource Include="Images\cat.png" />
+    <Resource Include="Images\home.png" />
+    <Resource Include="Images\img_arrow.png" />
+    <Resource Include="Images\img_exit.png" />
+    <Resource Include="Images\img_paiement.png" />
     <Resource Include="Images\logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\max_def.png" />
+    <Resource Include="Images\max_mo.png" />
+    <Resource Include="Images\new.png" />
+    <Resource Include="Images\reserv.png" />
+    <Resource Include="Images\shutdown_def.png" />
+    <Resource Include="Images\shutdown_mo.png" />
+    <Resource Include="Images\velo.png" />
   </ItemGroup>
 
   <ItemGroup>

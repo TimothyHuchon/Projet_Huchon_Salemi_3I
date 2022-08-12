@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Masset_wpfPA\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\obj\Debug\netcoreapp3.1\
+C:\Users\aless\source\repos\TimothyHuchon\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\obj\Debug\netcoreapp3.1\
 Projet_Huchon_Salemi_3I
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-D:\Masset_wpfPA\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\App.xaml
-31511748442
+C:\Users\aless\source\repos\TimothyHuchon\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\App.xaml
+11226283305
 
-311475183511
-195-1659841425
-MainWindow.xaml;View\LogIn.xaml;View\Register.xaml;
+382059400435
+195-1260268341
+MainWindow.xaml;Templates.xaml;View\Categorie.xaml;View\Disponibilité.xaml;View\Home.xaml;View\LogIn.xaml;View\Membre.xaml;View\Paiement.xaml;View\Register.xaml;View\Reservation.xaml;View\Velo.xaml;
 
 False
 
