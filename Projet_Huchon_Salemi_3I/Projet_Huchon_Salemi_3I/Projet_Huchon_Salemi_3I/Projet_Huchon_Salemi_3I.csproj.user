@@ -7,10 +7,31 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="View\Categorie.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Disponibilité.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Home.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\LogIn.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\Membre.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Paiement.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\Register.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Reservation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Velo.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -18,10 +39,34 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Templates.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Categorie.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Disponibilité.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Home.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\LogIn.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\Membre.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Paiement.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\Register.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Reservation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Velo.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
