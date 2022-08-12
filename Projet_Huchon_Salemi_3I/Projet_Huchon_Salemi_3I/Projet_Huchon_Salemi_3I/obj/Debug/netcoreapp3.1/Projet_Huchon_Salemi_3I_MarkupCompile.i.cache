@@ -1,5 +1,5 @@
 ﻿Projet_Huchon_Salemi_3I
-
+1.0.0.0
 
 winexe
 C#
@@ -12,9 +12,9 @@ TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 D:\Masset_wpfPA\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\App.xaml
 11226283305
 
-382059400435
+40-1797395408
 195-1659841425
 MainWindow.xaml;Templates.xaml;View\Categorie.xaml;View\Disponibilité.xaml;View\Home.xaml;View\LogIn.xaml;View\Membre.xaml;View\Paiement.xaml;View\Register.xaml;View\Reservation.xaml;View\Velo.xaml;
 
-False
+True
 

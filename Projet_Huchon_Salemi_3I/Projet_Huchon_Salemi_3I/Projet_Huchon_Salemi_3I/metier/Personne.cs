@@ -43,7 +43,7 @@ namespace Projet_Huchon_Salemi_3I.metier
             return HashCode.Combine(Id);
         }
 
-        public decimal GetidUser(String nom, String prenom)
+        public decimal GetidUser(string nom, string prenom)
         {
             PersonneDAO dao = new PersonneDAO();
             decimal id = 0;
@@ -63,7 +63,7 @@ namespace Projet_Huchon_Salemi_3I.metier
             return isMembre;
         }
 
-        public String checkProfile()
+        public string checkProfile()
         {
             string value = null;
 

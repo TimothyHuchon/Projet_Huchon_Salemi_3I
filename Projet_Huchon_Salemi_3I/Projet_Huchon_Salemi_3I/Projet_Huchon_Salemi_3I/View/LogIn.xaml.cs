@@ -70,21 +70,33 @@ namespace Projet_Huchon_Salemi_3I.View
             motDePasse = txtPassWord.Password;
             bool verification = false;
 
-            Personne personne = new Personne();
-            verification= personne.SignIn(userName, motDePasse);
 
-            if (verification == true)
+            if (userName != "" || motDePasse != "")
             {
-                this.Hide();
-                Register register = new Register();
-                register.ShowDialog();
+                Personne personne = new Personne();
+                verification= personne.SignIn(userName, motDePasse);
+
+                if (verification == true)
+                {
+                    this.Hide();
+                    Membre membre = new Membre();
+                    membre.ShowDialog();
+                }
+                else
+                {
+                    txtUsername.Clear();
+                    txtPassWord.Clear();
+                    MessageBox.Show("Vérifier vos identifiants ou créer un compte!", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+                }
+
             }
             else
             {
-
+                txtUsername.Clear();
+                txtPassWord.Clear();
+                MessageBox.Show("Veuillez remplir tous les champs!", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
-          
-           
 
 
         }
