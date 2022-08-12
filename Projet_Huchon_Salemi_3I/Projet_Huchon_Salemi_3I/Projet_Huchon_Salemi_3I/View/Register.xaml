@@ -1,0 +1,92 @@
+﻿<Window x:Class="Projet_Huchon_Salemi_3I.View.Register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projet_Huchon_Salemi_3I.View" xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Register" Height="750" Width="850"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{x:Null}"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen">
+
+    <MaterialDesign:Card UniformCornerRadius="15" Background="{DynamicResource MaterialDesignPaper}" Margin="15">
+        <MaterialDesign:DialogHost CloseOnClickAway="True" x:Name="DialogHost">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="20"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Menu d'option en haut a droite  -->
+                <MaterialDesign:PopupBox  Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" Margin="0 0 0 0" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Height="25" MaterialDesign:ShadowAssist.ShadowDepth="Depth4" >
+                    <StackPanel>
+                        <StackPanel Margin="16 10 0 6" Orientation="Horizontal" HorizontalAlignment="Center">
+
+                            <TextBlock VerticalAlignment="Center" Text="Dark Mode"/>
+                            <ToggleButton Cursor="Hand" ToolTip="Enable Dark Mode" Margin="12 0 8 0" x:Name="themeToggle" IsChecked="{Binding IsDarkTheme}" Click="themeToggle_Click"/>
+                        </StackPanel>
+                        <Button ToolTip="Having Trouble Register?" Margin="0 8 0 0" Content="Help Me"/>
+
+                        <Button x:Name="btn_exit" ToolTip="Close Application" Content="Exit Application" Click="btn_exit_Click"/>
+
+                    </StackPanel>
+                </MaterialDesign:PopupBox>
+
+
+                <!-- LOGO TITRE PHRASE -->
+
+                <Image Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Margin="0 0 0 0" Source="/Images/logo.png" Height="206" Width="235"/>
+
+                <TextBlock Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Margin="0 175 0 0"  FontSize="28" FontWeight="Bold" Text="Welcome!"/>
+
+                <TextBlock Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Margin="0 215 0 10" FontSize="17" FontWeight="SemiBold"  Text="Register your informations"/>
+
+
+                <!-- Formulaire -->
+
+                <TextBox Grid.Row="3" Grid.Column="1" Margin="70,30,0,15" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="txtNom" Width="250" FontSize="18" MaterialDesign:HintAssist.Hint="Enter First Name" BorderThickness="2"
+                         BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+
+
+                <TextBox Grid.Row="3" Grid.Column="1" Margin="0,30,70,15" VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="txtPrenom" FontSize="18" MaterialDesign:HintAssist.Hint="Enter Last Name" BorderThickness="2"
+                         BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"  Width="250"/>
+
+
+                <TextBox Grid.Row="4" Grid.Column="1" Margin="70,15,0,15" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="txtTel" Width="250" FontSize="18" MaterialDesign:HintAssist.Hint="Enter Phone" BorderThickness="2"
+                         BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+
+
+                <TextBox Grid.Row="5" Grid.Column="1" Margin="70,15,0,15" HorizontalAlignment="Left" VerticalAlignment="Center"  x:Name="txtID" Width="250" FontSize="18" MaterialDesign:HintAssist.Hint="Enter ID" BorderThickness="2"
+                         BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+
+                <PasswordBox Grid.Row="5" Grid.Column="1" Margin="0,15,70,15" VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="txtPassWord" Width="250" FontSize="15" MaterialDesign:HintAssist.Hint="Enter Password" BorderThickness="2"
+                              BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedPasswordBox}"/>
+
+
+                <Button Grid.Row="6" Grid.Column="1" Margin="220,15,0,15" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="signupBtn" Style="{StaticResource MaterialDesignFlatMidBgButton}" MaterialDesign:ShadowAssist.ShadowDepth="Depth0"
+                        Height="53" Width="150" MaterialDesign:ButtonAssist.CornerRadius="10" FontSize="15" Content="Create Account"/>
+
+                <Button Grid.Row="6" Grid.Column="1" Margin="0,15,220,15" VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="LoginBtn" Style="{StaticResource MaterialDesignFlatButton}" MaterialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" 
+                        Width="150" MaterialDesign:ButtonAssist.CornerRadius="10" FontSize="18" Content="Log In" Click="LoginBtn_Click"/>
+
+            </Grid>
+
+        </MaterialDesign:DialogHost>
+    </MaterialDesign:Card>
+</Window>

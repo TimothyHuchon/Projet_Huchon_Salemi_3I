@@ -163,7 +163,7 @@ namespace Projet_Huchon_Salemi_3I.DAO
             return TotalofAbonnement;
         }
 
-        public decimal RecupCptBanquaire(decimal id)
+        public decimal RecupCptBancaire(decimal id)
         {
             decimal cptbanquaire = 0;
             try

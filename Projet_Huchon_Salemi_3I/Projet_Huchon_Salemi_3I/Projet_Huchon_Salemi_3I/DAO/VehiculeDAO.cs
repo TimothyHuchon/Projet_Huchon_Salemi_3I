@@ -156,7 +156,7 @@ namespace Projet_Huchon_Salemi_3I.DAO
             return vehicules;
         }
 
-        public void ajoutPassager(decimal id, Vehicule vehicule)
+        public void AjoutPassager(decimal id, Vehicule vehicule)
         {
             int verif = 0;
             try
@@ -223,7 +223,7 @@ namespace Projet_Huchon_Salemi_3I.DAO
             return vehicule;
         }
 
-        public void ajoutVelo(decimal id_membre, Velo velo, Vehicule vehicule)
+        public void AjoutVelo(decimal id_membre, Velo velo, Vehicule vehicule)
         {
             try
             {
