@@ -20,7 +20,7 @@ namespace Projet_Huchon_Salemi_3I.DAO
             {
                 using (SqlConnection connection = new SqlConnection(this.connectionString))
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Personne([nom],[prenom],[tel],[id],[motDePasse]) VALUES(@nom, @prenom, @tel, @id, @mdp); ", connection);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Personne([nom],[prenom],[tel],[id],[motDePasse]) VALUES(@nom, @prenom, @tel, @id, @mdp)", connection);
                     cmd.Parameters.AddWithValue("nom", obj.Nom);
                     cmd.Parameters.AddWithValue("prenom", obj.Prenom);
                     cmd.Parameters.AddWithValue("tel", obj.Tel);

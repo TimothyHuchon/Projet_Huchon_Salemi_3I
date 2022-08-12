@@ -87,7 +87,6 @@ namespace Projet_Huchon_Salemi_3I.View
                     txtUsername.Clear();
                     txtPassWord.Clear();
                     MessageBox.Show("Vérifier vos identifiants ou créer un compte!", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
-
                 }
 
             }

@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MaterialDesignThemes.Wpf;
+using Projet_Huchon_Salemi_3I.metier;
+using Projet_Huchon_Salemi_3I.DAO;
 
 namespace Projet_Huchon_Salemi_3I.View
 {
@@ -18,6 +20,11 @@ namespace Projet_Huchon_Salemi_3I.View
     /// </summary>
     public partial class Register : Window
     {
+        public string lastName = "";
+        public string firstName = "";
+        public string phone = "";
+        public string id = "";
+        public string password = "";
         public Register()
         {
             InitializeComponent();
@@ -57,6 +64,44 @@ namespace Projet_Huchon_Salemi_3I.View
             this.Hide();
             LogIn login = new LogIn();
             login.ShowDialog();
+        }
+
+        private void signupBtn_Click(object sender, RoutedEventArgs e)
+        {
+            lastName = txtNom.Text;
+            firstName = txtPrenom.Text;
+            phone = txtTel.Text;
+            id = txtID.Text;
+            password = txtPassWord.Password;
+
+            if (lastName != "" || firstName != "" || phone != "" || id != "" || password != "")
+            {
+
+
+                bool ok = false;
+                Personne personne = new Personne(lastName, firstName, phone, id, password);
+                PersonneDAO personneDAO = new PersonneDAO();
+                ok = personneDAO.Create(personne);
+
+
+                if (ok == true)
+                {
+
+                    MessageBox.Show("Vous êtes enregistré!", "Bienvenue", MessageBoxButton.OK, MessageBoxImage.Information);
+                    this.Hide();
+                    LogIn login = new LogIn();
+                    login.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Une erreur est survenue!", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Veuillez remplir tous les champs!", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+
         }
     }
 }
