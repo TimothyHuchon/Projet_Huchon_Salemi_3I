@@ -149,6 +149,28 @@ namespace Projet_Huchon_Salemi_3I.DAO
             return personne;
         }
 
-
+        public int IsInscrit(string id, string motDePasse)
+        {
+            int countPersonne = 0;
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Personne where id = @id and motDePasse = @mdp", connection);
+                    cmd.Parameters.AddWithValue("id", id);
+                    cmd.Parameters.AddWithValue("mdp", motDePasse);
+                    connection.Open();
+                    if (cmd.ExecuteScalar() != null)
+                    {
+                        countPersonne = (int)cmd.ExecuteScalar();
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite");
+            }
+            return countPersonne;
+        }
     }
 }

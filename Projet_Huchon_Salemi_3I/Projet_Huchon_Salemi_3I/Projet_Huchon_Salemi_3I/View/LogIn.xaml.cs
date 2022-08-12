@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MaterialDesignThemes.Wpf;
+using Projet_Huchon_Salemi_3I.metier;
 
 
 namespace Projet_Huchon_Salemi_3I.View
@@ -19,6 +20,8 @@ namespace Projet_Huchon_Salemi_3I.View
     /// </summary>
     public partial class LogIn : Window
     {
+        private string userName="";
+        private string motDePasse="";
         public LogIn()
         {
             InitializeComponent();
@@ -59,6 +62,31 @@ namespace Projet_Huchon_Salemi_3I.View
             this.Hide();
             Register register = new Register();
             register.ShowDialog();
+        }
+
+        private void loginBtn_Click(object sender, RoutedEventArgs e)
+        {
+            userName = txtUsername.Text;
+            motDePasse = txtPassWord.Password;
+            bool verification = false;
+
+            Personne personne = new Personne();
+            verification= personne.SignIn(userName, motDePasse);
+
+            if (verification == true)
+            {
+                this.Hide();
+                Register register = new Register();
+                register.ShowDialog();
+            }
+            else
+            {
+
+            }
+          
+           
+
+
         }
     }
 }
