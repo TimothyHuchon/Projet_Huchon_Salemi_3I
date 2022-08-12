@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "J2ZM6mf3Y9dt/hS4Q/u8+suuddmKm5/e+p9xtut3FYVcDGWOn1/PEMgkRLnQWfVi+bgnBBCkxLjZEn9zNy/vNA==",
+  "dgSpecHash": "UqrI8jtvImGoLhjhjB2hKc4FdUyYdCi1j02ugyrlEax30dXt14SvK6k8/Rw5C0p6T/be9MpMh6DT7ho54R8QXg==",
   "success": true,
   "projectFilePath": "D:\\Masset_wpfPA\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I\\Projet_Huchon_Salemi_3I.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\tim-1\\.nuget\\packages\\materialdesigncolors\\2.0.6\\materialdesigncolors.2.0.6.nupkg.sha512",
+    "C:\\Users\\tim-1\\.nuget\\packages\\materialdesignthemes\\4.5.0\\materialdesignthemes.4.5.0.nupkg.sha512",
     "C:\\Users\\tim-1\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\tim-1\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\tim-1\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",

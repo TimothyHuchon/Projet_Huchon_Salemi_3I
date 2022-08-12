@@ -52,7 +52,7 @@ namespace Projet_Huchon_Salemi_3I.metier
             Personne personne = new Personne();
             decimal id = personne.GetidUser(nom, prenom);
             decimal total = dao.TotalofAbonnementCat(id);
-            decimal cpt = dao.RecupCptBanquaire(id);
+            decimal cpt = dao.RecupCptBancaire(id);
 
             if (total >= 2)
             {
@@ -91,7 +91,7 @@ namespace Projet_Huchon_Salemi_3I.metier
             DAO.MembreDAO dao = new DAO.MembreDAO();
             Personne personne = new Personne();
             decimal id = personne.GetidUser(nom, prenom);
-            decimal cpt = dao.RecupCptBanquaire(id);
+            decimal cpt = dao.RecupCptBancaire(id);
             Membre membre = new Membre(id, 0, cpt);
             dao.Update(membre);
         }

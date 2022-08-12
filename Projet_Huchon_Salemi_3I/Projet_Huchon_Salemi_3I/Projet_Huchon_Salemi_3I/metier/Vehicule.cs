@@ -46,7 +46,7 @@ namespace Projet_Huchon_Salemi_3I.metier
                 " }";
         }
 
-        public Vehicule membreByVehicule(String nom, String prenom)
+        public Vehicule MembreByVehicule(String nom, String prenom)
         {
             Personne personne = new Personne();
             decimal id = personne.GetidUser(nom, prenom);
@@ -56,14 +56,14 @@ namespace Projet_Huchon_Salemi_3I.metier
             return dao.VehiculeByMembre(id);
         }
 
-        public void ajouterPassager(String nom, String prenom)
+        public void AjouterPassager(String nom, String prenom)
         {
             Personne personne = new Personne();
             decimal id = personne.GetidUser(nom, prenom);
 
             VehiculeDAO dao = new VehiculeDAO();
 
-            dao.ajoutPassager(id, this);
+            dao.AjoutPassager(id, this);
 
         }
 
@@ -74,7 +74,7 @@ namespace Projet_Huchon_Salemi_3I.metier
             
 
             VehiculeDAO dao = new VehiculeDAO();
-            dao.ajoutVelo(id,velo, this);
+            dao.AjoutVelo(id,velo, this);
         }
     }
 }

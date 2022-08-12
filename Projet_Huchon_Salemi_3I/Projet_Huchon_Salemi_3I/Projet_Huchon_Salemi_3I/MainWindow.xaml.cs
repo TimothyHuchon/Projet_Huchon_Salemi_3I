@@ -164,6 +164,7 @@ namespace Projet_Huchon_Salemi_3I
             Personne personne4 = new Personne();
             decimal id = personne4.CheckidUser("Salemi", "Alessandro");
             System.Diagnostics.Debug.WriteLine("l'id est donc = " + id);*/
+
             /* ------------- Responsable ------------- */
 
           /*  Responsable responsable = new Responsable(1);
@@ -183,7 +184,7 @@ namespace Projet_Huchon_Salemi_3I
             responsableDAO3.Find(1);*/
             /* ------------- Tresorier ------------- */
 
-          /*  Tresorier tresorier = new Tresorier(1);
+          /*Tresorier tresorier = new Tresorier(1);
             TresorierDAO tresorierDao = new TresorierDAO();
             tresorierDao.Create(tresorier);
 
