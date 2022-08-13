@@ -172,5 +172,41 @@ namespace Projet_Huchon_Salemi_3I.DAO
             }
             return countPersonne;
         }
+
+
+        public Personne whoIsInscrit(string id, string motDePasse)
+        {
+            Personne personne = null;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Personne where id = @id and motDePasse = @mdp", connection);
+                    cmd.Parameters.AddWithValue("id", id);
+                    cmd.Parameters.AddWithValue("mdp", motDePasse);
+                    connection.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            personne = new Personne
+                            {
+                                ID_personne = reader.GetDecimal("id_personne"),
+                                Nom = reader.GetString("nom"),
+                                Prenom = reader.GetString("prenom"),
+                                Tel = reader.GetString("tel"),
+                                Id = reader.GetString("id"),
+                                MotDePasse = reader.GetString("motDePasse"),
+                            };
+                        }
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite");
+            }
+            return personne;
+        }
     }
 }

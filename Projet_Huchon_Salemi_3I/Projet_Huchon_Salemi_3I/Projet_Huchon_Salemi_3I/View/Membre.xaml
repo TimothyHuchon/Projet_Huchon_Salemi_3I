@@ -58,12 +58,13 @@
                         VerticalAlignment="Center"
                         HorizontalAlignment="Right"/>
 
-                <TextBlock Text="Name"
+                <TextBlock x:Name="nameTxtBlock"
+                           Text="Name"
                            Foreground="#FFFFFF"
                            FontFamily="Fonts/#Orbitron Medium"
                            FontSize="15"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Center"/>
+                           VerticalAlignment="Bottom"
+                           HorizontalAlignment="Center" Margin="0,0,0,16"/>
             </Grid>
 
             <!--// Main Menu //-->

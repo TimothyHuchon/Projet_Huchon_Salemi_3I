@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Projet_Huchon_Salemi_3I.metier;
+using Projet_Huchon_Salemi_3I.DAO;
 
 namespace Projet_Huchon_Salemi_3I.View
 {
@@ -18,10 +20,14 @@ namespace Projet_Huchon_Salemi_3I.View
     /// </summary>
     public partial class Membre : Window
     {
-        public Membre()
+        private string name = "";
+        public Membre(Personne personne)
         {
             InitializeComponent();
             Main.Content = new Home();
+            name = personne.Nom;
+            nameTxtBlock.Text = name;
+
         }
 
         private void MaxBtn_Click(object sender, RoutedEventArgs e)
