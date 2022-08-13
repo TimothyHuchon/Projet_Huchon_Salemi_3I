@@ -63,16 +63,16 @@ namespace Projet_Huchon_Salemi_3I.metier
             return isMembre;
         }
 
-        public string checkProfile()
+        public string checkProfile(decimal id)
         {
             string value = null;
 
             ResponsableDAO Rdao = new ResponsableDAO();
-            Responsable responsable = Rdao.Find(this.ID_personne);
+            Responsable responsable = Rdao.Find(id);
             if (responsable == null)
             {
                 TresorierDAO Tdao = new TresorierDAO();
-                Tresorier tresorier = Tdao.Find(this.ID_personne);
+                Tresorier tresorier = Tdao.Find(id);
                 if (tresorier == null)
                 {
                     value = "Membre";

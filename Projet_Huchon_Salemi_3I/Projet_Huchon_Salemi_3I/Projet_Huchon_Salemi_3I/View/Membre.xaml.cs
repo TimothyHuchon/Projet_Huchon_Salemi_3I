@@ -22,11 +22,22 @@ namespace Projet_Huchon_Salemi_3I.View
     public partial class Membre : Window
     {
         private Personne personne;
+        private string value;
 
         public Membre(Personne personne)
         {
             InitializeComponent();
             Main.Content = new Home(personne);
+            value = personne.checkProfile(personne.ID_personne);
+
+            switch (value)
+            {
+                case "Responsable": break;
+                case "Tresorier": break;
+                case "Membre": break;
+                default: break;
+                
+            }
         }
 
         /* TEST */
