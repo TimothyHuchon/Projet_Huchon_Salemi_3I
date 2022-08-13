@@ -25,7 +25,7 @@ namespace Projet_Huchon_Salemi_3I.metier
 
         public Membre() { }
 
-        public decimal ID_personne { get => id_personne; set => id_personne = value; }
+        public decimal Id_personne { get => id_personne; set => id_personne = value; }
         public decimal Solde { get => solde; set => solde = value; }
         public decimal CptBanquaire { get => cptBanquaire; set => cptBanquaire = value; }
 

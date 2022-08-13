@@ -117,5 +117,38 @@ namespace Projet_Huchon_Salemi_3I.DAO
             }
             return value;
         }
+
+        public Velo FindByMembre(decimal id)
+        {
+            Velo velo = null;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Velo where id_personne = @id", connection);
+                    cmd.Parameters.AddWithValue("id", id);
+                    connection.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            velo = new Velo
+                            {
+                                Proprietaire = reader.GetDecimal("id_personne"),
+                                Vehicule = reader.GetDecimal("id_vehicule"),
+                                Poids = reader.GetDecimal("poids"),
+                                Type = reader.GetString("type"),
+                                Longueur = reader.GetDecimal("longueur"),
+                            };
+                        }
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+            return velo;
+        }
     }
 }

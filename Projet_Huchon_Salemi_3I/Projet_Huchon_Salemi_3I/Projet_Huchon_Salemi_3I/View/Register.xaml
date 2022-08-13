@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projet_Huchon_Salemi_3I.View" xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Register" Height="750" Width="850"
+        Title="Register" Height="750" Width="850" Icon="/Images/biker.png"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{x:Null}"
         AllowsTransparency="True"
@@ -50,7 +50,6 @@
 
 
                 <!-- LOGO TITRE PHRASE -->
-                <Label x:Name="labelTesttxt" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Label"/>
 
                 <Image Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Margin="0 0 0 0" Source="/Images/logo.png" Height="206" Width="235"/>
 

@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Projet_Huchon_Salemi_3I.View"
         mc:Ignorable="d"
-        Title="Login" Height="760" Width="450"
+        Title="Login" Height="760" Width="450" Icon="/Images/biker.png"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{x:Null}"
         AllowsTransparency="True"

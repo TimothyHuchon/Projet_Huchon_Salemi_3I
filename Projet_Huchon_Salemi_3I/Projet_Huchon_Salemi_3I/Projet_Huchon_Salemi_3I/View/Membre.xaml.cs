@@ -12,6 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Projet_Huchon_Salemi_3I.metier;
 using Projet_Huchon_Salemi_3I.DAO;
+using MaterialDesignThemes.Wpf;
 
 namespace Projet_Huchon_Salemi_3I.View
 {
@@ -20,15 +21,46 @@ namespace Projet_Huchon_Salemi_3I.View
     /// </summary>
     public partial class Membre : Window
     {
-        private string name = "";
+        private Personne personne;
+
         public Membre(Personne personne)
         {
             InitializeComponent();
-            Main.Content = new Home();
-            name = personne.Nom;
-            nameTxtBlock.Text = name;
-
+            Main.Content = new Home(personne);
         }
+
+        /* TEST */
+
+
+        public bool IsDarkTheme { get; set; }
+        private readonly PaletteHelper paletteHelper = new PaletteHelper();
+
+        private void themeToggle_Click(object sender, RoutedEventArgs e)
+        {
+            ITheme theme = paletteHelper.GetTheme();
+            if (IsDarkTheme = theme.GetBaseTheme() == BaseTheme.Dark)
+            {
+                IsDarkTheme = false;
+                theme.SetBaseTheme(Theme.Light);
+            }
+            else
+            {
+                IsDarkTheme = true;
+                theme.SetBaseTheme(Theme.Dark);
+            }
+            paletteHelper.SetTheme(theme);
+        }
+
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+
+        /* TEST */
+
+
+
 
         private void MaxBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -63,7 +95,8 @@ namespace Projet_Huchon_Salemi_3I.View
 
         private void MenuItem_home_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Home();
+
+            Main.Content = new Home(personne);
         }
         private void MenuItem_Dispo_Click(object sender, RoutedEventArgs e)
         {
