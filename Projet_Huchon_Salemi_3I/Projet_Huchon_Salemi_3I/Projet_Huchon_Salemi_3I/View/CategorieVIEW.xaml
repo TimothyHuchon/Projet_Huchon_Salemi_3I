@@ -1,4 +1,4 @@
-﻿<Page x:Class="Projet_Huchon_Salemi_3I.View.Categorie"
+﻿<Page x:Class="Projet_Huchon_Salemi_3I.View.CategorieVIEW"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -33,18 +33,14 @@
                   MaterialDesign:HintAssist.Hint="Entrez Catégorie" BorderThickness="2" Background="White"
                   BorderBrush="{DynamicResource MaterialDesignDivider}" 
                   Style="{StaticResource MaterialDesignComboBox}">
-            <ComboBoxItem>Categ 1</ComboBoxItem>
-            <ComboBoxItem>Categ 2</ComboBoxItem>
         </ComboBox>
-
-        
 
 
         <Button Grid.Row="2" Grid.Column="0" Content="Inscription" Padding="5000" 
                 Style="{StaticResource buttonMainGreen}" 
                 Grid.ColumnSpan="2"
                 HorizontalAlignment="Center"
-                Margin="0 30 0 0"/>
+                Margin="0 30 0 0" Click="Button_Click"/>
 
     </Grid>
 </Page>

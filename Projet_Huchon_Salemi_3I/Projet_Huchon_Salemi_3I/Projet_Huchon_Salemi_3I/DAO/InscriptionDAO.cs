@@ -16,7 +16,10 @@ namespace Projet_Huchon_Salemi_3I.DAO
             {
                 using(SqlConnection connection = new SqlConnection(this.connectionString))
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Inscription([passager],[velo]) VALUES (@passager,@velo)",connection);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Inscription([id_personne],[num_balade],[id_velo],[passager],[velo]) VALUES (@idP, @num, @idV, @passager,@velo)",connection);
+                    cmd.Parameters.AddWithValue("idP", obj.Id_personne);
+                    cmd.Parameters.AddWithValue("num", obj.Num_balade);
+                    cmd.Parameters.AddWithValue("idV", obj.Id_velo);
                     cmd.Parameters.AddWithValue("passager", obj.Passager);
                     cmd.Parameters.AddWithValue("velo", obj.Velo);
                     connection.Open();

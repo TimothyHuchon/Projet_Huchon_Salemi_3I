@@ -107,5 +107,32 @@ namespace Projet_Huchon_Salemi_3I.DAO
             }
             return value;
         }
+
+        public List<decimal> idByCategorie(decimal num)
+        {
+            List<decimal> listId = new List<decimal>();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT id_calendrier FROM Calendrier where num_categorie = @num", connection);
+                    cmd.Parameters.AddWithValue("num", num);
+                    connection.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            decimal calendrier = reader.GetDecimal("id_calendrier");
+                            listId.Add(calendrier);
+                        }
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite");
+            }
+            return listId;
+        }
     }
 }

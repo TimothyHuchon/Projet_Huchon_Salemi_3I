@@ -202,5 +202,79 @@ namespace Projet_Huchon_Salemi_3I.DAO
             }
             return cptbanquaire;
         }
+
+        public void membreInCat(decimal id, decimal num)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("INSERT INTO MembreByCat([id_personne],[num_categorie]) VALUES(@id, @num); ", connection);
+                    cmd.Parameters.AddWithValue("id", id);
+                    cmd.Parameters.AddWithValue("num", num);
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+        }
+
+        public bool VerifierCatPresent(decimal id, decimal num)
+        {
+            bool value = false;
+            int categorie = 0;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM MembreByCat where id_personne = @id AND num_categorie = @num ", connection);
+                    cmd.Parameters.AddWithValue("id", id);
+                    cmd.Parameters.AddWithValue("num", num);
+                    connection.Open();
+                    categorie = (int)cmd.ExecuteScalar();
+
+                }
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+
+            if (categorie >= 1)
+            {
+                value = true;
+            }
+            return value;
+        }
+
+        public List<decimal> catByMembre(decimal id)
+        {
+            List<decimal> listnum = new List<decimal>();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT num_categorie FROM MembreByCat where id_personne = @id", connection);
+                    cmd.Parameters.AddWithValue("id", id);
+                    connection.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            decimal num = reader.GetDecimal("num_categorie");
+                            listnum.Add(num);
+                        }
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite");
+            }
+            return listnum;
+        }
     }
 }

@@ -76,23 +76,16 @@ namespace Projet_Huchon_Salemi_3I.metier
 
         }
 
-        public decimal verifierSolde(String nom, String prenom)
+        public decimal verifierSolde()
         {
             DAO.MembreDAO dao = new DAO.MembreDAO();
-            Personne personne = new Personne();
-
-            decimal id = personne.GetidUser(nom, prenom);
-
-            return dao.RecupSolde(id);
+            return dao.RecupSolde(this.ID_personne);
         }
 
-        public void soldeToZero(String nom, String prenom)
+        public void paiementUpdate(decimal cpt)
         {
             DAO.MembreDAO dao = new DAO.MembreDAO();
-            Personne personne = new Personne();
-            decimal id = personne.GetidUser(nom, prenom);
-            decimal cpt = dao.RecupCptBancaire(id);
-            Membre membre = new Membre(id, 0, cpt);
+            Membre membre = new Membre(this.ID_personne, 0, cpt);
             dao.Update(membre);
         }
     }

@@ -17,13 +17,12 @@ namespace Projet_Huchon_Salemi_3I.DAO
             {
                     using (SqlConnection connection = new SqlConnection(this.connectionString))
                     {
-                        SqlCommand cmd = new SqlCommand("INSERT INTO Velo([id_personne],[id_vehicule],[poids],[type],[longueur]) VALUES(@idP, @idV, @poids, @type, @long)", connection);
+                        SqlCommand cmd = new SqlCommand("INSERT INTO Velo([id_personne],[poids],[type],[longueur]) VALUES(@idP, @poids, @type, @long)", connection);
                         cmd.Parameters.AddWithValue("idP", obj.Proprietaire);
-                        cmd.Parameters.AddWithValue("idV", obj.Vehicule);
                         cmd.Parameters.AddWithValue("poids", obj.Poids);
                         cmd.Parameters.AddWithValue("type", obj.Type);
                         cmd.Parameters.AddWithValue("long", obj.Longueur);
-                    connection.Open();
+                        connection.Open();
                         cmd.ExecuteNonQuery();
                     }
                     value = true;
@@ -116,6 +115,42 @@ namespace Projet_Huchon_Salemi_3I.DAO
                 throw new Exception("Une erreur sql s'est produite!");
             }
             return value;
+        }
+
+        public List<Velo> FindVeloByMemebre(decimal id)
+        {
+           List<Velo> listvelo = new List<Velo>();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Velo where id_personne = @id", connection);
+                    cmd.Parameters.AddWithValue("id", id);
+                    connection.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Velo velo = new Velo
+                            {
+                                ID = reader.GetDecimal("id_velo"),
+                                Proprietaire = reader.GetDecimal("id_personne"),
+                                Poids = reader.GetDecimal("poids"),
+                                Type = reader.GetString("type"),
+                                Longueur = reader.GetDecimal("longueur"),
+                            };
+                            listvelo.Add(velo);
+                        }
+
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+
+            return listvelo;
         }
     }
 }

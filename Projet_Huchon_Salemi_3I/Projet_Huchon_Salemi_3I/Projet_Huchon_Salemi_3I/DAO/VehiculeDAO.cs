@@ -93,14 +93,14 @@ namespace Projet_Huchon_Salemi_3I.DAO
                     {
                         if (reader.Read())
                         {
-                        vehicule = new Vehicule
-                        {
-                                ID_vehicule = reader.GetDecimal("id_vehicule"),
-                                NbrePlacesMembre = reader.GetDecimal("nbrePlacesMembre"),
-                                NbrePlacesVelo = reader.GetDecimal("nbrePlacesVelo"),
-                                Conducteur = new Membre(),
-                                Passagers = new List<Membre>(),
-                                ListeVelo = new List<Velo>()  
+                            vehicule = new Vehicule
+                            {
+                                    ID_vehicule = reader.GetDecimal("id_vehicule"),
+                                    NbrePlacesMembre = reader.GetDecimal("nbrePlacesMembre"),
+                                    NbrePlacesVelo = reader.GetDecimal("nbrePlacesVelo"),
+                                    Conducteur = new Membre(),
+                                    Passagers = new List<Membre>(),
+                                    ListeVelo = new List<Velo>()  
 
                             };
                         }
@@ -223,19 +223,16 @@ namespace Projet_Huchon_Salemi_3I.DAO
             return vehicule;
         }
 
-        public void AjoutVelo(decimal id_membre, Velo velo, Vehicule vehicule)
+        public void AjoutVelo(decimal id_membre, decimal idvelo, Vehicule vehicule)
         {
             try
             {
                 using (SqlConnection connection = new SqlConnection(this.connectionString))
                 {
-                    SqlCommand cmd = new SqlCommand("UPDATE Velo SET [id_personne] = @idPers ,[id_vehicule] = @idV,[poids] = @poid,[type] = @type,[longueur] = @longeur WHERE id_velo = @idVelo", connection);
-                    cmd.Parameters.AddWithValue("idPers", id_membre);
+                    SqlCommand cmd = new SqlCommand("UPDATE Velo SET [id_vehicule] = @idV WHERE id_velo = @idVelo", connection);
+                  
                     cmd.Parameters.AddWithValue("idV", vehicule.ID_vehicule);
-                    cmd.Parameters.AddWithValue("poid", velo.Poids);
-                    cmd.Parameters.AddWithValue("type", velo.Type);
-                    cmd.Parameters.AddWithValue("longeur", velo.Longueur);
-                    cmd.Parameters.AddWithValue("idVelo", velo.ID);
+                    cmd.Parameters.AddWithValue("idVelo", idvelo);
                     connection.Open();
                     cmd.ExecuteNonQuery();
                 }
@@ -267,6 +264,75 @@ namespace Projet_Huchon_Salemi_3I.DAO
             }
 
             return totalMembre;
+        }
+
+        public decimal lastVehiculeSave()
+        {
+            decimal id = 0;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT MAX(id_vehicule) from vehicule", connection);
+                    connection.Open();
+                    id = (decimal)cmd.ExecuteScalar();
+                }
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+
+            return id;
+        }
+
+        public List<decimal> vehiculeByNumBalade(decimal num)
+        {
+            List<decimal> listNum = new List<decimal>();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT id_vehicule from transport where num_balade = @num", connection);
+                    cmd.Parameters.AddWithValue("num", num);
+                    connection.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            decimal v = reader.GetDecimal("id_vehicule");
+                            listNum.Add(v);
+                        }
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+
+            return listNum;
+        }
+
+        public decimal countPassagerByVehicule(decimal idV)
+        {
+            decimal id = 0;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT COUNT(*) from passager where id_vehicule =@id", connection);
+                    cmd.Parameters.AddWithValue("id", idV);
+                    connection.Open();
+                    id = (int)cmd.ExecuteScalar();
+                }
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+
+            return id;
         }
 
     }

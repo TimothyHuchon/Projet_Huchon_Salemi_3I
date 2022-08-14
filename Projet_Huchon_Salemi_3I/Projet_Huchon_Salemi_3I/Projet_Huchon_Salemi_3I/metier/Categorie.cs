@@ -17,6 +17,8 @@ namespace Projet_Huchon_Salemi_3I.metier
             this.num = num;
         }
 
+        public Categorie() { }
+
         public int Num { get => num; set => num = value; }
         internal Responsable Responsable1 { get => responsable; set => responsable = value; }
         internal List<Membre> ListeMembre { get => listeMembre; set => listeMembre = value; }

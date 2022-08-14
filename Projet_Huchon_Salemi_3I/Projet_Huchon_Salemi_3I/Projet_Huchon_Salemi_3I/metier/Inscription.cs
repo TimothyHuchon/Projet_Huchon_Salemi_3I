@@ -28,9 +28,11 @@ namespace Projet_Huchon_Salemi_3I.metier
             this.Velo = velo;
         }
 
-        public Inscription(decimal id_inscription, bool passager, bool velo)
+        public Inscription(decimal id_personne, decimal num_balade, bool passager, decimal id_velo, bool velo)
         {
-            this.Id_inscription = id_inscription;
+            this.Id_personne = id_personne;
+            this.Num_balade = num_balade;
+            this.Id_velo = id_velo;
             this.Passager = passager;
             this.Velo = velo;
         }

@@ -98,7 +98,7 @@ namespace Projet_Huchon_Salemi_3I.DAO
                         {
                             balade = new Balade
                             {
-                                Num = reader.GetInt32("num"),
+                                Num = reader.GetDecimal("num"),
                                 LieuDepart = reader.GetString("lieu_depart"),
                                 DateDepart = reader.GetDateTime("dateDepart"),
                                 Forfait = reader.GetDecimal("forfait"),
@@ -185,6 +185,43 @@ namespace Projet_Huchon_Salemi_3I.DAO
             }
 
             return value;
+        }
+
+        public Balade FindBaladeByCalendrier(decimal id_cal)
+        {
+            Balade balade = null;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Balade where id_calendrier = @id", connection);
+                    cmd.Parameters.AddWithValue("id", id_cal);
+                    connection.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            balade = new Balade
+                            {
+                                Num = reader.GetDecimal("num"),
+                                LieuDepart = reader.GetString("lieu_depart"),
+                                DateDepart = reader.GetDateTime("dateDepart"),
+                                Forfait = reader.GetDecimal("forfait"),
+                                ListeVehicule = new List<Vehicule>(),
+                                ListeInscription = new List<Inscription>(),
+                                CalendrierBalade = reader.GetDecimal("id_calendrier")
+                            };
+                        }
+
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+
+            return balade;
         }
     }
 }

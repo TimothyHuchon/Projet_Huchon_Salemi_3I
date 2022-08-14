@@ -1,4 +1,4 @@
-﻿<Page x:Class="Projet_Huchon_Salemi_3I.View.Home"
+﻿<Page x:Class="Projet_Huchon_Salemi_3I.View.HomeVIEW"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 

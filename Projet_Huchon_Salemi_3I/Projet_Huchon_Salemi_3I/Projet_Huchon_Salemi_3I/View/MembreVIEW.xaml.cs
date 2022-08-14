@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Projet_Huchon_Salemi_3I.DAO;
+using Projet_Huchon_Salemi_3I.metier;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -16,12 +18,16 @@ namespace Projet_Huchon_Salemi_3I.View
     /// <summary>
     /// Logique d'interaction pour Membre.xaml
     /// </summary>
-    public partial class Membre : Window
+    public partial class MembreVIEW : Window
     {
-        public Membre()
+        public Personne personne = new Personne();
+        public PersonneDAO dao = new PersonneDAO();
+
+        public MembreVIEW()
         {
             InitializeComponent();
-            Main.Content = new Home();
+            personne = dao.Find(1);
+            Main.Content = new HomeVIEW();
         }
 
         private void MaxBtn_Click(object sender, RoutedEventArgs e)
@@ -57,30 +63,36 @@ namespace Projet_Huchon_Salemi_3I.View
 
         private void MenuItem_home_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Home();
+            Main.Content = new HomeVIEW();
         }
         private void MenuItem_Dispo_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Disponibilité();
+            Main.Content = new DisponibilitéVIEW(personne);
         }
 
-        private void MenuItem_Velo_Click(object sender, RoutedEventArgs e)
+        public void MenuItem_Velo_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Velo();
+            Main.Content = new VeloVIEW(personne);
         }
 
         private void MenuItem_Reserv_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Reservation();
+            Main.Content = new ReservationVIEW(personne);
         }
 
         private void MenuItem_Pay_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Paiement();
+            Main.Content = new PaiementVIEW(personne);
         }
         private void MenuItem_Cat_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Categorie();
+            Main.Content = new CategorieVIEW(personne);
+        }
+        private void MenuItem_Deco_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            LogIn x = new LogIn();
+            x.ShowDialog();
         }
 
     }
