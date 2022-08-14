@@ -33,7 +33,7 @@ namespace Projet_Huchon_Salemi_3I.View
             Decimal Long = 0;
             if(string.IsNullOrWhiteSpace(textPoid.Text) || string.IsNullOrWhiteSpace(textType.Text) || string.IsNullOrWhiteSpace(textLong.Text))
             {
-                MessageBox.Show("Veuillez compléter tous les champs");
+                MessageBox.Show("Veuillez compléter tous les champs", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
             {
@@ -55,11 +55,11 @@ namespace Projet_Huchon_Salemi_3I.View
                         textType.Clear();
                         textPoid.Clear();
                         textLong.Clear();
-                        MessageBox.Show("Vélo ajouté avec succés !");
+                        MessageBox.Show("Vélo ajouté avec succés !", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
                     }
                     else
                     {
-                        MessageBox.Show("Veuillez entrez des valeurs correctes");
+                        MessageBox.Show("Veuillez entrez des valeurs correctes", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
                     }
                 }
             }

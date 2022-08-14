@@ -83,7 +83,7 @@ namespace Projet_Huchon_Salemi_3I.View
                     PersonneDAO personneDAO = new PersonneDAO();
                     personne = personneDAO.whoIsInscrit(userName, motDePasse);
                     this.Hide();
-                    Membre membre = new Membre(personne);
+                    MembreVIEW membre = new MembreVIEW(personne);
                     membre.ShowDialog();
                 }
                 else

@@ -24,7 +24,7 @@
         </Grid.ColumnDefinitions>
 
         <Image Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0 3 0 0" Source="/Images/home.png" Height="25" Width="25"/>
-        <TextBlock Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30 0 0 0"  FontSize="20"  FontWeight="Bold" Text="Accueil!"/>
+        <TextBlock Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30 0 0 0"  FontSize="20"  FontWeight="Bold" Text="Accueil"/>
 
 
         <MaterialDesign:Card Grid.Row="2" Grid.Column="1" UniformCornerRadius="15" Margin="-500 -150 0 0" Height="180" Width="150">

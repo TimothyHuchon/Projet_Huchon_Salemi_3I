@@ -3,7 +3,8 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Projet_Huchon_Salemi_3I.View" xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:Projet_Huchon_Salemi_3I.View" 
+      xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Disponibilité">
@@ -32,15 +33,15 @@
 
         <ComboBox Grid.Row="1"  x:Name="txtBalade" Grid.ColumnSpan="2"
                   Margin="150 0 150 30"
-                  MaterialDesign:HintAssist.Hint="Entrez Balade" BorderThickness="2" Background="White"
+                  MaterialDesign:HintAssist.Hint="Entrez Balade" BorderThickness="2" 
                   BorderBrush="{DynamicResource MaterialDesignDivider}" 
                   Style="{StaticResource MaterialDesignComboBox}">
         </ComboBox>
         
-        <TextBox Grid.ColumnSpan="2" Grid.Row="2" x:Name="textVoiture" Background="White" Margin="150 0 150 30"
+        <TextBox Grid.ColumnSpan="2" Grid.Row="2" x:Name="textVoiture"  Margin="150 0 150 30"
                   MaterialDesign:HintAssist.Hint="Nombre de places dans le véhicule" BorderThickness="2"
                   BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
-        <TextBox Grid.ColumnSpan="2" Grid.Row="3" x:Name="textVelo" Background="White" Margin="150 0 150 0"
+        <TextBox Grid.ColumnSpan="2" Grid.Row="3" x:Name="textVelo"  Margin="150 0 150 0"
                   MaterialDesign:HintAssist.Hint="Nombre de places vélo" BorderThickness="2"
                   BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
 

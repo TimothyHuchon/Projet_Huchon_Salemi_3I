@@ -47,7 +47,7 @@ namespace Projet_Huchon_Salemi_3I.View
             Decimal nbrVelo = 0;
             if (string.IsNullOrWhiteSpace(txtBalade.Text) || string.IsNullOrWhiteSpace(textVoiture.Text) || string.IsNullOrWhiteSpace(textVelo.Text))
             {
-                MessageBox.Show("Veuillez compléter tous les champs");
+                MessageBox.Show("Veuillez compléter tous les champs","Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
             {
@@ -72,7 +72,7 @@ namespace Projet_Huchon_Salemi_3I.View
                 }
                 else
                 {
-                    MessageBox.Show("Veuillez entrez des valeurs correctes");
+                    MessageBox.Show("Veuillez entrez des valeurs correctes", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
 
@@ -80,6 +80,7 @@ namespace Projet_Huchon_Salemi_3I.View
 
         private void Button_clear_Click(object sender, RoutedEventArgs e)
         {
+            txtBalade.Items.Clear();
             textVelo.Clear();
             textVoiture.Clear();
         }

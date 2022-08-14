@@ -72,7 +72,7 @@ namespace Projet_Huchon_Salemi_3I.View
 
             if (cptOkDecimal < soldeOkDecimal)
             {
-                MessageBox.Show("Vous n'avez pas assez de fonds !");
+                MessageBox.Show("Vous n'avez pas assez de fonds !", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
             {

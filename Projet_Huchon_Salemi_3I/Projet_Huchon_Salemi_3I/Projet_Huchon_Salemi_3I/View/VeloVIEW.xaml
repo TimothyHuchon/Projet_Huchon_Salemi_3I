@@ -31,15 +31,15 @@
         <Image Source="/Images/velo.png" Stretch="None" VerticalAlignment="Top" Margin="0 3 -80 0"/>
         <TextBlock Grid.Row="0" Text="Ajout Vélo" Style="{StaticResource text}" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="0 0 0 50" FontWeight="SemiBold" FontSize="30"/>
 
-        <TextBox Grid.ColumnSpan="2" Grid.Row="1" x:Name="textType" Background="White" Margin="150 0 150 30"
+        <TextBox Grid.ColumnSpan="2" Grid.Row="1" x:Name="textType" Margin="150 0 150 30"
                   MaterialDesign:HintAssist.Hint="Type de vélo" BorderThickness="2"
                   BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
 
-        <TextBox Grid.ColumnSpan="2" Grid.Row="2" x:Name="textLong" Background="White" Margin="150 0 150 30"
+        <TextBox Grid.ColumnSpan="2" Grid.Row="2" x:Name="textLong" Margin="150 0 150 30"
                   MaterialDesign:HintAssist.Hint="Longeur du vélo" BorderThickness="2"
                   BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
 
-        <TextBox Grid.ColumnSpan="3" Grid.Row="3" x:Name="textPoid" Background="White" Margin="150 0 150 30"
+        <TextBox Grid.ColumnSpan="3" Grid.Row="3" x:Name="textPoid" Margin="150 0 150 30"
                   MaterialDesign:HintAssist.Hint="Poids du vélo" BorderThickness="2"
                   BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
 

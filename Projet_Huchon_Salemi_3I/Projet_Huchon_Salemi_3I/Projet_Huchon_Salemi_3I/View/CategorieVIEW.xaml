@@ -30,7 +30,7 @@
         <TextBlock Grid.Row="0" Text="Catégorie" Style="{StaticResource text}" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="0 0 0 50" FontWeight="SemiBold" FontSize="30"/>
         <ComboBox Grid.Row="1"  
                   Grid.ColumnSpan="2" x:Name="txtCat" 
-                  MaterialDesign:HintAssist.Hint="Entrez Catégorie" BorderThickness="2" Background="White"
+                  MaterialDesign:HintAssist.Hint="Entrez Catégorie" BorderThickness="2"
                   BorderBrush="{DynamicResource MaterialDesignDivider}" 
                   Style="{StaticResource MaterialDesignComboBox}">
         </ComboBox>

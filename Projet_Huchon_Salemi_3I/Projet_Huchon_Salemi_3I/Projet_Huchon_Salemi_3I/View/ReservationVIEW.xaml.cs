@@ -233,7 +233,7 @@ namespace Projet_Huchon_Salemi_3I.View
             
             if (string.IsNullOrEmpty(txtCat.Text))
             {
-                MessageBox.Show("Veuillez selectionnez une balade !");
+                MessageBox.Show("Veuillez selectionnez une balade !", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
             {

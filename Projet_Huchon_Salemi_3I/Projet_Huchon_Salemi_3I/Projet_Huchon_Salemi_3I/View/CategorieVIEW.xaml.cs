@@ -70,7 +70,7 @@ namespace Projet_Huchon_Salemi_3I.View
             {
                 dao.membreInCat(user.ID_personne, num);
                 txtCat.Items.Clear();
-                MessageBox.Show("Catégorie ajouté avec succés !");
+                MessageBox.Show("Catégorie ajouté avec succés !", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             
         }
