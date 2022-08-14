@@ -23,9 +23,6 @@
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
 
-        <Button Grid.Row="2" Grid.Column="1" x:Name="testBtn" Style="{StaticResource MaterialDesignFlatMidBgButton}" MaterialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" 
-                        Width="120" MaterialDesign:ButtonAssist.CornerRadius="10" FontSize="18" Content="Modifier" HorizontalAlignment="Left"  Visibility="Visible" Margin="282,288,0,69" Click="testBtn_Click"/>
-
 
 
         <Image Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0 3 0 0" Source="/Images/home.png" Height="25" Width="25"/>

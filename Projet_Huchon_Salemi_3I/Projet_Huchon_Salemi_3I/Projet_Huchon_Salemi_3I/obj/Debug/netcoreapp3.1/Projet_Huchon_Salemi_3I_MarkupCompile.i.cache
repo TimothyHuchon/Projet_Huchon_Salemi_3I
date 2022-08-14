@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 D:\Masset_wpfPA\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\App.xaml
-11226283305
+11-1078532261
 
-391626154358
+401369243974
 195-1659841425
-MainWindow.xaml;Templates.xaml;View\Categorie.xaml;View\Disponibilité.xaml;View\Home.xaml;View\LogIn.xaml;View\Membre.xaml;View\Paiement.xaml;View\Register.xaml;View\Reservation.xaml;View\Velo.xaml;
+MainWindow.xaml;Templates.xaml;View\CategorieVIEW.xaml;View\DisponibilitéVIEW.xaml;View\HomeVIEW.xaml;View\LogIn.xaml;View\MembreVIEW.xaml;View\PaiementVIEW.xaml;View\Register.xaml;View\ReservationVIEW.xaml;View\VeloVIEW.xaml;
 
 True
 

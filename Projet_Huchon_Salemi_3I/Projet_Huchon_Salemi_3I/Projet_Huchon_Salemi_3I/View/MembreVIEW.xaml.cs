@@ -137,5 +137,11 @@ namespace Projet_Huchon_Salemi_3I.View
             Main.Content = new CategorieVIEW(user);
         }
 
+        private void signOut_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            LogIn signOut = new LogIn();
+            signOut.ShowDialog();
+        }
     }
 }
