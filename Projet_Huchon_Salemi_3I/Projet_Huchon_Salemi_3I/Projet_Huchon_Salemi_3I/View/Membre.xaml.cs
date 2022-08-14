@@ -23,11 +23,18 @@ namespace Projet_Huchon_Salemi_3I.View
     {
         private Personne personne;
         private string value;
+        private Button btnModif1;
+       
+
 
         public Membre(Personne personne)
         {
             InitializeComponent();
             Main.Content = new Home(personne);
+
+            btnModif1 = modifBtn;
+            btnModif1.Visibility = Visibility.Visible;
+            
             value = personne.checkProfile(personne.ID_personne);
 
             switch (value)
@@ -106,32 +113,37 @@ namespace Projet_Huchon_Salemi_3I.View
 
         private void MenuItem_home_Click(object sender, RoutedEventArgs e)
         {
-
+            btnModif1.Visibility = Visibility.Visible;
             Main.Content = new Home(personne);
         }
         private void MenuItem_Dispo_Click(object sender, RoutedEventArgs e)
         {
+            btnModif1.Visibility = Visibility.Hidden;
             Main.Content = new Disponibilité();
         }
 
         private void MenuItem_Velo_Click(object sender, RoutedEventArgs e)
         {
+            btnModif1.Visibility = Visibility.Hidden;
             Main.Content = new Velo();
         }
 
         private void MenuItem_Reserv_Click(object sender, RoutedEventArgs e)
         {
+            btnModif1.Visibility = Visibility.Hidden;
             Main.Content = new Reservation();
         }
 
         private void MenuItem_Pay_Click(object sender, RoutedEventArgs e)
         {
+            btnModif1.Visibility = Visibility.Hidden;
             Main.Content = new Paiement();
+            
         }
         private void MenuItem_Cat_Click(object sender, RoutedEventArgs e)
         {
+            btnModif1.Visibility = Visibility.Hidden;
             Main.Content = new Categorie();
         }
-
     }
 }

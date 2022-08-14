@@ -23,6 +23,11 @@
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
 
+        <Button Grid.Row="2" Grid.Column="1" x:Name="testBtn" Style="{StaticResource MaterialDesignFlatMidBgButton}" MaterialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" 
+                        Width="120" MaterialDesign:ButtonAssist.CornerRadius="10" FontSize="18" Content="Modifier" HorizontalAlignment="Left"  Visibility="Visible" Margin="282,288,0,69" Click="testBtn_Click"/>
+
+
+
         <Image Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0 3 0 0" Source="/Images/home.png" Height="25" Width="25"/>
         <TextBlock Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30 0 0 0"  FontSize="20"  FontWeight="Bold" Text="Accueil!"/>
 
@@ -63,7 +68,7 @@
                     <TextBlock  FontSize="12" FontWeight="SemiBold" Text="Tél: " Margin="0 0 0 0"/>
                     <TextBlock x:Name="profilTel" FontSize="12" FontWeight="SemiBold" Text="Tél " Margin="0 0 0 0"/>
                 </StackPanel>
-            </StackPanel> 
+            </StackPanel>
         </MaterialDesign:Card>
 
         <MaterialDesign:Card Grid.Row="2" Grid.Column="1" UniformCornerRadius="15" Margin="-150 -150 0 0" Height="180" Width="150">
@@ -98,7 +103,7 @@
                     <TextBlock  FontSize="12" FontWeight="SemiBold" Text="MDP: " Margin="0 0 0 0"/>
                     <TextBlock x:Name="identifiantPassword" FontSize="12" FontWeight="SemiBold" Text="Password"/>
                 </StackPanel>
-             
+
             </StackPanel>
         </MaterialDesign:Card>
 
@@ -166,8 +171,8 @@
                 </StackPanel>
             </StackPanel>
         </MaterialDesign:Card>
- -->       
-        
-        
+ -->
+
+
     </Grid>
 </Page>
