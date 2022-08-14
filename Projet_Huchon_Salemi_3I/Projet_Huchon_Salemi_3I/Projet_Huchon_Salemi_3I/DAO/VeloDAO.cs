@@ -17,13 +17,12 @@ namespace Projet_Huchon_Salemi_3I.DAO
             {
                     using (SqlConnection connection = new SqlConnection(this.connectionString))
                     {
-                        SqlCommand cmd = new SqlCommand("INSERT INTO Velo([id_personne],[id_vehicule],[poids],[type],[longueur]) VALUES(@idP, @idV, @poids, @type, @long)", connection);
+                        SqlCommand cmd = new SqlCommand("INSERT INTO Velo([id_personne],[poids],[type],[longueur]) VALUES(@idP, @poids, @type, @long)", connection);
                         cmd.Parameters.AddWithValue("idP", obj.Proprietaire);
-                        cmd.Parameters.AddWithValue("idV", obj.Vehicule);
                         cmd.Parameters.AddWithValue("poids", obj.Poids);
                         cmd.Parameters.AddWithValue("type", obj.Type);
                         cmd.Parameters.AddWithValue("long", obj.Longueur);
-                    connection.Open();
+                        connection.Open();
                         cmd.ExecuteNonQuery();
                     }
                     value = true;
@@ -118,9 +117,9 @@ namespace Projet_Huchon_Salemi_3I.DAO
             return value;
         }
 
-        public Velo FindByMembre(decimal id)
+        public List<Velo> FindVeloByMemebre(decimal id)
         {
-            Velo velo = null;
+           List<Velo> listvelo = new List<Velo>();
             try
             {
                 using (SqlConnection connection = new SqlConnection(this.connectionString))
@@ -130,17 +129,19 @@ namespace Projet_Huchon_Salemi_3I.DAO
                     connection.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        if (reader.Read())
+                        while (reader.Read())
                         {
-                            velo = new Velo
+                            Velo velo = new Velo
                             {
+                                ID = reader.GetDecimal("id_velo"),
                                 Proprietaire = reader.GetDecimal("id_personne"),
-                                Vehicule = reader.GetDecimal("id_vehicule"),
                                 Poids = reader.GetDecimal("poids"),
                                 Type = reader.GetString("type"),
                                 Longueur = reader.GetDecimal("longueur"),
                             };
+                            listvelo.Add(velo);
                         }
+
                     }
                 }
             }
@@ -148,7 +149,8 @@ namespace Projet_Huchon_Salemi_3I.DAO
             {
                 throw new Exception("Une erreur sql s'est produite!");
             }
-            return velo;
+
+            return listvelo;
         }
     }
 }

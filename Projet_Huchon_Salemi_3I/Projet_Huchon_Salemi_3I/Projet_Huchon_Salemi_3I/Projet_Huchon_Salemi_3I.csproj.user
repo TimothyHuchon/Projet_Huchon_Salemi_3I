@@ -7,31 +7,31 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="View\Categorie.xaml.cs">
+    <Compile Update="View\CategorieVIEW.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\Disponibilité.xaml.cs">
+    <Compile Update="View\DisponibilitéVIEW.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\Home.xaml.cs">
+    <Compile Update="View\HomeVIEW.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\LogIn.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\Membre.xaml.cs">
+    <Compile Update="View\MembreVIEW.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\Paiement.xaml.cs">
+    <Compile Update="View\PaiementVIEW.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\Register.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\Reservation.xaml.cs">
+    <Compile Update="View\ReservationVIEW.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\Velo.xaml.cs">
+    <Compile Update="View\VeloVIEW.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -42,31 +42,31 @@
     <Page Update="Templates.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Categorie.xaml">
+    <Page Update="View\CategorieVIEW.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Disponibilité.xaml">
+    <Page Update="View\DisponibilitéVIEW.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Home.xaml">
+    <Page Update="View\HomeVIEW.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\LogIn.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Membre.xaml">
+    <Page Update="View\MembreVIEW.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Paiement.xaml">
+    <Page Update="View\PaiementVIEW.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Register.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Reservation.xaml">
+    <Page Update="View\ReservationVIEW.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Velo.xaml">
+    <Page Update="View\VeloVIEW.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

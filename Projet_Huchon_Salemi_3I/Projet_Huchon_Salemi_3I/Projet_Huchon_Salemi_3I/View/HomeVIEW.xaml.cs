@@ -18,9 +18,9 @@ namespace Projet_Huchon_Salemi_3I.View
     /// <summary>
     /// Logique d'interaction pour Home.xaml
     /// </summary>
-    public partial class Home : Page
+    public partial class HomeVIEW : Page
     {
-        public Home(Personne personne)
+        public HomeVIEW(Personne personne)
         {
             InitializeComponent();
             profilNom.Text = personne.Nom;

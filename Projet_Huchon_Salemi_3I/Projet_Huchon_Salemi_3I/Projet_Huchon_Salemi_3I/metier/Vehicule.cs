@@ -17,13 +17,13 @@ namespace Projet_Huchon_Salemi_3I.metier
 
         public Vehicule(){}
 
-        public Vehicule(int nbrePlacesMembre, int nbrePlacesVelo)
+        public Vehicule(Decimal nbrePlacesMembre, Decimal nbrePlacesVelo)
         {
             this.NbrePlacesMembre = nbrePlacesMembre;
             this.NbrePlacesVelo = nbrePlacesVelo;
         }
 
-        public Vehicule(Decimal id_personne_conducteur, int nbrePlacesMembre, int nbrePlacesVelo)
+        public Vehicule(Decimal id_personne_conducteur, Decimal nbrePlacesMembre, Decimal nbrePlacesVelo)
         {
             this.ID_personne_conducteur = id_personne_conducteur;
             this.NbrePlacesMembre = nbrePlacesMembre;
@@ -67,14 +67,14 @@ namespace Projet_Huchon_Salemi_3I.metier
 
         }
 
-        public void ajouterVelo(Velo velo, String nom, String prenom)
+        public void ajouterVelo(decimal idvelo, String nom, String prenom)
         {
             Personne personne = new Personne();
             decimal id = personne.GetidUser(nom, prenom);
             
 
             VehiculeDAO dao = new VehiculeDAO();
-            dao.AjoutVelo(id,velo, this);
+            dao.AjoutVelo(id,idvelo, this);
         }
     }
 }

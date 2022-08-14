@@ -9,7 +9,7 @@ namespace Projet_Huchon_Salemi_3I.metier
     class Balade
     {
         public decimal id_vehicule;
-        private int num;
+        private decimal num;
         private string lieuDepart;
         private DateTime dateDepart;
         private decimal forfait;
@@ -21,7 +21,7 @@ namespace Projet_Huchon_Salemi_3I.metier
         {
         }
 
-        public Balade(int num, string lieuDepart, DateTime dateDepart, decimal forfait)
+        public Balade(decimal num, string lieuDepart, DateTime dateDepart, decimal forfait)
         {
             this.num = num;
             this.lieuDepart = lieuDepart;
@@ -29,7 +29,7 @@ namespace Projet_Huchon_Salemi_3I.metier
             this.forfait = forfait;
         }
 
-        public Balade(int num, string lieuDepart, DateTime dateDepart, decimal forfait, List<Vehicule> listeVehicule, List<Inscription> listeInscription, decimal id_calendrier)
+        public Balade(decimal num, string lieuDepart, DateTime dateDepart, decimal forfait, List<Vehicule> listeVehicule, List<Inscription> listeInscription, decimal id_calendrier)
         {
             this.num = num;
             this.lieuDepart = lieuDepart;
@@ -40,7 +40,7 @@ namespace Projet_Huchon_Salemi_3I.metier
             this.CalendrierBalade = id_calendrier;
         }
 
-        public Balade(int num)
+        public Balade(decimal num)
         {
             this.num = num;
         }
@@ -53,7 +53,7 @@ namespace Projet_Huchon_Salemi_3I.metier
         }
 
 
-        public int Num { get => num; set => num = value; }
+        public decimal Num { get => num; set => num = value; }
         public string LieuDepart { get => lieuDepart; set => lieuDepart = value; }
         public DateTime DateDepart { get => dateDepart; set => dateDepart = value; }
         public decimal Forfait { get => forfait; set => forfait = value; }

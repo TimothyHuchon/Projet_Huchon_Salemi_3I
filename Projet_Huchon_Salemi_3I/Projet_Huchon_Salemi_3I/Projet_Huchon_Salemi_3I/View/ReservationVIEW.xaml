@@ -1,4 +1,4 @@
-﻿<Page x:Class="Projet_Huchon_Salemi_3I.View.Reservation"
+﻿<Page x:Class="Projet_Huchon_Salemi_3I.View.ReservationVIEW"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -35,45 +35,39 @@
                   Grid.ColumnSpan="2"
                   x:Name="txtCat" 
                   Margin="150 0 150 20"
-                  MaterialDesign:HintAssist.Hint="Entrez Catégorie" BorderThickness="2" Background="White"
+                  MaterialDesign:HintAssist.Hint="Entrez Catégorie" BorderThickness="2" 
                   BorderBrush="{DynamicResource MaterialDesignDivider}" 
                   Style="{StaticResource MaterialDesignComboBox}">
-            <ComboBoxItem>Categ 1</ComboBoxItem>
-            <ComboBoxItem>Categ 2</ComboBoxItem>
         </ComboBox>
         
         <!-- Box balade -->
         <ComboBox Grid.Row="2"  x:Name="txtBalade" 
                   Margin="40 0 40 20"
-                  MaterialDesign:HintAssist.Hint="Entrez Balade" BorderThickness="2" Background="White"
+                  MaterialDesign:HintAssist.Hint="Entrez Balade" BorderThickness="2" 
                   BorderBrush="{DynamicResource MaterialDesignDivider}" 
-                  Style="{StaticResource MaterialDesignComboBox}">
-            <ComboBoxItem>balade 1</ComboBoxItem>
-            <ComboBoxItem>balade 2</ComboBoxItem>
+                  Style="{StaticResource MaterialDesignComboBox}" DropDownOpened="txtBalade_DropDownOpened" DropDownClosed="txtBalade_DropDownClosed">
         </ComboBox>
         
         <!-- Box velo -->
         <ComboBox Grid.Row="2" Grid.Column="1" x:Name="txtvelo" 
                   Margin="40 0 40 20"
-                  MaterialDesign:HintAssist.Hint="Entrez Vélo" BorderThickness="2" Background="White"
+                  MaterialDesign:HintAssist.Hint="Entrez Vélo" BorderThickness="2" 
                   BorderBrush="{DynamicResource MaterialDesignDivider}" 
-                  Style="{StaticResource MaterialDesignComboBox}">
-            <ComboBoxItem>Velo 1</ComboBoxItem>
-            <ComboBoxItem>Velo 2</ComboBoxItem>
+                  Style="{StaticResource MaterialDesignComboBox}" DropDownOpened="txtvelo_DropDownOpened">
         </ComboBox>
         
         <!-- Box passager/velo -->
         <ComboBox Grid.Row="3"  x:Name="txtPass" 
                   Margin="40 0 40 20"
-                  MaterialDesign:HintAssist.Hint="Entrez Rôle" BorderThickness="2" Background="White"
+                  MaterialDesign:HintAssist.Hint="Entrez Rôle" BorderThickness="2" 
                   BorderBrush="{DynamicResource MaterialDesignDivider}" 
                   Style="{StaticResource MaterialDesignComboBox}">
-            <ComboBoxItem>Passager</ComboBoxItem>
-            <ComboBoxItem>Conducteur</ComboBoxItem>
+            <ComboBoxItem Content="Passager"></ComboBoxItem>
+            <ComboBoxItem Content="Conducteur"></ComboBoxItem>
         </ComboBox>
 
-        <TextBlock Grid.Row="4"  Text="Forfait = 25€" Style="{StaticResource text}" HorizontalAlignment="Center"/>
-        <TextBlock Grid.Row="4"  Grid.Column="1" Text="Place restantes = 5" Style="{StaticResource text}" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="4"  x:Name="forfait" Style="{StaticResource text}" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="4"  x:Name="placeRest" Grid.Column="1"  Style="{StaticResource text}" HorizontalAlignment="Center"/>
 
         <Button Grid.Row="5" Grid.Column="0" Content="Save" Padding="5000" 
                 Style="{StaticResource buttonMainGreen}" 

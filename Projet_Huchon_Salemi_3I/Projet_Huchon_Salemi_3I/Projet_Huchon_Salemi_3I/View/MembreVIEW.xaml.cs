@@ -19,30 +19,27 @@ namespace Projet_Huchon_Salemi_3I.View
     /// <summary>
     /// Logique d'interaction pour Membre.xaml
     /// </summary>
-    public partial class Membre : Window
+    public partial class MembreVIEW : Window
     {
-        private Personne personne;
+        public Personne user = new Personne();
         private string value;
-        private Button btnModif1;
-       
 
-
-        public Membre(Personne personne)
+        public MembreVIEW(Personne personne)
         {
             InitializeComponent();
-            Main.Content = new Home(personne);
-
-            btnModif1 = modifBtn;
-            btnModif1.Visibility = Visibility.Visible;
-            
+            user = personne;
+            Main.Content = new HomeVIEW(personne);
             value = personne.checkProfile(personne.ID_personne);
 
             switch (value)
             {
-                case "Responsable": break;
-                case "Tresorier": break;
-                case "Membre": break;
-                default: break;
+                case "Responsable": responsable.Visibility = Visibility.Visible;
+                                    break;
+                case "Tresorier": tresorier.Visibility = Visibility.Visible;
+                                 break;
+                default:
+                   
+                    break;
                 
             }
         }
@@ -113,37 +110,32 @@ namespace Projet_Huchon_Salemi_3I.View
 
         private void MenuItem_home_Click(object sender, RoutedEventArgs e)
         {
-            btnModif1.Visibility = Visibility.Visible;
-            Main.Content = new Home(personne);
+
+            Main.Content = new HomeVIEW(user);
         }
         private void MenuItem_Dispo_Click(object sender, RoutedEventArgs e)
         {
-            btnModif1.Visibility = Visibility.Hidden;
-            Main.Content = new Disponibilité();
+            Main.Content = new DisponibilitéVIEW(user);
         }
 
         private void MenuItem_Velo_Click(object sender, RoutedEventArgs e)
         {
-            btnModif1.Visibility = Visibility.Hidden;
-            Main.Content = new Velo();
+            Main.Content = new VeloVIEW(user);
         }
 
         private void MenuItem_Reserv_Click(object sender, RoutedEventArgs e)
         {
-            btnModif1.Visibility = Visibility.Hidden;
-            Main.Content = new Reservation();
+            Main.Content = new ReservationVIEW(user);
         }
 
         private void MenuItem_Pay_Click(object sender, RoutedEventArgs e)
         {
-            btnModif1.Visibility = Visibility.Hidden;
-            Main.Content = new Paiement();
-            
+            Main.Content = new PaiementVIEW(user);
         }
         private void MenuItem_Cat_Click(object sender, RoutedEventArgs e)
         {
-            btnModif1.Visibility = Visibility.Hidden;
-            Main.Content = new Categorie();
+            Main.Content = new CategorieVIEW(user);
         }
+
     }
 }
