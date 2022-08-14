@@ -104,7 +104,7 @@ namespace Projet_Huchon_Salemi_3I.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Projet_Huchon_Salemi_3I;component/view/reservationview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Projet_Huchon_Salemi_3I;V1.0.0.0;component/view/reservationview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\ReservationVIEW.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
