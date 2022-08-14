@@ -1,6 +1,4 @@
-﻿using Projet_Huchon_Salemi_3I.DAO;
-using Projet_Huchon_Salemi_3I.metier;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -12,23 +10,68 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Projet_Huchon_Salemi_3I.metier;
+using Projet_Huchon_Salemi_3I.DAO;
+using MaterialDesignThemes.Wpf;
 
 namespace Projet_Huchon_Salemi_3I.View
 {
     /// <summary>
     /// Logique d'interaction pour Membre.xaml
     /// </summary>
-    public partial class MembreVIEW : Window
+    public partial class Membre : Window
     {
-        public Personne personne = new Personne();
-        public PersonneDAO dao = new PersonneDAO();
+        private Personne personne;
+        private string value;
 
-        public MembreVIEW()
+        public Membre(Personne personne)
         {
             InitializeComponent();
-            personne = dao.Find(1);
-            Main.Content = new HomeVIEW();
+            Main.Content = new Home(personne);
+            value = personne.checkProfile(personne.ID_personne);
+
+            switch (value)
+            {
+                case "Responsable": break;
+                case "Tresorier": break;
+                case "Membre": break;
+                default: break;
+                
+            }
         }
+
+        /* TEST */
+
+
+        public bool IsDarkTheme { get; set; }
+        private readonly PaletteHelper paletteHelper = new PaletteHelper();
+
+        private void themeToggle_Click(object sender, RoutedEventArgs e)
+        {
+            ITheme theme = paletteHelper.GetTheme();
+            if (IsDarkTheme = theme.GetBaseTheme() == BaseTheme.Dark)
+            {
+                IsDarkTheme = false;
+                theme.SetBaseTheme(Theme.Light);
+            }
+            else
+            {
+                IsDarkTheme = true;
+                theme.SetBaseTheme(Theme.Dark);
+            }
+            paletteHelper.SetTheme(theme);
+        }
+
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+
+        /* TEST */
+
+
+
 
         private void MaxBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -63,36 +106,31 @@ namespace Projet_Huchon_Salemi_3I.View
 
         private void MenuItem_home_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new HomeVIEW();
+
+            Main.Content = new Home(personne);
         }
         private void MenuItem_Dispo_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new DisponibilitéVIEW(personne);
+            Main.Content = new Disponibilité();
         }
 
-        public void MenuItem_Velo_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_Velo_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new VeloVIEW(personne);
+            Main.Content = new Velo();
         }
 
         private void MenuItem_Reserv_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new ReservationVIEW(personne);
+            Main.Content = new Reservation();
         }
 
         private void MenuItem_Pay_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new PaiementVIEW(personne);
+            Main.Content = new Paiement();
         }
         private void MenuItem_Cat_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new CategorieVIEW(personne);
-        }
-        private void MenuItem_Deco_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-            LogIn x = new LogIn();
-            x.ShowDialog();
+            Main.Content = new Categorie();
         }
 
     }

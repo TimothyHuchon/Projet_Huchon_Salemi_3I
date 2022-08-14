@@ -1,26 +1,26 @@
-﻿<Window x:Class="Projet_Huchon_Salemi_3I.View.MembreVIEW"
+﻿<Window x:Class="Projet_Huchon_Salemi_3I.View.Membre"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Projet_Huchon_Salemi_3I.View"
         mc:Ignorable="d"
-        Title="Membre" Height="700" 
-        Width="1000"
+        Title="Membre" Height="700" Width="1000" Icon="/Images/biker.png"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         WindowStyle="None"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen">
     <!--// Background Grid //-->
 
-    <Grid Background="#23262B">
+    <Grid Background="{DynamicResource MaterialDesignPaper}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="829*"/>
             <ColumnDefinition Width="0"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="BALADE  A  VELO"
-                           Foreground="White"
+        <TextBlock Text="BikeBaladeApp"
                            FontFamily="Fonts/#Orbitron Medium"
-                           FontSize="40"
+                           FontSize="30"
                            VerticalAlignment="Top"
                            HorizontalAlignment="Center"
                            Margin="0,10,-200,0" Grid.ColumnSpan="2"/>
@@ -47,7 +47,7 @@
                     HorizontalAlignment="Left">
 
             <!--// Channel Name //-->
-            <Grid Height="50"
+            <Grid Height="100"
                   VerticalAlignment="Top"
                   Margin="0,30,0,0">
 
@@ -58,12 +58,7 @@
                         VerticalAlignment="Center"
                         HorizontalAlignment="Right"/>
 
-                <TextBlock Text="Name"
-                           Foreground="#FFFFFF"
-                           FontFamily="Fonts/#Orbitron Medium"
-                           FontSize="15"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Center"/>
+                <Image Source="/Images/logo.png" Height="100" Width="100"/>
             </Grid>
 
             <!--// Main Menu //-->
@@ -170,7 +165,7 @@
 
                 <!--// Main Menu - Exit //-->
                 <MenuItem Header="Deconnexion"
-                          Template="{StaticResource Menu_Template}" Click="MenuItem_Deco_Click"
+                          Template="{StaticResource Menu_Template}" 
                           Margin="0,0,0,20"
                           Name="exit">
 
@@ -187,17 +182,31 @@
 
         <Frame x:Name="Main" Margin="230,65,0,30" ContentRendered="Main_ContentRendered" />
 
-        <!--// Maximize / minimize App-->
+        <!--// Maximize / minimize App
 
         <Button x:Name="MaxBtn"
              Style="{StaticResource MaxBtnStyle}" 
-                Click="MaxBtn_Click"/>
+                Click="MaxBtn_Click"/>-->
 
-        <!--// close App-->
+        <!--// close App
 
         <Button x:Name="CloseBtn"
          Style="{StaticResource CloseBtnStyle}"
-            Click="CloseBtn_Click"/>
+            Click="CloseBtn_Click"/>-->
+
+        <MaterialDesign:PopupBox   HorizontalAlignment="Right" Margin="0,9,10,666" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Height="25" MaterialDesign:ShadowAssist.ShadowDepth="Depth4" >
+            <StackPanel>
+                <StackPanel Margin="16 10 0 6" Orientation="Horizontal" HorizontalAlignment="Center">
+
+                    <TextBlock VerticalAlignment="Center" Text="Dark Mode"/>
+                    <ToggleButton Cursor="Hand" ToolTip="Enable Dark Mode" Margin="12 0 8 0" x:Name="themeToggle" IsChecked="{Binding IsDarkTheme}" Click="themeToggle_Click"/>
+                </StackPanel>
+                <Button ToolTip="Having Trouble Register?" Margin="0 8 0 0" Content="Help Me"/>
+
+                <Button x:Name="btn_exit" ToolTip="Close Application" Content="Exit Application" Click="btn_exit_Click"/>
+
+            </StackPanel>
+        </MaterialDesign:PopupBox>
 
 
     </Grid>

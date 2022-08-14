@@ -3,42 +3,171 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Projet_Huchon_Salemi_3I.View"
+      xmlns:local="clr-namespace:Projet_Huchon_Salemi_3I.View" 
+      xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Home">
 
-    <Grid  
-          HorizontalAlignment="Center"
-          VerticalAlignment="Center"
-          Margin="0 10 0 0">
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"/>
-            <ColumnDefinition Width="300"/>
-
-        </Grid.ColumnDefinitions>
-
+    <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <Image Source="/Images/home.png" Stretch="None" VerticalAlignment="Top" Margin="0 6 -125 0"/>
-        <TextBlock Grid.Row="0" Text="Welcome" Style="{StaticResource text}" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="0 0 0 50" FontWeight="SemiBold" FontSize="30"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="1" 
-                   Text="Message" 
-                   Style="{StaticResource text}" 
-                   Grid.ColumnSpan="2" 
-                   HorizontalAlignment="Center"
-                   FontSize="18"/>
-        <TextBlock Grid.ColumnSpan="2" 
-                 Grid.Row="2"  
-                 Name="texthome"
-                 Padding="50"
-                   Background="White"/>
+        <Image Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0 3 0 0" Source="/Images/home.png" Height="25" Width="25"/>
+        <TextBlock Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30 0 0 0"  FontSize="20"  FontWeight="Bold" Text="Accueil!"/>
+
+
+        <MaterialDesign:Card Grid.Row="2" Grid.Column="1" UniformCornerRadius="15" Margin="-500 -150 0 0" Height="180" Width="150">
+            <MaterialDesign:Card.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0">
+                    <GradientStop Color="#6290F6" Offset="0" />
+                    <GradientStop Color="#559DD4" Offset="0.25" />
+                    <GradientStop Color="#6AD4EA" Offset="0.50" />
+                    <GradientStop Color="#55D4C6" Offset="0.75" />
+                    <GradientStop Color="#62F6BD" Offset="1" />
+                </LinearGradientBrush>
+            </MaterialDesign:Card.BorderBrush>
+
+            <MaterialDesign:Card.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+                    <GradientStop Color="#6290F6" Offset="0" />
+                    <GradientStop Color="#559DD4" Offset="0.25" />
+                    <GradientStop Color="#6AD4EA" Offset="0.50" />
+                    <GradientStop Color="#55D4C6" Offset="0.75" />
+                    <GradientStop Color="#62F6BD" Offset="1" />
+                </LinearGradientBrush>
+            </MaterialDesign:Card.Background>
+
+            <StackPanel HorizontalAlignment="Center">
+                <Image HorizontalAlignment="Center" Margin="0 15 0 0"  Source="/Images/user.png" Height="20"  />
+                <TextBlock HorizontalAlignment="Center"  FontSize="15" FontWeight="Bold" Text="Profil:" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 15 0 0">
+                    <TextBlock  FontSize="12" FontWeight="SemiBold" Text="Nom: "/>
+                    <TextBlock x:Name="profilNom" FontSize="12" FontWeight="SemiBold" Text="Nom "/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 0">
+                    <TextBlock  FontSize="12" FontWeight="SemiBold" Text="Prénom: " Margin="0 0 0 0"/>
+                    <TextBlock x:Name="profilPrenom" FontSize="12" FontWeight="SemiBold" Text="Prénom"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 0">
+                    <TextBlock  FontSize="12" FontWeight="SemiBold" Text="Tél: " Margin="0 0 0 0"/>
+                    <TextBlock x:Name="profilTel" FontSize="12" FontWeight="SemiBold" Text="Tél " Margin="0 0 0 0"/>
+                </StackPanel>
+            </StackPanel> 
+        </MaterialDesign:Card>
+
+        <MaterialDesign:Card Grid.Row="2" Grid.Column="1" UniformCornerRadius="15" Margin="-150 -150 0 0" Height="180" Width="150">
+            <MaterialDesign:Card.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0">
+                    <GradientStop Color="#F69447" Offset="0" />
+                    <GradientStop Color="#D46A3D" Offset="0.25" />
+                    <GradientStop Color="#EB674F" Offset="0.50" />
+                    <GradientStop Color="#D43E3D" Offset="0.75" />
+                    <GradientStop Color="#F6479C" Offset="1" />
+                </LinearGradientBrush>
+            </MaterialDesign:Card.BorderBrush>
+
+            <MaterialDesign:Card.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+                    <GradientStop Color="#F69447" Offset="0" />
+                    <GradientStop Color="#D46A3D" Offset="0.25" />
+                    <GradientStop Color="#EB674F" Offset="0.50" />
+                    <GradientStop Color="#D43E3D" Offset="0.75" />
+                    <GradientStop Color="#F6479C" Offset="1" />
+                </LinearGradientBrush>
+            </MaterialDesign:Card.Background>
+
+            <StackPanel HorizontalAlignment="Center">
+                <Image HorizontalAlignment="Center" Margin="0 15 0 0"  Source="/Images/lock.png" Height="20"  />
+                <TextBlock HorizontalAlignment="Center"  FontSize="15" FontWeight="Bold" Text="Identifiant:" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 15 0 0">
+                    <TextBlock  FontSize="12" FontWeight="SemiBold" Text="ID: "/>
+                    <TextBlock x:Name="identifiantID" FontSize="12" FontWeight="SemiBold" Text="Identifiant"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 0">
+                    <TextBlock  FontSize="12" FontWeight="SemiBold" Text="MDP: " Margin="0 0 0 0"/>
+                    <TextBlock x:Name="identifiantPassword" FontSize="12" FontWeight="SemiBold" Text="Password"/>
+                </StackPanel>
+             
+            </StackPanel>
+        </MaterialDesign:Card>
+
+
+        <MaterialDesign:Card Grid.Row="2" Grid.Column="1" UniformCornerRadius="15" Margin="200 -150 0 0" Height="180" Width="150">
+            <MaterialDesign:Card.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0">
+                    <GradientStop Color="#F69447" Offset="0" />
+                    <GradientStop Color="#D46A3D" Offset="0.25" />
+                    <GradientStop Color="#EB674F" Offset="0.50" />
+                    <GradientStop Color="#D43E3D" Offset="0.75" />
+                    <GradientStop Color="#F6479C" Offset="1" />
+                </LinearGradientBrush>
+            </MaterialDesign:Card.BorderBrush>
+
+            <MaterialDesign:Card.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+                    <GradientStop Color="#51F69F" Offset="0" />
+                    <GradientStop Color="#46D461" Offset="0.25" />
+                    <GradientStop Color="#6BEB59" Offset="0.50" />
+                    <GradientStop Color="#88D446" Offset="0.75" />
+                    <GradientStop Color="#D7F651" Offset="1" />
+                </LinearGradientBrush>
+            </MaterialDesign:Card.Background>
+
+            <StackPanel HorizontalAlignment="Center">
+                <Image HorizontalAlignment="Center" Margin="0 15 0 0"  Source="/Images/sport-car.png" Height="20"  />
+                <TextBlock HorizontalAlignment="Center"  FontSize="15" FontWeight="Bold" Text="Véhicule:" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 15 0 0">
+                    <TextBlock  FontSize="12" FontWeight="SemiBold" Text="NbrePassagers: "/>
+                    <TextBlock x:Name="vehiculeNbrePassagers" FontSize="12" FontWeight="SemiBold" Text="nbre"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 0">
+                    <TextBlock  FontSize="12" FontWeight="SemiBold" Text="NbreVélos: " Margin="0 0 0 0"/>
+                    <TextBlock x:Name="vehiculeNbreVelos" FontSize="12" FontWeight="SemiBold" Text="nbre"/>
+                </StackPanel>
+            </StackPanel>
+        </MaterialDesign:Card>
+
+        <!--
+            <MaterialDesign:Card.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+                    <GradientStop Color="#51F69F" Offset="0" />
+                    <GradientStop Color="#46D461" Offset="0.25" />
+                    <GradientStop Color="#6BEB59" Offset="0.50" />
+                    <GradientStop Color="#88D446" Offset="0.75" />
+                    <GradientStop Color="#D7F651" Offset="1" />
+                </LinearGradientBrush>
+            </MaterialDesign:Card.Background>
+
+            <StackPanel HorizontalAlignment="Center">
+                <Image HorizontalAlignment="Center" Margin="0 15 0 0"  Source="/Images/bicycle.png" Height="20"  />
+                <TextBlock HorizontalAlignment="Center"  FontSize="15" FontWeight="Bold" Text="Vélo:" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 15 0 0">
+                    <TextBlock  FontSize="12" FontWeight="SemiBold" Text="Poid: "/>
+                    <TextBlock x:Name="veloPoid" FontSize="12" FontWeight="SemiBold" Text="Poid"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 0">
+                    <TextBlock  FontSize="12" FontWeight="SemiBold" Text="Type: " Margin="0 0 0 0"/>
+                    <TextBlock x:Name="veloType" FontSize="12" FontWeight="SemiBold" Text="Type"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 0">
+                    <TextBlock  FontSize="12" FontWeight="SemiBold" Text="Longueur: " Margin="0 0 0 0"/>
+                    <TextBlock x:Name="veloLongueur" FontSize="12" FontWeight="SemiBold" Text="Longueur"/>
+                </StackPanel>
+            </StackPanel>
+        </MaterialDesign:Card>
+ -->       
+        
+        
     </Grid>
 </Page>

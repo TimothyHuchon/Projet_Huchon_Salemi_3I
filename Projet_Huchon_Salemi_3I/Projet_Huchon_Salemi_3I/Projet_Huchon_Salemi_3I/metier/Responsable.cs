@@ -23,11 +23,11 @@ namespace Projet_Huchon_Salemi_3I.metier
 
         public Responsable(decimal id_personne, decimal num_categorie) 
         {
-            this.ID_personne = id_personne;
+            this.Id_personne = id_personne;
             this.Num_categorie = num_categorie;
         }
         
-        public decimal ID_personne { get => id_personne; set => id_personne = value; }
+        public decimal Id_personne { get => id_personne; set => id_personne = value; }
         public decimal Num_categorie { get => num_categorie; set => num_categorie = value; }
        
         public override string ToString()

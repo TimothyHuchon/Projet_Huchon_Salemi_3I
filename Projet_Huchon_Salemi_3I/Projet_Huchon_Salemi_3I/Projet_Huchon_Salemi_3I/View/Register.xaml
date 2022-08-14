@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projet_Huchon_Salemi_3I.View" xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Register" Height="750" Width="850"
+        Title="Register" Height="750" Width="850" Icon="/Images/biker.png"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{x:Null}"
         AllowsTransparency="True"
@@ -51,39 +51,39 @@
 
                 <!-- LOGO TITRE PHRASE -->
 
-                <Image Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Margin="0 0 0 0" Source="/Images/logo.png" Height="206" Width="235"/>
+                <Image Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Margin="0 0 0 0" Source="/Images/logo.png" Height="206" Width="235"/>
 
-                <TextBlock Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Margin="0 175 0 0"  FontSize="28" FontWeight="Bold" Text="Welcome!"/>
+                <TextBlock Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Margin="0 175 0 0"  FontSize="28" FontWeight="Bold" Text="Bienvenue!"/>
 
-                <TextBlock Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Margin="0 215 0 10" FontSize="17" FontWeight="SemiBold"  Text="Register your informations"/>
+                <TextBlock Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Margin="0 215 0 10" FontSize="17" FontWeight="SemiBold"  Text="Enregistrer vos informations:"/>
 
 
                 <!-- Formulaire -->
 
-                <TextBox Grid.Row="3" Grid.Column="1" Margin="70,30,0,15" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="txtNom" Width="250" FontSize="18" MaterialDesign:HintAssist.Hint="Enter First Name" BorderThickness="2"
-                         BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Margin="70,30,0,15" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="txtNom" Width="250" FontSize="18" MaterialDesign:HintAssist.Hint="Nom" BorderThickness="2"
+                         BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}" MaxLength="50" />
 
 
-                <TextBox Grid.Row="3" Grid.Column="1" Margin="0,30,70,15" VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="txtPrenom" FontSize="18" MaterialDesign:HintAssist.Hint="Enter Last Name" BorderThickness="2"
-                         BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"  Width="250"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Margin="0,30,70,15" VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="txtPrenom" FontSize="18" MaterialDesign:HintAssist.Hint="Prénom" BorderThickness="2"
+                         BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"  Width="250" MaxLength="50"/>
 
 
-                <TextBox Grid.Row="4" Grid.Column="1" Margin="70,15,0,15" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="txtTel" Width="250" FontSize="18" MaterialDesign:HintAssist.Hint="Enter Phone" BorderThickness="2"
-                         BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Margin="70,15,0,15" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="txtTel" Width="250" FontSize="18" MaterialDesign:HintAssist.Hint="Téléphone" BorderThickness="2"
+                         BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}" MaxLength="50"/>
 
 
-                <TextBox Grid.Row="5" Grid.Column="1" Margin="70,15,0,15" HorizontalAlignment="Left" VerticalAlignment="Center"  x:Name="txtID" Width="250" FontSize="18" MaterialDesign:HintAssist.Hint="Enter ID" BorderThickness="2"
-                         BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Margin="70,15,0,15" HorizontalAlignment="Left" VerticalAlignment="Center"  x:Name="txtID" Width="250" FontSize="18" MaterialDesign:HintAssist.Hint="Identifiant" BorderThickness="2"
+                         BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}" MaxLength="50"/>
 
-                <PasswordBox Grid.Row="5" Grid.Column="1" Margin="0,15,70,15" VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="txtPassWord" Width="250" FontSize="15" MaterialDesign:HintAssist.Hint="Enter Password" BorderThickness="2"
-                              BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedPasswordBox}"/>
+                <PasswordBox Grid.Row="5" Grid.Column="1" Margin="0,15,70,15" VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="txtPassWord" Width="250" FontSize="15" MaterialDesign:HintAssist.Hint="Mot de passe" BorderThickness="2"
+                              BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedPasswordBox}" MaxLength="50"/>
 
 
                 <Button Grid.Row="6" Grid.Column="1" Margin="220,15,0,15" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="signupBtn" Style="{StaticResource MaterialDesignFlatMidBgButton}" MaterialDesign:ShadowAssist.ShadowDepth="Depth0"
-                        Height="53" Width="150" MaterialDesign:ButtonAssist.CornerRadius="10" FontSize="15" Content="Create Account"/>
+                        Height="53" Width="150" MaterialDesign:ButtonAssist.CornerRadius="10" FontSize="15" Content="Créer un compte" Click="signupBtn_Click"/>
 
                 <Button Grid.Row="6" Grid.Column="1" Margin="0,15,220,15" VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="LoginBtn" Style="{StaticResource MaterialDesignFlatButton}" MaterialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" 
-                        Width="150" MaterialDesign:ButtonAssist.CornerRadius="10" FontSize="18" Content="Log In" Click="LoginBtn_Click"/>
+                        Width="150" MaterialDesign:ButtonAssist.CornerRadius="10" FontSize="18" Content="Se connecter" Click="LoginBtn_Click"/>
 
             </Grid>
 

@@ -10,6 +10,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MaterialDesignThemes.Wpf;
+using Projet_Huchon_Salemi_3I.DAO;
+using Projet_Huchon_Salemi_3I.metier;
+
 
 
 namespace Projet_Huchon_Salemi_3I.View
@@ -19,6 +22,8 @@ namespace Projet_Huchon_Salemi_3I.View
     /// </summary>
     public partial class LogIn : Window
     {
+        private string userName="";
+        private string motDePasse="";
         public LogIn()
         {
             InitializeComponent();
@@ -63,9 +68,37 @@ namespace Projet_Huchon_Salemi_3I.View
 
         private void loginBtn_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            MembreVIEW x = new MembreVIEW();
-            x.ShowDialog();
+            userName = txtUsername.Text;
+            motDePasse = txtPassWord.Password;
+            bool verification = false;
+
+
+            if (userName != "" || motDePasse != "")
+            {
+                Personne personne = new Personne();
+                verification = personne.SignIn(userName, motDePasse);
+
+                if (verification == true)
+                {
+                    PersonneDAO personneDAO = new PersonneDAO();
+                    personne = personneDAO.whoIsInscrit(userName, motDePasse);
+                    this.Hide();
+                    Membre membre = new Membre(personne);
+                    membre.ShowDialog();
+                }
+                else
+                {
+                    txtUsername.Clear();
+                    txtPassWord.Clear();
+                    MessageBox.Show("Vérifier vos identifiants ou créer un compte!", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+            else
+            {
+                txtUsername.Clear();
+                txtPassWord.Clear();
+                MessageBox.Show("Veuillez remplir tous les champs!", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
     }
 }

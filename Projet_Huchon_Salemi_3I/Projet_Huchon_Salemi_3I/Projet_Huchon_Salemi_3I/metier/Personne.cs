@@ -43,7 +43,7 @@ namespace Projet_Huchon_Salemi_3I.metier
             return HashCode.Combine(Id);
         }
 
-        public decimal GetidUser(String nom, String prenom)
+        public decimal GetidUser(string nom, string prenom)
         {
             PersonneDAO dao = new PersonneDAO();
             decimal id = 0;
@@ -53,16 +53,26 @@ namespace Projet_Huchon_Salemi_3I.metier
             return id;
         }
 
-        public String checkProfile()
+        public bool SignIn(string id, string motDePasse)
+        {
+            bool isMembre = false;
+            int countPersonne = 0;
+            PersonneDAO personneDAO = new PersonneDAO();
+            countPersonne = personneDAO.IsInscrit(id, motDePasse);
+            if (countPersonne == 1) isMembre = true;
+            return isMembre;
+        }
+
+        public string checkProfile(decimal id)
         {
             string value = null;
 
             ResponsableDAO Rdao = new ResponsableDAO();
-            Responsable responsable = Rdao.Find(this.ID_personne);
+            Responsable responsable = Rdao.Find(id);
             if (responsable == null)
             {
                 TresorierDAO Tdao = new TresorierDAO();
-                Tresorier tresorier = Tdao.Find(this.ID_personne);
+                Tresorier tresorier = Tdao.Find(id);
                 if (tresorier == null)
                 {
                     value = "Membre";

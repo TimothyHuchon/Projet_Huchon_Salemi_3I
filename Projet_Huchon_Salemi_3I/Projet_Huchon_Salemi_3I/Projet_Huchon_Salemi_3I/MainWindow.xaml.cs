@@ -145,7 +145,7 @@ namespace Projet_Huchon_Salemi_3I
             membreDAO3.Find(1);*/
             /* ------------- Personne ------------- */
 
-           /* Personne personne = new Personne(1);
+           /* Personne personne = new Personne("LeRouge","Roger","1234567899","LeRouge","azerty");
             PersonneDAO personneDao = new PersonneDAO();
             personneDao.Create(personne);
 
@@ -239,4 +239,6 @@ namespace Projet_Huchon_Salemi_3I
 
         }
     }
+
+
 }
