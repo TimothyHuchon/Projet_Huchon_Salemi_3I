@@ -54,17 +54,19 @@ namespace Projet_Huchon_Salemi_3I.View
 
                 Decimal num_balade = 0;
                 Decimal.TryParse((txtBalade.SelectedItem as ComboboxItem).Value.ToString(), out num_balade);
+                System.Diagnostics.Debug.WriteLine(num_balade);
                 Decimal num_velo = 0;
                 Decimal.TryParse((txtvelo.SelectedItem as ComboboxItem).Value.ToString(), out num_velo);
-
                 Balade balade = baladeDAO.Find(num_balade);
-                if (balade.obtenirPlacesMembreRestantes((int)num_balade) > 0)
+
+                if (txtPass.Text == "Passager")
                 {
-                    if (txtPass.Text == "Passager")
+                    Inscription inscri = new Inscription(user.ID_personne, num_balade, true, num_velo, true);
+                    inscriptionDAO.Create(inscri);
+                    List<decimal> Listvehicule = vehiculeDAO.vehiculeByNumBalade(num_balade);
+                   
+                    if (!Listvehicule.Count.Equals(0))
                     {
-                        Inscription inscri = new Inscription(user.ID_personne, num_balade, true, num_velo, true);
-                        inscriptionDAO.Create(inscri);
-                        List<decimal> Listvehicule = vehiculeDAO.vehiculeByNumBalade(num_balade);
                         decimal id_v_ok = 0;
                         foreach(decimal i in Listvehicule)
                         {
@@ -78,31 +80,31 @@ namespace Projet_Huchon_Salemi_3I.View
                         Vehicule vehicule_ok = vehiculeDAO.Find(id_v_ok);
                         vehicule_ok.AjouterPassager(user.Nom, user.Prenom);
 
-                   
-                        txtBalade.Items.Clear();
-                        txtCat.Items.Clear();
-                        txtPass.Items.Clear();
-                        txtvelo.Items.Clear();
+                        MessageBox.Show("Réservation ajouté avec succés !", "Félicitations", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                     else
                     {
-                        Inscription inscri = new Inscription(user.ID_personne, num_balade, false, num_velo, true);
-                        inscriptionDAO.Create(inscri);
-
-                        Vehicule vehicule_ok = vehiculeDAO.VehiculeByMembre(user.ID_personne);
-                        vehicule_ok.ajouterVelo(num_velo, user.Nom, user.Prenom);
-
-                        txtBalade.Items.Clear();
-                        txtCat.Items.Clear();
-                        txtPass.Items.Clear();
-                        txtvelo.Items.Clear();
+                        MessageBox.Show("Pas assez de places pour cette balade", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
                     }
 
-                    MessageBox.Show("Réservation ajouté avec succés !", "Félicitations", MessageBoxButton.OK, MessageBoxImage.Information);
+                    txtBalade.Items.Clear();
+                    txtCat.Items.Clear();
+                    txtPass.Items.Clear();
+                    txtvelo.Items.Clear();
                 }
                 else
                 {
-                    MessageBox.Show("Plus de places disponnibles !", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    Inscription inscri = new Inscription(user.ID_personne, num_balade, false, num_velo, true);
+                    inscriptionDAO.Create(inscri);
+
+                    Vehicule vehicule_ok = vehiculeDAO.VehiculeByMembre(user.ID_personne);
+                    vehicule_ok.ajouterVelo(num_velo, user.Nom, user.Prenom);
+
+                    MessageBox.Show("Réservation ajouté avec succés !", "Félicitations", MessageBoxButton.OK, MessageBoxImage.Information);
+                    txtBalade.Items.Clear();
+                    txtCat.Items.Clear();
+                    txtPass.Items.Clear();
+                    txtvelo.Items.Clear();
                 }
             }
         }
@@ -114,7 +116,6 @@ namespace Projet_Huchon_Salemi_3I.View
             txtPass.Items.Clear();
             txtvelo.Items.Clear();
             forfait.Text = null;
-            placeRest.Text = null;
 
         }
 
@@ -159,10 +160,13 @@ namespace Projet_Huchon_Salemi_3I.View
             List<decimal> listIdCalendrier = daoCalendrier.idByCategorie(numCat);
             foreach (decimal j in listIdCalendrier)
             {
-                balade = daoBalade.FindBaladeByCalendrier(j);
-                if (balade != null)
+                List<Balade> listBaladeOk = daoBalade.FindBaladeByCalendrier(j);
+                foreach (Balade b in listBaladeOk)
                 {
-                    listBalade.Add(balade);
+                    if (b != null)
+                    {
+                        listBalade.Add(b);
+                    }
                 }
             }
           
@@ -268,10 +272,9 @@ namespace Projet_Huchon_Salemi_3I.View
                 BaladeDAO baladeDAO = new BaladeDAO();
                 Balade balade = new Balade();
                 balade = baladeDAO.Find(num_balade);
-                int plcRest = balade.obtenirPlacesMembreRestantes((int)num_balade);
+                
 
                 forfait.Text = "Forfait = " + balade.Forfait + "€";
-                placeRest.Text = "Place restantes = " + plcRest;
             }
             
         }

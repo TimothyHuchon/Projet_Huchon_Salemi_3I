@@ -13,9 +13,9 @@ namespace Projet_Huchon_Salemi_3I.metier
         private string lieuDepart;
         private DateTime dateDepart;
         private decimal forfait;
-        private List<Vehicule> listeVehicule = new List<Vehicule>();
-        private List<Inscription> listeInscription = new List<Inscription>();
-        private decimal id_calendrier;
+        public List<Vehicule> listeVehicule = new List<Vehicule>();
+        public List<Inscription> listeInscription = new List<Inscription>();
+        public decimal id_calendrier;
 
         public Balade()
         {

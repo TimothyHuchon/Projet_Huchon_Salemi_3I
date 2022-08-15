@@ -180,9 +180,9 @@ namespace Projet_Huchon_Salemi_3I.DAO
             return value;
         }
 
-        public Balade FindBaladeByCalendrier(decimal id_cal)
+        public List<Balade> FindBaladeByCalendrier(decimal id_cal)
         {
-            Balade balade = null;
+            List<Balade> listBalade = new List<Balade>();
             try
             {
                 using (SqlConnection connection = new SqlConnection(this.connectionString))
@@ -192,9 +192,9 @@ namespace Projet_Huchon_Salemi_3I.DAO
                     connection.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        if (reader.Read())
+                        while (reader.Read())
                         {
-                            balade = new Balade
+                            Balade balade = new Balade
                             {
                                 Num = reader.GetDecimal("num"),
                                 LieuDepart = reader.GetString("lieu_depart"),
@@ -204,6 +204,7 @@ namespace Projet_Huchon_Salemi_3I.DAO
                                 ListeInscription = new List<Inscription>(),
                                 CalendrierBalade = reader.GetDecimal("id_calendrier")
                             };
+                            listBalade.Add(balade);
                         }
 
                     }
@@ -214,7 +215,7 @@ namespace Projet_Huchon_Salemi_3I.DAO
                 throw new Exception("Une erreur sql s'est produite!");
             }
 
-            return balade;
+            return listBalade;
         }
 
         public List<decimal> idCatByPers(decimal id)
@@ -260,6 +261,7 @@ namespace Projet_Huchon_Salemi_3I.DAO
                             Balade balade = new Balade
                             {
                                 Num = reader.GetDecimal("num"),
+                                CalendrierBalade = reader.GetDecimal("id_calendrier"),
                                 LieuDepart = reader.GetString("lieu_depart"),
                                 DateDepart = reader.GetDateTime("dateDepart"),
                                 Forfait = reader.GetDecimal("forfait")

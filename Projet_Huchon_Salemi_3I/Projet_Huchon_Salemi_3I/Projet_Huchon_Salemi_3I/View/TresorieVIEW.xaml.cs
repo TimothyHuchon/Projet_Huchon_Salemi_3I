@@ -50,7 +50,8 @@ namespace Projet_Huchon_Salemi_3I.View
 
             for (int i = 0; i < listBalade.Count; i++)
             {
-                String recupString = listCat[i] + " A " + listBalade[i].LieuDepart + " => " + listBalade[i].DateDepart;
+                decimal numCat = ((listBalade[i].CalendrierBalade) - 2);
+                String recupString = listCat[(int)numCat] + " A " + listBalade[i].LieuDepart + " => " + listBalade[i].DateDepart;
                 listRecupString.Add(recupString);
                 listNum.Add(listBalade[i].Num);
             }

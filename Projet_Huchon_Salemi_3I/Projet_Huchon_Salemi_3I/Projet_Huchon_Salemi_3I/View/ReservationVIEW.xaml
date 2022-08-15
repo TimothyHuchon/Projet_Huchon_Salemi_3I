@@ -67,7 +67,7 @@
         </ComboBox>
 
         <TextBlock Grid.Row="4"  x:Name="forfait" Style="{StaticResource text}" HorizontalAlignment="Center"/>
-        <TextBlock Grid.Row="4"  x:Name="placeRest" Grid.Column="1"  Style="{StaticResource text}" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="4" Grid.Column="1" x:Name="placeRest" Style="{StaticResource text}" HorizontalAlignment="Center"/>
 
         <Button Grid.Row="5" Grid.Column="0" Content="Save" Padding="5000" 
                 Style="{StaticResource buttonMainGreen}" 

@@ -49,7 +49,8 @@ namespace Projet_Huchon_Salemi_3I.View
 
             for (int i = 0; i < listBalade.Count; i++)
             {
-                String recupString = listCat[i] + " A " + listBalade[i].LieuDepart + " => " + listBalade[i].DateDepart;
+                decimal numCat = ((listBalade[i].CalendrierBalade)-2);
+                String recupString = listCat[(int)numCat] + " A " + listBalade[i].LieuDepart + " => " + listBalade[i].DateDepart;
                 listRecupString.Add(recupString);
                 listNum.Add(listBalade[i].Num);
             }
@@ -72,24 +73,31 @@ namespace Projet_Huchon_Salemi_3I.View
 
         private void txtBalade_DropDownClosed(object sender, EventArgs e)
         {
-            Decimal numBalade = 0;
-            Decimal.TryParse((txtBalade.SelectedItem as ComboboxItem).Value.ToString(), out numBalade);
-            BaladeDAO daoBalade = new BaladeDAO();
-            Balade Balade = new Balade();
-            Balade = daoBalade.Find(numBalade);
-            int MembreTotal = Balade.obtenirPlacesMembreTotal((int)numBalade);
-            int MembreRest = Balade.obtenirPlacesMembreRestantes((int)numBalade);
-            int VeloTotal = Balade.obtenirPlacesVeloTotal((int)numBalade);
-            int VeloRest = Balade.obtenirPlacesVeloRestantes((int)numBalade);
-            int MembreBesoin = Balade.obtenirPlacesMembreBesoin((int)numBalade);
-            int VeloBesoin = Balade.obtenirPlaceVeloBesoin((int)numBalade);
+            if(string.IsNullOrWhiteSpace(txtBalade.Text))
+            {
+                MessageBox.Show("Veuillez séléctionner une balade ", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else
+            {
+                Decimal numBalade = 0;
+                Decimal.TryParse((txtBalade.SelectedItem as ComboboxItem).Value.ToString(), out numBalade);
+                BaladeDAO daoBalade = new BaladeDAO();
+                Balade Balade = new Balade();
+                Balade = daoBalade.Find(numBalade);
+                int MembreTotal = Balade.obtenirPlacesMembreTotal((int)numBalade);
+                int MembreRest = Balade.obtenirPlacesMembreRestantes((int)numBalade);
+                int VeloTotal = Balade.obtenirPlacesVeloTotal((int)numBalade);
+                int VeloRest = Balade.obtenirPlacesVeloRestantes((int)numBalade);
+                int MembreBesoin = Balade.obtenirPlacesMembreBesoin((int)numBalade);
+                int VeloBesoin = Balade.obtenirPlaceVeloBesoin((int)numBalade);
 
-            membreTotal.Text = "Total des places = " + MembreTotal;
-            membreRest.Text = "Places restants = " + MembreRest;
-            veloTotal.Text = "Total des vélo = " + VeloTotal;
-            veloRest.Text = "Velo restants = " + VeloRest;
-            membreBesoin.Text = "Besoin Membre = " + MembreBesoin;
-            veloBesoin.Text = "Besoin Vélo = " + VeloBesoin;
+                membreTotal.Text = "Total des places = " + MembreTotal;
+                membreRest.Text = "Places restants = " + MembreRest;
+                veloTotal.Text = "Total des vélo = " + VeloTotal;
+                veloRest.Text = "Velo restants = " + VeloRest;
+                membreBesoin.Text = "Besoin Membre = " + MembreBesoin;
+                veloBesoin.Text = "Besoin Vélo = " + VeloBesoin;
+            }
         }
     }
 }

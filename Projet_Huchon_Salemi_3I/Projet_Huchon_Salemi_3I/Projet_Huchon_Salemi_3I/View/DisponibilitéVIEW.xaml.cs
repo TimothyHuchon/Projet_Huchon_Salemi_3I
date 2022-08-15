@@ -25,7 +25,13 @@ namespace Projet_Huchon_Salemi_3I.View
         {
             InitializeComponent();
             user = personne;
-            listeOfItem();
+            MembreDAO membreDAO = new MembreDAO();
+            List<decimal> listBalade = membreDAO.catByMembre(user.ID_personne);
+            foreach(decimal d in listBalade)
+            {
+                listeOfItem((int)d);
+            }
+            
         }
 
         public class ComboboxItem
@@ -95,7 +101,7 @@ namespace Projet_Huchon_Salemi_3I.View
             textVoiture.Clear();
         }
 
-        private List<Balade> baladeByCat()
+        private List<Balade> baladeByCat(int numCat)
         {
             MembreDAO daoMembre = new MembreDAO();
             CalendrierDAO daoCalendrier = new CalendrierDAO();
@@ -104,32 +110,33 @@ namespace Projet_Huchon_Salemi_3I.View
             List<Balade> listBalade = new List<Balade>();
             List<decimal> listNumCat = daoMembre.catByMembre(user.ID_personne);
 
-            foreach (decimal i in listNumCat)
+            List<decimal> listIdCalendrier = daoCalendrier.idByCategorie(numCat);
+            foreach (decimal j in listIdCalendrier)
             {
-                List<decimal> listIdCalendrier = daoCalendrier.idByCategorie(i);
-                foreach (decimal j in listIdCalendrier)
+                List<Balade> listBaladeOk = daoBalade.FindBaladeByCalendrier(j);
+                foreach (Balade b in listBaladeOk)
                 {
-                    balade = daoBalade.FindBaladeByCalendrier(j);
-                    if (balade != null)
+                    if (b != null)
                     {
-                        listBalade.Add(balade);
+                        listBalade.Add(b);
                     }
                 }
             }
+
             return listBalade;
         }
 
-        private void listeOfItem()
+        private void listeOfItem(int numCat)
         {
             MembreDAO daoMembre = new MembreDAO();
             List<string> listCat = new List<string> { "Trialiste", "Descente", "Randonneur", "Cyclo" };
-            List<Balade> nameBalade = baladeByCat();
+            List<Balade> nameBalade = baladeByCat(numCat);
             List<string> listRecupString = new List<string>();
             List<decimal> listNum = new List<decimal>();
 
             for (int i = 0; i < nameBalade.Count; i++)
             {
-                String recupString = listCat[i] + " A "+ nameBalade[i].LieuDepart + " => " + nameBalade[i].DateDepart;
+                String recupString = listCat[numCat - 1] + " A "+ nameBalade[i].LieuDepart + " => " + nameBalade[i].DateDepart;
                 listRecupString.Add(recupString);
                 listNum.Add(nameBalade[i].Num);
             }
@@ -149,5 +156,6 @@ namespace Projet_Huchon_Salemi_3I.View
                 txtBalade.Items.Add(i);
             }
         }
+
     }
 }
