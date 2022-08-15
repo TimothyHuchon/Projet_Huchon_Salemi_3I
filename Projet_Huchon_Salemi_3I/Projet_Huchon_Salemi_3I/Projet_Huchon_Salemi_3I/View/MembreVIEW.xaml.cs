@@ -38,15 +38,10 @@ namespace Projet_Huchon_Salemi_3I.View
                                     break;
                 case "Tresorier": tresorier.Visibility = Visibility.Visible;
                                  break;
-                default:
-                   
-                    break;
+                default: break;
                 
             }
         }
-
-        /* TEST */
-
 
         public bool IsDarkTheme { get; set; }
         private readonly PaletteHelper paletteHelper = new PaletteHelper();
@@ -70,27 +65,6 @@ namespace Projet_Huchon_Salemi_3I.View
         private void btn_exit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
-        }
-
-
-        /* TEST */
-
-
-
-
-        private void MaxBtn_Click(object sender, RoutedEventArgs e)
-        {
-            if (WindowState == WindowState.Normal)
-            {
-                WindowState = WindowState.Maximized;
-            }
-            else
-            {
-                if (WindowState == WindowState.Maximized)
-                {
-                    WindowState = WindowState.Normal;
-                }
-            }
         }
 
         private void CloseBtn_Click(object sender, RoutedEventArgs e)
@@ -176,6 +150,30 @@ namespace Projet_Huchon_Salemi_3I.View
             Personne userModif = new Personne();
             userModif = personneDAO.Find(user.ID_personne);
             Main.Content = new UpdateMembreView(userModif);
+        }
+
+        private void responsable_Click(object sender, RoutedEventArgs e)
+        {
+            modifBtn.Visibility = Visibility.Hidden;
+            PersonneDAO personneDAO = new PersonneDAO();
+            Personne userModif = new Personne();
+            userModif = personneDAO.Find(user.ID_personne);
+            Main.Content = new ResponsableVIEW(userModif);
+        }
+
+        private void info_Click(object sender, RoutedEventArgs e)
+        {
+            modifBtn.Visibility = Visibility.Hidden;
+            Main.Content = new RecapBaladeVIEW();
+        }
+
+        private void tresorier_Click(object sender, RoutedEventArgs e)
+        {
+            modifBtn.Visibility = Visibility.Hidden;
+            PersonneDAO personneDAO = new PersonneDAO();
+            Personne userModif = new Personne();
+            userModif = personneDAO.Find(user.ID_personne);
+            Main.Content = new TresorieVIEW(userModif);
         }
     }
 }

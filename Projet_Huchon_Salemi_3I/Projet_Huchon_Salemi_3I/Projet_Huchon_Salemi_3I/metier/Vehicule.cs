@@ -17,14 +17,16 @@ namespace Projet_Huchon_Salemi_3I.metier
 
         public Vehicule(){}
 
-        public Vehicule(Decimal nbrePlacesMembre, Decimal nbrePlacesVelo)
+        public Vehicule(Decimal id_personne_conducteur, Decimal nbrePlacesMembre, Decimal nbrePlacesVelo)
         {
+            this.ID_personne_conducteur = id_personne_conducteur;
             this.NbrePlacesMembre = nbrePlacesMembre;
             this.NbrePlacesVelo = nbrePlacesVelo;
         }
 
-        public Vehicule(Decimal id_personne_conducteur, Decimal nbrePlacesMembre, Decimal nbrePlacesVelo)
+        public Vehicule(Decimal id_vehicule, Decimal id_personne_conducteur, Decimal nbrePlacesMembre, Decimal nbrePlacesVelo)
         {
+            this.ID_vehicule = id_vehicule;
             this.ID_personne_conducteur = id_personne_conducteur;
             this.NbrePlacesMembre = nbrePlacesMembre;
             this.NbrePlacesVelo = nbrePlacesVelo;

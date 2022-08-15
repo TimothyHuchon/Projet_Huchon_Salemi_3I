@@ -42,7 +42,8 @@ namespace Projet_Huchon_Salemi_3I.DAO
             {
                 using (SqlConnection connection = new SqlConnection(this.connectionString))
                 {
-                    SqlCommand cmd = new SqlCommand("UPDATE Balade SET [lieu_depart]=@lieu_depart, [dateDepart]=@dateDepart, [forfait]=@forfait WHERE num=@num", connection);
+                    SqlCommand cmd = new SqlCommand("UPDATE Balade SET [id_calendrier]=@idCal,[lieu_depart]=@lieu_depart, [dateDepart]=@dateDepart, [forfait]=@forfait WHERE num=@num", connection);
+                    cmd.Parameters.AddWithValue("idCal", obj.CalendrierBalade);
                     cmd.Parameters.AddWithValue("lieu_depart", obj.LieuDepart);
                     cmd.Parameters.AddWithValue("dateDepart", obj.DateDepart);
                     cmd.Parameters.AddWithValue("forfait", obj.Forfait);
@@ -104,7 +105,7 @@ namespace Projet_Huchon_Salemi_3I.DAO
                                 Forfait = reader.GetDecimal("forfait"),
                                 ListeVehicule = new List<Vehicule>(),
                                 ListeInscription = new List<Inscription>(),
-                                CalendrierBalade = reader.GetDecimal("id_calendrier") 
+                               
                             };
                         }
                     }
@@ -125,14 +126,6 @@ namespace Projet_Huchon_Salemi_3I.DAO
                     {
                         balade.listeInscription.Add(inscri);
                     }
-
-                    /*  *********************************************************  
-                        *********************************************************  
-                        ********************************************************* 
-                            à compléter après la création basique des dao
-                        ********************************************************* 
-                        ********************************************************* 
-                        ********************************************************* */
                 }
             }
             catch (SqlException)
@@ -222,6 +215,85 @@ namespace Projet_Huchon_Salemi_3I.DAO
             }
 
             return balade;
+        }
+
+        public List<decimal> idCatByPers(decimal id)
+        {
+            List<decimal> listnum= new List<decimal>();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT num_categorie FROM MembreByCat where id_personne = @id", connection);
+                    cmd.Parameters.AddWithValue("id", id);
+                    connection.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            decimal num = reader.GetDecimal("num_categorie");
+                            listnum.Add(num);
+                        }
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite");
+            }
+            return listnum;
+        }
+
+        public List<Balade> allBalade()
+        {
+            List<Balade> listBalade = new List<Balade>();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Balade", connection);
+                    connection.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Balade balade = new Balade
+                            {
+                                Num = reader.GetDecimal("num"),
+                                LieuDepart = reader.GetString("lieu_depart"),
+                                DateDepart = reader.GetDateTime("dateDepart"),
+                                Forfait = reader.GetDecimal("forfait")
+                            };
+                            listBalade.Add(balade);
+                        }
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite");
+            }
+            return listBalade;
+        }
+
+        public decimal lastBaladeSave()
+        {
+            decimal id = 0;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT MAX(num) from balade", connection);
+                    connection.Open();
+                    id = (decimal)cmd.ExecuteScalar();
+                }
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+
+            return id;
         }
     }
 }

@@ -58,17 +58,27 @@ namespace Projet_Huchon_Salemi_3I.View
                 Decimal.TryParse(textVelo.Text, out nbrVelo);
                 if (nbrVoiture != 0 && nbrVelo != 0)
                 {
-                    Vehicule v = new Vehicule(user.ID_personne, nbrVoiture, nbrVelo);
                     VehiculeDAO dao = new VehiculeDAO();
-                    dao.Create(v);
-                    decimal idVehicule = dao.lastVehiculeSave();
+                    Vehicule vTest = dao.VehiculeByMembre(user.ID_personne);
+                    if(vTest == null)
+                    {
+                        Vehicule v = new Vehicule(user.ID_personne, nbrVoiture, nbrVelo);
+                        dao.Create(v);
 
-                    daoBalade.CreateTransport(idVehicule, numBalade);
 
-                    txtBalade.Items.Clear();
-                    textVoiture.Clear();
-                    textVelo.Clear();
-                    MessageBox.Show("Véhicule ajouté avec succés !");
+                        decimal idVehicule = dao.lastVehiculeSave();
+
+                        daoBalade.CreateTransport(idVehicule, numBalade);
+
+                        txtBalade.Items.Clear();
+                        textVoiture.Clear();
+                        textVelo.Clear();
+                        MessageBox.Show("Véhicule ajouté avec succés !", "Félicitations", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Vous possedez déjà un vehicule", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
                 }
                 else
                 {

@@ -76,7 +76,7 @@
                 </Menu.ItemsPanel>
 
                 <!--// Main Menu - Home //-->
-                <MenuItem Header="Acceuil"
+                <MenuItem Header="Accueil"
                           Template="{StaticResource Menu_Template}" Click="MenuItem_home_Click"
                           Margin="0,0,0,20">
 
@@ -163,28 +163,54 @@
                 </MenuItem>
 
 
-                <!--// Main Menu - Exit //-->
-                <MenuItem Header="Responsable"
-                          Template="{StaticResource Menu_Template}" 
+                <!--// Main Menu - Responsable //-->
+                <MenuItem Header="Balade"
+                          Template="{StaticResource Menu_SubMenu_Template}" 
                           Margin="0,0,0,20"
                           x:Name="responsable"
-                          Visibility="Hidden">
+                          FontSize="2"
+                          Visibility="Hidden" >
 
                     <MenuItem.Icon>
-                        <Image Source="/Images/img_exit.png"
+                        <Image Source="/Images/personne.png"
                                Stretch="None"/>
                     </MenuItem.Icon>
 
+                    <MenuItem Header="Ajout"
+                          Template="{StaticResource Menu_SubMenu_Template}" 
+                          Margin="0,0,0,20"
+                          x:Name="ajoutBalade"
+                          FontSize="2"
+                          Click="responsable_Click">
+
+                        <MenuItem.Icon>
+                            <Image Source="/Images/plus.png"
+                               Stretch="None"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Info"
+                          Template="{StaticResource Menu_SubMenu_Template}" 
+                          Margin="0,0,0,20"
+                          x:Name="infoBalade"
+                          FontSize="2"
+                          Click="info_Click">
+
+                        <MenuItem.Icon>
+                            <Image Source="/Images/i.png"
+                               Stretch="None"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
 
-                <MenuItem Header="Tresorier"
+                <!--// Main Menu - Tresorier //-->
+                <MenuItem Header="Trésorier"
                           Template="{StaticResource Menu_Template}" 
                           Margin="0,-70,0,20"
                           x:Name="tresorier"
-                          Visibility="Hidden">
+                          Visibility="Hidden" Click="tresorier_Click">
 
                     <MenuItem.Icon>
-                        <Image Source="/Images/img_exit.png"
+                        <Image Source="/Images/personne.png"
                                Stretch="None"/>
                     </MenuItem.Icon>
 
@@ -195,18 +221,6 @@
         </StackPanel>
 
         <Frame x:Name="Main" Margin="230,65,0,30" ContentRendered="Main_ContentRendered" />
-
-        <!--// Maximize / minimize App
-
-        <Button x:Name="MaxBtn"
-             Style="{StaticResource MaxBtnStyle}" 
-                Click="MaxBtn_Click"/>-->
-
-        <!--// close App
-
-        <Button x:Name="CloseBtn"
-         Style="{StaticResource CloseBtnStyle}"
-            Click="CloseBtn_Click"/>-->
 
         <Button x:Name="modifBtn" Style="{StaticResource MaterialDesignFlatMidBgButton}" MaterialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" 
                         Width="120" MaterialDesign:ButtonAssist.CornerRadius="10" FontSize="18" Content="Modifier" HorizontalAlignment="Left" Margin="555,600,0,16" Visibility="Hidden" Click="modifBtn_Click"/>

@@ -1,0 +1,64 @@
+﻿<Page x:Class="Projet_Huchon_Salemi_3I.View.TresorieVIEW"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Projet_Huchon_Salemi_3I.View"
+       xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Tresorie">
+
+    <Grid 
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          Margin="0 10 0 0">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="300"/>
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+
+        </Grid.RowDefinitions>
+
+        <Image Source="/Images/personne.png" Stretch="None" VerticalAlignment="Top" Margin="0 3 -130 0"/>
+        <TextBlock Grid.Row="0" Text="Trésorie" Style="{StaticResource text}" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="0 0 0 50" FontWeight="SemiBold" FontSize="30"/>
+
+        <ComboBox Grid.Row="1" x:Name="txtBalade"
+                  Margin="130 -20 130 30"
+                  Grid.ColumnSpan="2"
+                  MaterialDesign:HintAssist.Hint="Entrez Balade" BorderThickness="2" 
+                  BorderBrush="{DynamicResource MaterialDesignDivider}" 
+                  Style="{StaticResource MaterialDesignComboBox}">
+        </ComboBox>
+        
+        <Button Grid.Row="2" Grid.Column="0" Content="Envoyer rappel paiement" Padding="5000" Width="200"
+                Style="{StaticResource buttonMain}" 
+                HorizontalAlignment="Center"
+                Grid.ColumnSpan="2"
+                Margin="50 0 60 30"
+                Click="Button_Envoyer_Click"/>
+
+
+        <Button Grid.Row="3" Grid.Column="0" Content="Payer conducteur" Padding="5000" 
+                Style="{StaticResource buttonMainRed}" 
+                Grid.ColumnSpan="2"
+                HorizontalAlignment="Center"
+                Margin="0 0 340 0"
+                Click="Button_Payer_Click"/>
+        <Button Grid.Row="3" Grid.Column="0" Content="Réclamer forfait" Padding="5000" 
+                Style="{StaticResource buttonMainRed}" 
+                Grid.ColumnSpan="2"
+                HorizontalAlignment="Center"
+                Margin="0 0 -340 0"
+                Click="Button_reclam_Click"/>
+
+    </Grid>
+</Page>

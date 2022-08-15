@@ -9,13 +9,15 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Home">
 
-    <Grid>
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
+            
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -148,10 +150,20 @@
             <ComboBox x:Name="txtvelo" Width="300" Height="35" FontSize="15" Margin="0 0 0 0" MaterialDesign:HintAssist.Hint="- Liste des vélos - " BorderThickness="2" 
                   BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignComboBox}" DropDownOpened="txtvelo_DropDownOpened" DropDownClosed="txtvelo_DropDownClosed" >
             </ComboBox>
-
         </StackPanel>
         
+        <MaterialDesign:Card UniformCornerRadius="15" Grid.Row="4" Grid.Column="1" Margin="0 15 0 -20" 
+                             Height="80" Width="500" Visibility="Hidden" x:Name="messageBox">
+            <MaterialDesign:Card.Background>
+            <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+                    <GradientStop Color="#C22100" Offset="0" />
+                    <GradientStop Color="#FF2A00" Offset="0.50" />
+                    <GradientStop Color="#E62600" Offset="1" />
+                </LinearGradientBrush>
+            </MaterialDesign:Card.Background>
 
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" FontWeight="Bold" Text="Message :" x:Name="txtMessage" />
+        </MaterialDesign:Card>
 
     </Grid>
 </Page>

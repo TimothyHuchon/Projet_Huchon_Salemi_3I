@@ -125,8 +125,8 @@ namespace Projet_Huchon_Salemi_3I.View
                 good = veloDAO.Delete(velo);
                 if(good == true) MessageBox.Show("Vélo supprimé!", "Bravo", MessageBoxButton.OK, MessageBoxImage.Information);
                 else MessageBox.Show("Erreur lors de la suppression du vélo!", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            else MessageBox.Show("Erreur! Séléctionner un vélo", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                txtveloModif.Items.Clear();
+            }           
         }
     }
 }

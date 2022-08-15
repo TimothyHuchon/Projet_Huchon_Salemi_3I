@@ -31,6 +31,7 @@ namespace Projet_Huchon_Salemi_3I.View
             identifiantID.Text = personne.Id;
             identifiantPassword.Text = personne.MotDePasse;
             user = personne;
+            checkmessage();
 
             Vehicule vehicule = new Vehicule();
             VehiculeDAO vehiculeDAO = new VehiculeDAO();
@@ -51,6 +52,17 @@ namespace Projet_Huchon_Salemi_3I.View
             {
                 return Text;
             }
+        }
+         public void checkmessage()
+        {
+            MembreDAO membreDAO = new MembreDAO();
+            Membre membre = membreDAO.FindMessage(user.ID_personne);
+            if(membre.Message == true)
+            {
+                txtMessage.Text = "Attention ! Veuillez payer vos dettes !";
+                messageBox.Visibility = Visibility.Visible;
+            }
+
         }
 
         private void listeOfVelo()

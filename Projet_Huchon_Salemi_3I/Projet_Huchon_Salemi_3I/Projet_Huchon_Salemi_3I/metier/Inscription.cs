@@ -17,16 +17,6 @@ namespace Projet_Huchon_Salemi_3I.metier
         {
         }
 
-        public Inscription(decimal id_inscription)
-        {
-            this.id_inscription = id_inscription;
-        }
-
-        public Inscription(Boolean passager, Boolean velo)
-        {
-            this.Passager = passager;
-            this.Velo = velo;
-        }
 
         public Inscription(decimal id_personne, decimal num_balade, bool passager, decimal id_velo, bool velo)
         {

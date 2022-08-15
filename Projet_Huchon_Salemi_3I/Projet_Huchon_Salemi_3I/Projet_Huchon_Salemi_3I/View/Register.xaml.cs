@@ -81,8 +81,13 @@ namespace Projet_Huchon_Salemi_3I.View
                 bool ok = false;
                 Personne personne = new Personne(lastName, firstName, phone, id, password);
                 PersonneDAO personneDAO = new PersonneDAO();
+                MembreDAO membreDAO = new MembreDAO();
                 ok = personneDAO.Create(personne);
 
+                decimal id_personne = personneDAO.lastPersonneSave();
+                System.Diagnostics.Debug.WriteLine(id_personne);
+                Membre membre = new Membre(id_personne, 0, 0,false);
+                membreDAO.Create(membre);
 
                 if (ok == true)
                 {

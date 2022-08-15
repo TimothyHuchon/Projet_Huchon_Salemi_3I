@@ -25,13 +25,19 @@
     <Compile Update="View\PaiementVIEW.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\RecapBaladeVIEW.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\Register.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\ReservationVIEW.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\UpdateMembreView.xaml.cs">
+    <Compile Update="View\ResponsableVIEW.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\TresorieVIEW.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\VeloVIEW.xaml.cs">
@@ -63,13 +69,19 @@
     <Page Update="View\PaiementVIEW.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\RecapBaladeVIEW.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\Register.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\ReservationVIEW.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\UpdateMembreView.xaml">
+    <Page Update="View\ResponsableVIEW.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\TresorieVIEW.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\VeloVIEW.xaml">
