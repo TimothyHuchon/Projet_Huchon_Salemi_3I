@@ -7,12 +7,12 @@ namespace Projet_Huchon_Salemi_3I.metier
 {
     public class Personne
     {
-        protected Decimal id_personne;
-        protected string nom;
-        protected string prenom;
-        protected string tel;
-        protected string id;
-        protected string motDePasse;
+        private Decimal id_personne;
+        private string nom;
+        private string prenom;
+        private string tel;
+        private string id;
+        private string motDePasse;
 
         public Personne(){}
 
