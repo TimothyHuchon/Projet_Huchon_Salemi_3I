@@ -234,6 +234,10 @@
          Style="{StaticResource CloseBtnStyle}"
             Click="CloseBtn_Click"/>-->
 
+        <Button x:Name="modifBtn" Style="{StaticResource MaterialDesignFlatMidBgButton}" MaterialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" 
+                        Width="120" MaterialDesign:ButtonAssist.CornerRadius="10" FontSize="18" Content="Modifier" HorizontalAlignment="Left" Margin="555,600,0,16" Visibility="Hidden" Click="modifBtn_Click"/>
+
+
         <MaterialDesign:PopupBox   HorizontalAlignment="Right" Margin="0,9,10,666" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Height="25" MaterialDesign:ShadowAssist.ShadowDepth="Depth4" >
             <StackPanel>
                 <StackPanel Margin="16 10 0 6" Orientation="Horizontal" HorizontalAlignment="Center">
@@ -241,13 +245,11 @@
                     <TextBlock VerticalAlignment="Center" Text="Dark Mode"/>
                     <ToggleButton Cursor="Hand" ToolTip="Enable Dark Mode" Margin="12 0 8 0" x:Name="themeToggle" IsChecked="{Binding IsDarkTheme}" Click="themeToggle_Click"/>
                 </StackPanel>
-                <Button ToolTip="Having Trouble Register?" Margin="0 8 0 0" Content="Help Me"/>
+                <Button x:Name="signOut" ToolTip="Cliquez ici pour vous déconnecter" Margin="0 8 0 0" Content="Déconnexion" Click="signOut_Click"/>
 
                 <Button x:Name="btn_exit" ToolTip="Close Application" Content="Exit Application" Click="btn_exit_Click"/>
 
             </StackPanel>
         </MaterialDesign:PopupBox>
-
-
     </Grid>
 </Window>

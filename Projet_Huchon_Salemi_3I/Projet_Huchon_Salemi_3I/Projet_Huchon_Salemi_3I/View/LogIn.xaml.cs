@@ -24,6 +24,7 @@ namespace Projet_Huchon_Salemi_3I.View
     {
         private string userName="";
         private string motDePasse="";
+
         public LogIn()
         {
             InitializeComponent();

@@ -67,7 +67,7 @@ namespace Projet_Huchon_Salemi_3I.DAO
             {
                 using (SqlConnection connection = new SqlConnection(this.connectionString))
                 {
-                    SqlCommand cmd = new SqlCommand("UPDATE Personne SET [nom] = @nom,[prenom] = @prenom,[tel] = @tel,[id] = @id,[motDePasse] = @mdp WHERE nom = @nom and prenom = @prenom", connection);
+                    SqlCommand cmd = new SqlCommand("UPDATE Personne SET [tel] = @tel,[id] = @id,[motDePasse] = @mdp WHERE nom = @nom and prenom = @prenom", connection);
                     cmd.Parameters.AddWithValue("nom", obj.Nom);
                     cmd.Parameters.AddWithValue("prenom", obj.Prenom);
                     cmd.Parameters.AddWithValue("tel", obj.Tel);
