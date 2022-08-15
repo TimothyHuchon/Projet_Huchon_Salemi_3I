@@ -17,12 +17,6 @@ namespace Projet_Huchon_Salemi_3I.metier
 
         public Vehicule(){}
 
-        public Vehicule(Decimal nbrePlacesMembre, Decimal nbrePlacesVelo)
-        {
-            this.NbrePlacesMembre = nbrePlacesMembre;
-            this.NbrePlacesVelo = nbrePlacesVelo;
-        }
-
         public Vehicule(Decimal id_personne_conducteur, Decimal nbrePlacesMembre, Decimal nbrePlacesVelo)
         {
             this.ID_personne_conducteur = id_personne_conducteur;

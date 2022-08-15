@@ -17,12 +17,12 @@ namespace Projet_Huchon_Salemi_3I.DAO
             bool value = false;
             try
             {
-                if (VerifierIdPresent(obj.ID_personne) == false)
+               if (VerifierIdPresent(obj.ID_personne) == false)
                 {
                     using (SqlConnection connection = new SqlConnection(this.connectionString))
                     {
                         SqlCommand cmd = new SqlCommand("INSERT INTO Membre([id_personne],[solde],[compte_banquaire]) VALUES(@id, @solde, @cpt); ", connection);
-                        cmd.Parameters.AddWithValue("id", obj.ID_personne);
+                        cmd.Parameters.AddWithValue("id", obj.Id_personne);
                         cmd.Parameters.AddWithValue("solde", obj.Solde);
                         cmd.Parameters.AddWithValue("cpt", obj.CptBanquaire);
                         connection.Open();
@@ -92,6 +92,40 @@ namespace Projet_Huchon_Salemi_3I.DAO
             return membre;
         }
 
+        public  Membre FindMessage(decimal id)
+        {
+            Membre membre = null;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Membre where id_personne = @id", connection);
+                    cmd.Parameters.AddWithValue("id", id);
+                    connection.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            membre = new Membre
+                            {
+                                ID_personne = reader.GetDecimal("id_personne"),
+                                Solde = reader.GetDecimal("solde"),
+                                CptBanquaire = reader.GetDecimal("compte_banquaire"),
+                                Message = reader.GetBoolean("message_rappel")
+                            };
+                        }
+
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+
+            return membre;
+        }
+
         public override bool Update(Membre obj)
         {
             bool value = false; 
@@ -107,6 +141,28 @@ namespace Projet_Huchon_Salemi_3I.DAO
                         cmd.ExecuteNonQuery();
                     }
                     value = true;
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+            return value;
+        }
+
+        public bool UpdateMessage(Membre obj)
+        {
+            bool value = false;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("UPDATE Membre SET [message_rappel] = @message WHERE id_personne = @id", connection);
+                    cmd.Parameters.AddWithValue("id", obj.ID_personne);
+                    cmd.Parameters.AddWithValue("message", obj.Message);
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                value = true;
             }
             catch (SqlException)
             {
@@ -276,5 +332,6 @@ namespace Projet_Huchon_Salemi_3I.DAO
             }
             return listnum;
         }
+
     }
 }

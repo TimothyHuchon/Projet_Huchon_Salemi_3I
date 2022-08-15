@@ -16,13 +16,6 @@ namespace Projet_Huchon_Salemi_3I.metier
 
         public Personne(){}
 
-        public Personne(string tel, string id, string motDePasse)
-        {
-            this.tel = tel;
-            this.id = id;
-            this.motDePasse = motDePasse;
-        }
-
         public Personne(string nom, string prenom, string tel, string id, string motDePasse)
         {
             this.nom = nom;

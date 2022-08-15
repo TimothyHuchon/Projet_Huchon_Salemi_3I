@@ -21,18 +21,12 @@ namespace Projet_Huchon_Salemi_3I.metier
         {
         }
 
-        public Balade(decimal num)
-        {
-            this.num = num;
-        }
-
         public Balade(string lieuDepart, DateTime dateDepart, decimal forfait)
         {
             this.lieuDepart = lieuDepart;
             this.dateDepart = dateDepart;
             this.forfait = forfait;
         }
-
 
         public decimal Num { get => num; set => num = value; }
         public string LieuDepart { get => lieuDepart; set => lieuDepart = value; }
@@ -71,7 +65,6 @@ namespace Projet_Huchon_Salemi_3I.metier
             Balade balade = new Balade();
 
             balade = baladeDAO.Find(num);
-
             foreach (Vehicule i in balade.listeVehicule)
             {
                 totalNbrePlaces = totalNbrePlaces + (int) i.NbrePlacesMembre;
@@ -110,8 +103,7 @@ namespace Projet_Huchon_Salemi_3I.metier
             Balade balade = new Balade();
 
             balade = baladeDAO.Find(num);
-
-            foreach(Vehicule i in balade.listeVehicule)
+            foreach (Vehicule i in balade.listeVehicule)
             {
                 totalNbrePlaces = totalNbrePlaces + (int) i.NbrePlacesVelo;
             }
@@ -126,8 +118,8 @@ namespace Projet_Huchon_Salemi_3I.metier
             BaladeDAO baladeDAO = new BaladeDAO();
             Balade balade = new Balade();
 
-            balade = baladeDAO.Find(num);
-            foreach(Inscription i in balade.listeInscription)
+            balade = baladeDAO.Find(num);            
+            foreach (Inscription i in balade.listeInscription)
             {
                 if (i.Passager)
                 {
@@ -150,7 +142,7 @@ namespace Projet_Huchon_Salemi_3I.metier
             BaladeDAO baladeDAO = new BaladeDAO();
             Balade balade = new Balade();
 
-            balade = baladeDAO.Find(num);
+            balade = baladeDAO.Find(num);            
             foreach (Inscription i in balade.listeInscription)
             {
                 if (i.Passager) membreReservation++;

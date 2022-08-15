@@ -78,7 +78,10 @@ namespace Projet_Huchon_Salemi_3I.View
             {
                 cptOkDecimal = cptOkDecimal - soldeOkDecimal;
                 membre.paiementUpdate(cptOkDecimal);
-                
+                membre.Message = false;
+                dao.UpdateMessage(membre);
+
+
                 solde.Text = 0 + "€";
                 cpt.Text = cptOkDecimal + "€";
             }

@@ -73,25 +73,51 @@ namespace Projet_Huchon_Salemi_3I.View
 
         private void Button_Payer_Click(object sender, RoutedEventArgs e)
         {
-            Decimal numBalade = 0;
-            Decimal.TryParse((txtBalade.SelectedItem as ComboboxItem).Value.ToString(), out numBalade);
-            TresorierDAO daoTresorier = new TresorierDAO();
-            Tresorier tresorier = daoTresorier.Find(user.ID_personne);
-            tresorier.payerConducteur(numBalade);
+            if (string.IsNullOrWhiteSpace(txtBalade.Text))
+            {
+                 MessageBox.Show("Veuillez séléctionner une balade ", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else 
+            {
+                Decimal numBalade = 0;
+                Decimal.TryParse((txtBalade.SelectedItem as ComboboxItem).Value.ToString(), out numBalade);
+                TresorierDAO daoTresorier = new TresorierDAO();
+                Tresorier tresorier = daoTresorier.Find(user.ID_personne);
+                tresorier.payerConducteur(numBalade);
+
+            }       
         }
 
         private void Button_reclam_Click(object sender, RoutedEventArgs e)
         {
-            Decimal numBalade = 0;
-            Decimal.TryParse((txtBalade.SelectedItem as ComboboxItem).Value.ToString(), out numBalade);
-            TresorierDAO daoTresorier = new TresorierDAO();
-            Tresorier tresorier = daoTresorier.Find(user.ID_personne);
-            tresorier.ReclamerForfait(numBalade);
+            if (string.IsNullOrWhiteSpace(txtBalade.Text))
+            {
+                MessageBox.Show("Veuillez séléctionner une balade ", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else
+            {
+                Decimal numBalade = 0;
+                Decimal.TryParse((txtBalade.SelectedItem as ComboboxItem).Value.ToString(), out numBalade);
+                TresorierDAO daoTresorier = new TresorierDAO();
+                Tresorier tresorier = daoTresorier.Find(user.ID_personne);
+                tresorier.ReclamerForfait(numBalade);
+            }
         }
 
         private void Button_Envoyer_Click(object sender, RoutedEventArgs e)
         {
-            // TO DO
+            if (string.IsNullOrWhiteSpace(txtBalade.Text))
+            {
+                MessageBox.Show("Veuillez séléctionner une balade ", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else
+            {
+                Decimal numBalade = 0;
+                Decimal.TryParse((txtBalade.SelectedItem as ComboboxItem).Value.ToString(), out numBalade);
+                TresorierDAO daoTresorier = new TresorierDAO();
+                Tresorier tresorier = daoTresorier.Find(user.ID_personne);
+                tresorier.envoiLettreRappel(numBalade);
+            }
         }
     }
 }

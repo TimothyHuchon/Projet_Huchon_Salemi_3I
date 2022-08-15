@@ -55,7 +55,7 @@ namespace Projet_Huchon_Salemi_3I.View
                         textType.Clear();
                         textPoid.Clear();
                         textLong.Clear();
-                        MessageBox.Show("Vélo ajouté avec succés !", "Erreur", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show("Vélo ajouté avec succés !", "Félicitations", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                     else
                     {

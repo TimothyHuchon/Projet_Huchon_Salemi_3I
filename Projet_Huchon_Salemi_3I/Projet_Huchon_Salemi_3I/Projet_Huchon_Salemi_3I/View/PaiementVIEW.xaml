@@ -48,7 +48,7 @@
                 HorizontalAlignment="Center"
                 Margin="0 30 0 0" Click="Button_payer_Click"/>
 
-        <TextBox  Grid.Row="2" Grid.Column="1" x:Name="textajouter" Background="White" Margin="65 30 155 0"
+        <TextBox  Grid.Row="2" Grid.Column="1" x:Name="textajouter"  Margin="65 30 155 0"
                   MaterialDesign:HintAssist.Hint="Montant" BorderThickness="2"
                   BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
         <Button Grid.Row="2" Grid.Column="1" Content="Recharger" Padding="5000" 

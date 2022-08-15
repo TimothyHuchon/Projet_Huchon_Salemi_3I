@@ -208,5 +208,24 @@ namespace Projet_Huchon_Salemi_3I.DAO
             }
             return personne;
         }
+        public decimal lastPersonneSave()
+        {
+            decimal id = 0;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT MAX(id_personne) from personne", connection);
+                    connection.Open();
+                    id = (decimal)cmd.ExecuteScalar();
+                }
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+
+            return id;
+        }
     }
 }

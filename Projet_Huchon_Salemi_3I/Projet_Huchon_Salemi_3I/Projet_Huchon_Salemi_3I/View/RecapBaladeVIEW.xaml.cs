@@ -85,11 +85,11 @@ namespace Projet_Huchon_Salemi_3I.View
             int VeloBesoin = Balade.obtenirPlaceVeloBesoin((int)numBalade);
 
             membreTotal.Text = "Total des places = " + MembreTotal;
-            membreRest.Text = "Places restantes = " + MembreRest;
+            membreRest.Text = "Places restants = " + MembreRest;
             veloTotal.Text = "Total des vélo = " + VeloTotal;
-            veloRest.Text = "Velo restantes = " + MembreRest;
+            veloRest.Text = "Velo restants = " + VeloRest;
             membreBesoin.Text = "Besoin Membre = " + MembreBesoin;
-            veloBesoin.Text = "Besoin Velo = " + VeloBesoin;
+            veloBesoin.Text = "Besoin Vélo = " + VeloBesoin;
         }
     }
 }

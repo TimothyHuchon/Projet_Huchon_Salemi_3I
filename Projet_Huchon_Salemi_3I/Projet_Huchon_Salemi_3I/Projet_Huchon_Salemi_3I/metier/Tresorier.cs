@@ -32,13 +32,18 @@ namespace Projet_Huchon_Salemi_3I.metier
 
         }
 
-        public string envoiLettreRappel(decimal numBalade)
+        public void envoiLettreRappel(decimal numBalade)
         {
-            string lettreRappel = null;
-            BaladeDAO dao = new BaladeDAO();
-            decimal forfait = dao.recupForfait(numBalade);
+            InscriptionDAO inscriptionDAO = new InscriptionDAO();
+            MembreDAO membreDAO = new MembreDAO();
+            List<decimal> listMembre = inscriptionDAO.FindPersonneInscrit(numBalade);
 
-            return "Vous devez payer " + forfait + " € pour la balade.";
+            foreach (decimal d in listMembre)
+            {
+                Membre membre = membreDAO.FindMessage(d);
+                membre.Message = true;
+                membreDAO.UpdateMessage(membre);
+            }
         }
 
         public void payerConducteur(decimal numBalade)
@@ -68,7 +73,7 @@ namespace Projet_Huchon_Salemi_3I.metier
                 membre.CptBanquaire = membre.CptBanquaire + totalAPayerConduct;
                 Mdao.Update(membre);
             }
-            MessageBox.Show("Paiement fait avec succés !", "Félicitations", MessageBoxButton.OK, MessageBoxImage.Warning);
+            MessageBox.Show("Paiement fait avec succés !", "Félicitations", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         public void ReclamerForfait(decimal numBalade)
@@ -86,7 +91,7 @@ namespace Projet_Huchon_Salemi_3I.metier
                 membre.Solde = membre.Solde + forfait;
                 Mdao.Update(membre);
             }
-            MessageBox.Show("Réclamation faite avec succés !", "Félicitations", MessageBoxButton.OK, MessageBoxImage.Warning);
+            MessageBox.Show("Réclamation faite avec succés !", "Félicitations", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
     }

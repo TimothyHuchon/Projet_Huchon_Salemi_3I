@@ -38,8 +38,8 @@ namespace Projet_Huchon_Salemi_3I.DAO
         public override bool Delete(Velo obj)
         {
             bool value = false;
-           // try
-           // {
+            try
+            {
                 using (SqlConnection connection = new SqlConnection(this.connectionString))
                 {
                     SqlCommand cmd = new SqlCommand("DELETE FROM Velo WHERE id_velo = @id", connection);
@@ -48,11 +48,11 @@ namespace Projet_Huchon_Salemi_3I.DAO
                     cmd.ExecuteNonQuery();
                 }
                 value = true;
-           // }
-           // catch (SqlException)
-           // {
+           }
+            catch (SqlException)
+            {
                 throw new Exception("Une erreur sql s'est produite!");
-            //}
+            }
             return value;
         }
 
@@ -72,8 +72,7 @@ namespace Projet_Huchon_Salemi_3I.DAO
                         {
                             velo = new Velo
                             {
-                                Proprietaire = reader.GetDecimal("id_personne"),
-                                Vehicule = reader.GetDecimal("id_vehicule"),
+                                Proprietaire = reader.GetDecimal("id_personne"),                                
                                 Poids = reader.GetDecimal("poids"),
                                 Type = reader.GetString("type"),
                                 Longueur = reader.GetDecimal("longueur"),

@@ -8,8 +8,8 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="UpdateMembreView">
-    <ScrollViewer>
-    <Grid>
+    
+    <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition Height="auto"/>
@@ -88,7 +88,7 @@
             <StackPanel Grid.Row="7" Grid.Column="1">
                 <StackPanel Orientation="Horizontal">
                     <Image HorizontalAlignment="Center" Margin="0 30 0 0"  Source="/Images/cyclist.png" Height="20"/>
-                    <TextBlock  Margin="0 30 0 0" HorizontalAlignment="Center" FontSize="12" FontWeight="SemiBold"  Text="Choisissez un vélo pour le supprimer:"/>
+                    <TextBlock  Margin="0 30 0 0" HorizontalAlignment="Center" FontSize="12" FontWeight="SemiBold"  Text="Choisissez un vélo encore diponible pour le supprimer:"/>
                 </StackPanel>
                 <ComboBox x:Name="txtveloModif" Width="300" Height="35" FontSize="15" Margin="0 0 0 0" MaterialDesign:HintAssist.Hint="- Liste des vélos - " BorderThickness="2" 
                   BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignComboBox}" DropDownOpened="txtveloModif_DropDownOpened" DropDownClosed="txtveloModif_DropDownClosed"  >
@@ -101,5 +101,5 @@
         
         
         
-</ScrollViewer>
+
 </Page>

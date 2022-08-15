@@ -104,16 +104,7 @@ namespace Projet_Huchon_Salemi_3I.DAO
                         }
                     }
                 }
-                if (vehicule != null)
-                {
-                    /*  *********************************************************  
-                        *********************************************************  
-                        ********************************************************* 
-                                à compléter après la création basique des dao
-                        ********************************************************* 
-                        ********************************************************* 
-                        ********************************************************* */
-                }
+               
             }
             catch (SqlException)
            {
@@ -220,6 +211,8 @@ namespace Projet_Huchon_Salemi_3I.DAO
 
             return vehicule;
         }
+
+       
 
         public void AjoutVelo(decimal id_membre, decimal idvelo, Vehicule vehicule)
         {

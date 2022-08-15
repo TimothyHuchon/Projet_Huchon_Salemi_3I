@@ -31,36 +31,33 @@
         <Image Source="/Images/personne.png" Stretch="None" VerticalAlignment="Top" Margin="0 3 -130 0"/>
         <TextBlock Grid.Row="0" Text="Trésorie" Style="{StaticResource text}" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="0 0 0 50" FontWeight="SemiBold" FontSize="30"/>
 
-        <TextBox Grid.ColumnSpan="2" Grid.Row="1" x:Name="txtMemo"  Margin="50 0 150 30" Height="110"
-                  MaterialDesign:HintAssist.Hint="Message de rappel" BorderThickness="2"
-                  BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
-
-        <Button Grid.Row="1" Grid.Column="1" Content="Envoyer" Padding="5000" Width="100"
-                Style="{StaticResource buttonMain}" 
-                HorizontalAlignment="Center"
-                Margin="50 -20 -90 0"
-                Click="Button_Envoyer_Click"/>
-
-        <Image Grid.Row="2" Source="/Images/img_paiement.png" Stretch="None" VerticalAlignment="Top" Margin="0 3 -130 0"/>
-        <TextBlock Grid.Row="2" Text="Economie" Style="{StaticResource text}" HorizontalAlignment ="Center" Grid.ColumnSpan="2" Margin="0 0 0 0" FontWeight="SemiBold" FontSize="25"/>
-        <ComboBox Grid.Row="3" x:Name="txtBalade"
+        <ComboBox Grid.Row="1" x:Name="txtBalade"
                   Margin="130 -20 130 30"
                   Grid.ColumnSpan="2"
                   MaterialDesign:HintAssist.Hint="Entrez Balade" BorderThickness="2" 
                   BorderBrush="{DynamicResource MaterialDesignDivider}" 
                   Style="{StaticResource MaterialDesignComboBox}">
         </ComboBox>
+        
+        <Button Grid.Row="2" Grid.Column="0" Content="Envoyer rappel paiement" Padding="5000" Width="200"
+                Style="{StaticResource buttonMain}" 
+                HorizontalAlignment="Center"
+                Grid.ColumnSpan="2"
+                Margin="50 0 60 30"
+                Click="Button_Envoyer_Click"/>
+
+
         <Button Grid.Row="3" Grid.Column="0" Content="Payer conducteur" Padding="5000" 
                 Style="{StaticResource buttonMainRed}" 
                 Grid.ColumnSpan="2"
                 HorizontalAlignment="Center"
-                Margin="0 90 340 0"
+                Margin="0 0 340 0"
                 Click="Button_Payer_Click"/>
         <Button Grid.Row="3" Grid.Column="0" Content="Réclamer forfait" Padding="5000" 
                 Style="{StaticResource buttonMainRed}" 
                 Grid.ColumnSpan="2"
                 HorizontalAlignment="Center"
-                Margin="0 90 -340 0"
+                Margin="0 0 -340 0"
                 Click="Button_reclam_Click"/>
 
     </Grid>
