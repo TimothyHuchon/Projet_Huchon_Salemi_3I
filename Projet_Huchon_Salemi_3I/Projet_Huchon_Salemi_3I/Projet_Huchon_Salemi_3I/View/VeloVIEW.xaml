@@ -33,15 +33,15 @@
 
         <TextBox Grid.ColumnSpan="2" Grid.Row="1" x:Name="textType" Margin="150 0 150 30"
                   MaterialDesign:HintAssist.Hint="Type de vélo" BorderThickness="2"
-                  BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+                  BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}" MaxLength="50"/>
 
         <TextBox Grid.ColumnSpan="2" Grid.Row="2" x:Name="textLong" Margin="150 0 150 30"
                   MaterialDesign:HintAssist.Hint="Longeur du vélo" BorderThickness="2"
-                  BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+                  BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}" MaxLength="50"/>
 
         <TextBox Grid.ColumnSpan="3" Grid.Row="3" x:Name="textPoid" Margin="150 0 150 30"
                   MaterialDesign:HintAssist.Hint="Poids du vélo" BorderThickness="2"
-                  BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+                  BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}" MaxLength="50"/>
 
         <Button Grid.Row="5" Grid.Column="0" Content="Save" Padding="5000" 
                 Style="{StaticResource buttonMainGreen}" 

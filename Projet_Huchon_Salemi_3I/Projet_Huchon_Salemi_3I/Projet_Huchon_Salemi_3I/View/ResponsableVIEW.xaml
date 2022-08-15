@@ -35,11 +35,11 @@
         <TextBox  Grid.Row="1" x:Name="txtlieu"  Margin="50 0 50 0" Height="50"
                   MaterialDesign:HintAssist.Hint="Lieu de depart" BorderThickness="2"
                   BorderBrush="{DynamicResource MaterialDesignDivider}" 
-                  Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+                  Style="{StaticResource MaterialDesignOutlinedTextBox}" MaxLength="50"/>
 
         <TextBox  Grid.Row="2" x:Name="txtForfait"  Margin="50 0 50 0" Height="50"
                   MaterialDesign:HintAssist.Hint="Forfait" BorderThickness="2"
-                  BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+                  BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}" MaxLength="50"/>
 
         <Calendar Grid.Row="0" Grid.Column="1"  Grid.RowSpan="4"
                   HorizontalAlignment="Center" 

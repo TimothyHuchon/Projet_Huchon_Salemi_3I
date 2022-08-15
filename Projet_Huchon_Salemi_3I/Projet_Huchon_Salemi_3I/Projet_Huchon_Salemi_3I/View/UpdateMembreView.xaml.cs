@@ -50,19 +50,23 @@ namespace Projet_Huchon_Salemi_3I.View
             passwordModif = txtPassWordModif.Password;
             bool good = false;
 
-            Personne user = new Personne();
-            Personne personne = new Personne(nomModifRO,prenomModifRO,telModif,idModif,passwordModif);
-            PersonneDAO personneDAO = new PersonneDAO();
-            good = personneDAO.Update(personne);
-            if (good == true) MessageBox.Show("Modification enregistrée!", "Bravo", MessageBoxButton.OK, MessageBoxImage.Information);
-            else MessageBox.Show("Erreur!", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
 
-            /* TEST */
+            if (string.IsNullOrWhiteSpace(txtTelModif.Text) || string.IsNullOrWhiteSpace(txtIdModif.Text) || string.IsNullOrWhiteSpace(txtPassWordModif.Password))
+            {
+                MessageBox.Show("Remplissez toutes les informations", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                Personne user = new Personne();
+                Personne personne = new Personne(nomModifRO, prenomModifRO, telModif, idModif, passwordModif);
+                PersonneDAO personneDAO = new PersonneDAO();
+                good = personneDAO.Update(personne);
+                if (good == true) MessageBox.Show("Modification enregistrée!", "Bravo", MessageBoxButton.OK, MessageBoxImage.Information);
+                else MessageBox.Show("Erreur!", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
 
-            /* MembreVIEW membre = new MembreVIEW(personne);
-             membre.ShowDialog();*/
 
-            /* TEST */
         }
 
         public class ComboboxItem
