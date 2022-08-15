@@ -6,18 +6,18 @@ namespace Projet_Huchon_Salemi_3I.metier
 {
     public class Responsable : Personne
     {
-        public decimal id_personne;
-        public decimal num_categorie;
+        private decimal id_personne;
+        private decimal num_categorie;
 
         public Responsable() { }
         public Responsable(string nom, string prenom, string tel, string id, string motDePasse, decimal num_categorie)
             : base(nom, prenom, tel, id, motDePasse)
         {
-            this.nom = nom;
-            this.prenom = prenom;
-            this.tel = tel;
-            this.id = id;
-            this.motDePasse = motDePasse;
+            this.Nom = nom;
+            this.Prenom = prenom;
+            this.Tel = tel;
+            this.Id = id;
+            this.MotDePasse = motDePasse;
             this.num_categorie = num_categorie;
         }
 
