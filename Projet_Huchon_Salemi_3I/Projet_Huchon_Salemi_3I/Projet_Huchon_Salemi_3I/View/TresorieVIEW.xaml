@@ -29,7 +29,7 @@
         </Grid.RowDefinitions>
 
         <Image Source="/Images/personne.png" Stretch="None" VerticalAlignment="Top" Margin="0 3 -130 0"/>
-        <TextBlock Grid.Row="0" Text="Trésorie" Style="{StaticResource text}" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="0 0 0 50" FontWeight="SemiBold" FontSize="30"/>
+        <TextBlock Grid.Row="0" Text="Trésorerie" Style="{StaticResource text}" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="0 0 0 50" FontWeight="SemiBold" FontSize="30"/>
 
         <ComboBox Grid.Row="1" x:Name="txtBalade"
                   Margin="130 -20 130 30"
