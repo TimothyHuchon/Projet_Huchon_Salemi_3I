@@ -209,7 +209,7 @@
             Click="CloseBtn_Click"/>-->
 
         <Button x:Name="modifBtn" Style="{StaticResource MaterialDesignFlatMidBgButton}" MaterialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" 
-                        Width="120" MaterialDesign:ButtonAssist.CornerRadius="10" FontSize="18" Content="Modifier" HorizontalAlignment="Left" Margin="555,600,0,16" Visibility="Hidden"/>
+                        Width="120" MaterialDesign:ButtonAssist.CornerRadius="10" FontSize="18" Content="Modifier" HorizontalAlignment="Left" Margin="555,600,0,16" Visibility="Hidden" Click="modifBtn_Click"/>
 
 
         <MaterialDesign:PopupBox   HorizontalAlignment="Right" Margin="0,9,10,666" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Height="25" MaterialDesign:ShadowAssist.ShadowDepth="Depth4" >
@@ -225,7 +225,5 @@
 
             </StackPanel>
         </MaterialDesign:PopupBox>
-
-
     </Grid>
 </Window>

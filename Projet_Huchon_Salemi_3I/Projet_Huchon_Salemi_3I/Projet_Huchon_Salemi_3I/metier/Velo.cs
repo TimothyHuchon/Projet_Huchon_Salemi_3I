@@ -14,6 +14,11 @@ namespace Projet_Huchon_Salemi_3I.metier
         private List<Inscription> listeInscription = new List<Inscription>();
         private decimal id_personne;
 
+        public Velo(decimal id_velo)
+        {
+            this.id_velo = id_velo;
+        }
+
         public Velo(decimal poids, string type, decimal longueur)
         {
             this.Poids = poids;

@@ -16,6 +16,7 @@
     <None Remove="Images\biker.png" />
     <None Remove="Images\car.png" />
     <None Remove="Images\cat.png" />
+    <None Remove="Images\cyclist.png" />
     <None Remove="Images\helmet.png" />
     <None Remove="Images\home.png" />
     <None Remove="Images\img_arrow.png" />
@@ -31,6 +32,7 @@
     <None Remove="Images\shutdown_def.png" />
     <None Remove="Images\shutdown_mo.png" />
     <None Remove="Images\sport-car.png" />
+    <None Remove="Images\tools.png" />
     <None Remove="Images\user.png" />
     <None Remove="Images\velo.png" />
   </ItemGroup>
@@ -52,6 +54,9 @@
     </Resource>
     <Resource Include="Images\car.png" />
     <Resource Include="Images\cat.png" />
+    <Resource Include="Images\cyclist.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\helmet.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -75,6 +80,9 @@
     <Resource Include="Images\shutdown_def.png" />
     <Resource Include="Images\shutdown_mo.png" />
     <Resource Include="Images\sport-car.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\tools.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\user.png">

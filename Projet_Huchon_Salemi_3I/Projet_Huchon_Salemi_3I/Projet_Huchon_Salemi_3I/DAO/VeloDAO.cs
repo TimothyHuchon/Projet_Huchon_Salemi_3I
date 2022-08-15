@@ -38,8 +38,8 @@ namespace Projet_Huchon_Salemi_3I.DAO
         public override bool Delete(Velo obj)
         {
             bool value = false;
-            try
-            {
+           // try
+           // {
                 using (SqlConnection connection = new SqlConnection(this.connectionString))
                 {
                     SqlCommand cmd = new SqlCommand("DELETE FROM Velo WHERE id_velo = @id", connection);
@@ -48,11 +48,11 @@ namespace Projet_Huchon_Salemi_3I.DAO
                     cmd.ExecuteNonQuery();
                 }
                 value = true;
-            }
-            catch (SqlException)
-            {
+           // }
+           // catch (SqlException)
+           // {
                 throw new Exception("Une erreur sql s'est produite!");
-            }
+            //}
             return value;
         }
 
@@ -117,7 +117,7 @@ namespace Projet_Huchon_Salemi_3I.DAO
             return value;
         }
 
-        public List<Velo> FindVeloByMemebre(decimal id)
+        public List<Velo> FindVeloByMembre(decimal id)
         {
            List<Velo> listvelo = new List<Velo>();
             try
@@ -125,6 +125,77 @@ namespace Projet_Huchon_Salemi_3I.DAO
                 using (SqlConnection connection = new SqlConnection(this.connectionString))
                 {
                     SqlCommand cmd = new SqlCommand("SELECT * FROM Velo where id_personne = @id", connection);
+                    cmd.Parameters.AddWithValue("id", id);
+                    connection.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Velo velo = new Velo
+                            {
+                                ID = reader.GetDecimal("id_velo"),
+                                Proprietaire = reader.GetDecimal("id_personne"),
+                                Poids = reader.GetDecimal("poids"),
+                                Type = reader.GetString("type"),
+                                Longueur = reader.GetDecimal("longueur"),
+                            };
+                            listvelo.Add(velo);
+                        }
+
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+
+            return listvelo;
+        }
+
+
+        public Velo FindVeloUniqueByMembre(decimal id)
+        {
+            Velo velo = null;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Velo where id_personne = @id", connection);
+                    cmd.Parameters.AddWithValue("id", id);
+                    connection.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            velo = new Velo
+                            {
+                                ID = reader.GetDecimal("id_velo"),
+                                Proprietaire = reader.GetDecimal("id_personne"),
+                                Poids = reader.GetDecimal("poids"),
+                                Type = reader.GetString("type"),
+                                Longueur = reader.GetDecimal("longueur"),
+                            };  
+                        }
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Une erreur sql s'est produite!");
+            }
+            return velo;
+        }
+
+
+        public List<Velo> FindVeloByMembre2(decimal id)
+        {
+            List<Velo> listvelo = new List<Velo>();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(this.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Velo WHERE id_personne = @id AND id_velo NOT IN (SELECT id_velo FROM Inscription)", connection);
                     cmd.Parameters.AddWithValue("id", id);
                     connection.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader())

@@ -197,14 +197,14 @@ namespace Projet_Huchon_Salemi_3I.View
         {
             VeloDAO daoVelo = new VeloDAO();
 
-            List<Velo> listVelo = daoVelo.FindVeloByMemebre(user.ID_personne);
+            List<Velo> listVelo = daoVelo.FindVeloByMembre(user.ID_personne);
 
             List<string> listRecupString = new List<string>();
             List<decimal> listNum = new List<decimal>();
 
             for (int i = 0; i < listVelo.Count; i++)
             {
-                String recupString = listVelo[i].Type + " => " + listVelo[i].Longueur + " cm";
+                String recupString = listVelo[i].Type + " - " + listVelo[i].Longueur + " cm";
                 listRecupString.Add(recupString);
                 listNum.Add(listVelo[i].ID);
             }

@@ -30,6 +30,7 @@ namespace Projet_Huchon_Salemi_3I.View
             user = personne;
             Main.Content = new HomeVIEW(personne);
             value = personne.checkProfile(personne.ID_personne);
+            modifBtn.Visibility = Visibility.Visible;
 
             switch (value)
             {
@@ -110,31 +111,55 @@ namespace Projet_Huchon_Salemi_3I.View
 
         private void MenuItem_home_Click(object sender, RoutedEventArgs e)
         {
-
-            Main.Content = new HomeVIEW(user);
+            modifBtn.Visibility = Visibility.Visible;
+            
+            PersonneDAO personneDAO = new PersonneDAO();
+            Personne userModif = new Personne();
+            userModif = personneDAO.Find(user.ID_personne);
+            Main.Content = new HomeVIEW(userModif);
         }
         private void MenuItem_Dispo_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new DisponibilitéVIEW(user);
+            modifBtn.Visibility = Visibility.Hidden;
+            PersonneDAO personneDAO = new PersonneDAO();
+            Personne userModif = new Personne();
+            userModif = personneDAO.Find(user.ID_personne);
+            Main.Content = new DisponibilitéVIEW(userModif);
         }
 
         private void MenuItem_Velo_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new VeloVIEW(user);
+            modifBtn.Visibility = Visibility.Hidden;
+            PersonneDAO personneDAO = new PersonneDAO();
+            Personne userModif = new Personne();
+            userModif = personneDAO.Find(user.ID_personne);
+            Main.Content = new VeloVIEW(userModif);
         }
 
         private void MenuItem_Reserv_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new ReservationVIEW(user);
+            modifBtn.Visibility = Visibility.Hidden;
+            PersonneDAO personneDAO = new PersonneDAO();
+            Personne userModif = new Personne();
+            userModif = personneDAO.Find(user.ID_personne);
+            Main.Content = new ReservationVIEW(userModif);
         }
 
         private void MenuItem_Pay_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new PaiementVIEW(user);
+            modifBtn.Visibility = Visibility.Hidden;
+            PersonneDAO personneDAO = new PersonneDAO();
+            Personne userModif = new Personne();
+            userModif = personneDAO.Find(user.ID_personne);
+            Main.Content = new PaiementVIEW(userModif);
         }
         private void MenuItem_Cat_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new CategorieVIEW(user);
+            modifBtn.Visibility = Visibility.Hidden;
+            PersonneDAO personneDAO = new PersonneDAO();
+            Personne userModif = new Personne();
+            userModif = personneDAO.Find(user.ID_personne);
+            Main.Content = new CategorieVIEW(userModif);
         }
 
         private void signOut_Click(object sender, RoutedEventArgs e)
@@ -142,6 +167,15 @@ namespace Projet_Huchon_Salemi_3I.View
             this.Close();
             LogIn signOut = new LogIn();
             signOut.ShowDialog();
+        }
+
+        private void modifBtn_Click(object sender, RoutedEventArgs e)
+        {
+            modifBtn.Visibility = Visibility.Hidden;
+            PersonneDAO personneDAO = new PersonneDAO();
+            Personne userModif = new Personne();
+            userModif = personneDAO.Find(user.ID_personne);
+            Main.Content = new UpdateMembreView(userModif);
         }
     }
 }
