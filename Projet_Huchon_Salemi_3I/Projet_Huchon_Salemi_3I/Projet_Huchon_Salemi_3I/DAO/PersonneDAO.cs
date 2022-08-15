@@ -152,8 +152,8 @@ namespace Projet_Huchon_Salemi_3I.DAO
         public int IsInscrit(string id, string motDePasse)
         {
             int countPersonne = 0;
-            try
-            {
+           // try
+           // {
                 using(SqlConnection connection = new SqlConnection(this.connectionString))
                 {
                     SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Personne where id = @id and motDePasse = @mdp", connection);
@@ -165,11 +165,11 @@ namespace Projet_Huchon_Salemi_3I.DAO
                         countPersonne = (int)cmd.ExecuteScalar();
                     }
                 }
-            }
-            catch (SqlException)
-            {
-                throw new Exception("Une erreur sql s'est produite");
-            }
+            //}
+           // catch (SqlException)
+           // {
+           //     throw new Exception("Une erreur sql s'est produite");
+           // }
             return countPersonne;
         }
 

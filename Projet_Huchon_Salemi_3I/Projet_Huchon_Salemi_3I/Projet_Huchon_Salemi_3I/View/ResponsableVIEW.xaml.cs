@@ -43,24 +43,34 @@ namespace Projet_Huchon_Salemi_3I.View
                 DateTime dateOk = new DateTime(y, m, d, h , min, 0);
                 Decimal forfait = 0;
                 Decimal.TryParse(txtForfait.Text, out forfait);
+  
 
-                BaladeDAO baladedao = new BaladeDAO();
-                Balade balade = new Balade(txtlieu.Text, dateOk, forfait);
-                baladedao.Create(balade);
+               
+                if(forfait != 0)
+                {
 
-                decimal lastAjoutBalade = baladedao.lastBaladeSave();
+                    BaladeDAO baladedao = new BaladeDAO();
+                    Balade balade = new Balade(txtlieu.Text, dateOk, forfait);
+                    baladedao.Create(balade);
 
-                CalendrierDAO calendrierDAO = new CalendrierDAO();
-                Calendrier calendrier = new Calendrier();
-                ResponsableDAO responsableDAO = new ResponsableDAO();
-                Responsable responsable = responsableDAO.Find(user.ID_personne);
-                List<decimal> ListId_calendrier = calendrierDAO.idByCategorie(responsable.Num_categorie);
-                calendrier = calendrierDAO.Find(ListId_calendrier[0]);
-                calendrier.ajouterBalade(lastAjoutBalade);
+                    decimal lastAjoutBalade = baladedao.lastBaladeSave();
 
-                txtForfait.Clear();
-                txtlieu.Clear();
-                MessageBox.Show("Balade ajouté avec succés !", "Félicitations", MessageBoxButton.OK, MessageBoxImage.Information);
+                    CalendrierDAO calendrierDAO = new CalendrierDAO();
+                    Calendrier calendrier = new Calendrier();
+                    ResponsableDAO responsableDAO = new ResponsableDAO();
+                    Responsable responsable = responsableDAO.Find(user.ID_personne);
+                    List<decimal> ListId_calendrier = calendrierDAO.idByCategorie(responsable.Num_categorie);
+                    calendrier = calendrierDAO.Find(ListId_calendrier[0]);
+                    calendrier.ajouterBalade(lastAjoutBalade);
+
+                    txtForfait.Clear();
+                    txtlieu.Clear();
+                    MessageBox.Show("Balade ajouté avec succés !", "Félicitations", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Erreur Ajout Balade", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
 
         }
