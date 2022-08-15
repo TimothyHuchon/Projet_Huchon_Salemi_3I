@@ -21,25 +21,6 @@ namespace Projet_Huchon_Salemi_3I.metier
         {
         }
 
-        public Balade(decimal num, string lieuDepart, DateTime dateDepart, decimal forfait)
-        {
-            this.num = num;
-            this.lieuDepart = lieuDepart;
-            this.dateDepart = dateDepart;
-            this.forfait = forfait;
-        }
-
-        public Balade(decimal num, string lieuDepart, DateTime dateDepart, decimal forfait, List<Vehicule> listeVehicule, List<Inscription> listeInscription, decimal id_calendrier)
-        {
-            this.num = num;
-            this.lieuDepart = lieuDepart;
-            this.dateDepart = dateDepart;
-            this.forfait = forfait;
-            this.listeVehicule = listeVehicule;
-            this.listeInscription = listeInscription;
-            this.CalendrierBalade = id_calendrier;
-        }
-
         public Balade(decimal num)
         {
             this.num = num;

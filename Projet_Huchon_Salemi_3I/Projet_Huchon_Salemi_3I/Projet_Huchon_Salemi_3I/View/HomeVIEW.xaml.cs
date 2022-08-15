@@ -44,8 +44,12 @@ namespace Projet_Huchon_Salemi_3I.View
             Vehicule vehicule = new Vehicule();
             VehiculeDAO vehiculeDAO = new VehiculeDAO();
             vehicule = vehiculeDAO.VehiculeByMembre(personne.ID_personne);
-            vehiculeNbrePassagers.Text = ""+vehicule.NbrePlacesMembre;
-            vehiculeNbreVelos.Text = ""+vehicule.NbrePlacesVelo;
+            if(vehicule != null)
+            {
+                vehiculeNbrePassagers.Text = ""+vehicule.NbrePlacesMembre;
+                vehiculeNbreVelos.Text = ""+vehicule.NbrePlacesVelo;
+            }
+           
         }
     }
 }

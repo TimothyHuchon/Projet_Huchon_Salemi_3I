@@ -68,7 +68,7 @@ namespace Projet_Huchon_Salemi_3I.View
                     txtBalade.Items.Clear();
                     textVoiture.Clear();
                     textVelo.Clear();
-                    MessageBox.Show("Véhicule ajouté avec succés !");
+                    MessageBox.Show("Véhicule ajouté avec succés !", "Félicitations", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {

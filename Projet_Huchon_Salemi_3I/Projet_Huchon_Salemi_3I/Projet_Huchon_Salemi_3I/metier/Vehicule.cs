@@ -30,6 +30,14 @@ namespace Projet_Huchon_Salemi_3I.metier
             this.NbrePlacesVelo = nbrePlacesVelo;
         }
 
+        public Vehicule(Decimal id_vehicule, Decimal id_personne_conducteur, Decimal nbrePlacesMembre, Decimal nbrePlacesVelo)
+        {
+            this.ID_vehicule = id_vehicule;
+            this.ID_personne_conducteur = id_personne_conducteur;
+            this.NbrePlacesMembre = nbrePlacesMembre;
+            this.NbrePlacesVelo = nbrePlacesVelo;
+        }
+
         public Decimal ID_vehicule { get => id_vehicule; set => id_vehicule = value; }
         public Decimal ID_personne_conducteur { get => id_personne_conducteur; set => id_personne_conducteur = value; }
         public Decimal NbrePlacesMembre { get => nbrePlacesMembre; set => nbrePlacesMembre = value; }

@@ -64,13 +64,15 @@ namespace Projet_Huchon_Salemi_3I.View
             Decimal.TryParse((txtCat.SelectedItem as ComboboxItem).Value.ToString(), out num);
             if(dao.VerifierCatPresent(user.ID_personne, num))
             {
-                MessageBox.Show("Vous etes déjà inscrit à cette catégorie !");
+                MessageBox.Show("Vous etes déjà inscrit à cette catégorie !","Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
             {
                 dao.membreInCat(user.ID_personne, num);
+                Membre membre = dao.Find(user.ID_personne);
+                membre.calculSolde(user.Nom, user.Prenom);
                 txtCat.Items.Clear();
-                MessageBox.Show("Catégorie ajouté avec succés !", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Catégorie ajouté avec succés !", "Félicitation", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             
         }

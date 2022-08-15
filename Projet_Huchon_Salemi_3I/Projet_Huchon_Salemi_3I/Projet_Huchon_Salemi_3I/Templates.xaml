@@ -495,11 +495,23 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="buttonMainRed" TargetType="Button" BasedOn="{StaticResource buttonMain}">
+        <Setter Property="Width" Value="180"/>
+        <Setter Property="Background" Value="#f33333"/>
+        <Setter Property="Foreground" Value="#ffffff"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#bc0707" />
+                <Setter Property="Foreground" Value="#ffffff" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
     <Style x:Key="textCpt" TargetType="TextBlock">
         <Setter Property="Background" Value="#FF4A9EE2"/>
         <Setter Property="Foreground" Value="#ffffff"/>
         <Setter Property="Height" Value="40"/>
-        <Setter Property="Width" Value="110"/>
+        <Setter Property="Width" Value="160"/>
         <Setter Property="FontSize" Value="30"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="TextAlignment" Value="Center"/>
@@ -509,7 +521,7 @@
         <Setter Property="Background" Value="#FFF65F5F"/>
         <Setter Property="Foreground" Value="#ffffff"/>
         <Setter Property="Height" Value="40"/>
-        <Setter Property="Width" Value="110"/>
+        <Setter Property="Width" Value="160"/>
         <Setter Property="FontSize" Value="30"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="TextAlignment" Value="Center"/>

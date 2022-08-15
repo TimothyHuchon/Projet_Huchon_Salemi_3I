@@ -83,3 +83,9 @@ C:\Users\aless\source\repos\TimothyHuchon\Projet_Huchon_Salemi_3I\Projet_Huchon_
 C:\Users\aless\source\repos\TimothyHuchon\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\obj\Debug\netcoreapp3.1\View\MembreVIEW.baml
 C:\Users\aless\source\repos\TimothyHuchon\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\obj\Debug\netcoreapp3.1\View\PaiementVIEW.baml
 C:\Users\aless\source\repos\TimothyHuchon\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\obj\Debug\netcoreapp3.1\View\ReservationVIEW.baml
+C:\Users\aless\source\repos\TimothyHuchon\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\obj\Debug\netcoreapp3.1\View\ResponsableVIEW.g.cs
+C:\Users\aless\source\repos\TimothyHuchon\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\obj\Debug\netcoreapp3.1\View\TresorieVIEW.g.cs
+C:\Users\aless\source\repos\TimothyHuchon\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\obj\Debug\netcoreapp3.1\View\ResponsableVIEW.baml
+C:\Users\aless\source\repos\TimothyHuchon\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\obj\Debug\netcoreapp3.1\View\TresorieVIEW.baml
+C:\Users\aless\source\repos\TimothyHuchon\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\obj\Debug\netcoreapp3.1\View\RecapBaladeVIEW.g.cs
+C:\Users\aless\source\repos\TimothyHuchon\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\Projet_Huchon_Salemi_3I\obj\Debug\netcoreapp3.1\View\RecapBaladeVIEW.baml

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projet_Huchon_Salemi_3I.DAO;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -48,29 +49,24 @@ namespace Projet_Huchon_Salemi_3I.metier
         public void calculSolde(String nom, String prenom)
         {
             decimal solde = 0;
-            DAO.MembreDAO dao = new DAO.MembreDAO();
+            MembreDAO dao = new MembreDAO();
             Personne personne = new Personne();
             decimal id = personne.GetidUser(nom, prenom);
             decimal total = dao.TotalofAbonnementCat(id);
-            decimal cpt = dao.RecupCptBancaire(id);
 
-            if (total >= 2)
+            if (total > 1)
             {
-                for (int i = 0; i < (total - 1); i = i + 1)
-                {
-                    solde = solde + 5;
-                }
-                solde = solde + 20;
+                solde = solde + 5;
 
-
-                Membre membre = new Membre(id, solde, cpt);
-                System.Diagnostics.Debug.WriteLine(membre);
+                Membre membre = dao.Find(id);
+                membre.Solde = membre.Solde + solde;
                 dao.Update(membre);
             }
             else
             {
                 solde = 20;
-                Membre membre = new Membre(id, solde, cpt);
+                Membre membre = dao.Find(id);
+                membre.Solde = membre.Solde + solde;
                 dao.Update(membre);
             }
 

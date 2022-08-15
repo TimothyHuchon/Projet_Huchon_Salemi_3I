@@ -44,7 +44,7 @@ namespace Projet_Huchon_Salemi_3I.View
         {
             if (string.IsNullOrEmpty(txtvelo.Text) || string.IsNullOrEmpty(txtPass.Text) || string.IsNullOrEmpty(txtCat.Text) || string.IsNullOrEmpty(txtBalade.Text))
             {
-                MessageBox.Show("Veuillez selectionnez tous les champs !");
+                MessageBox.Show("Veuillez selectionnez tous les champs !", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
             {
@@ -98,11 +98,11 @@ namespace Projet_Huchon_Salemi_3I.View
                         txtvelo.Items.Clear();
                     }
 
-                    MessageBox.Show("Réservation ajouté avec succés !");
+                    MessageBox.Show("Réservation ajouté avec succés !", "Félicitations", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Plus de places disponnibles !");
+                    MessageBox.Show("Plus de places disponnibles !", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
         }
@@ -120,19 +120,28 @@ namespace Projet_Huchon_Salemi_3I.View
 
         private void listeOfCat()
         {
-            List<string> nameCat = new List<string> { "Trialiste", "Descente", "Randonneur", "Cyclo" };
+            List<string> nameTotal = new List<string> { "Trialiste", "Descente", "Randonneur", "Cyclo" };
+            BaladeDAO daoBalade = new BaladeDAO();
+            List<decimal> listNum = daoBalade.idCatByPers(user.ID_personne);
+            List<string> nameCatOk = new List<string>();
+
+            foreach (decimal d in listNum)
+            {
+                nameCatOk.Add(nameTotal[(int)d -1]);
+            }
+            
             ComboboxItem item = null;
             List<ComboboxItem> listItem = new List<ComboboxItem>();
 
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < nameCatOk.Count; i++)
             {
                 item = new ComboboxItem();
-                item.Text = nameCat[i];
+                item.Text = nameCatOk[i];
                 item.Value = i + 1;
                 listItem.Add(item);
             }
 
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < nameCatOk.Count; i++)
             {
                 txtCat.Items.Add(listItem[i]);
             }
@@ -233,7 +242,7 @@ namespace Projet_Huchon_Salemi_3I.View
             
             if (string.IsNullOrEmpty(txtCat.Text))
             {
-                MessageBox.Show("Veuillez selectionnez une balade !", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Veuillez selectionnez une catégorie !", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
             {
@@ -266,5 +275,6 @@ namespace Projet_Huchon_Salemi_3I.View
             }
             
         }
+
     }
 }

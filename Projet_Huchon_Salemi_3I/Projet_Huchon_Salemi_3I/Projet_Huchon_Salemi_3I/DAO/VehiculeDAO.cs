@@ -95,13 +95,11 @@ namespace Projet_Huchon_Salemi_3I.DAO
                         {
                             vehicule = new Vehicule
                             {
-                                    ID_vehicule = reader.GetDecimal("id_vehicule"),
-                                    NbrePlacesMembre = reader.GetDecimal("nbrePlacesMembre"),
-                                    NbrePlacesVelo = reader.GetDecimal("nbrePlacesVelo"),
-                                    Conducteur = new Membre(),
-                                    Passagers = new List<Membre>(),
-                                    ListeVelo = new List<Velo>()  
-
+                                ID_vehicule = reader.GetDecimal("id_vehicule"),
+                                ID_personne_conducteur = reader.GetDecimal("id_personne_conducteurs"),
+                                NbrePlacesMembre = reader.GetDecimal("nbrePlacesMembre"),
+                                NbrePlacesVelo = reader.GetDecimal("nbrePlacesVelo"),
+                               
                             };
                         }
                     }

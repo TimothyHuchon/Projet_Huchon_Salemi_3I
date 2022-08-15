@@ -137,5 +137,18 @@ namespace Projet_Huchon_Salemi_3I.View
             Main.Content = new CategorieVIEW(user);
         }
 
+        private void responsable_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new ResponsableVIEW(user);
+        }
+        private void info_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new RecapBaladeVIEW();
+        }
+
+        private void tresorier_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new TresorieVIEW(user);
+        }
     }
 }
